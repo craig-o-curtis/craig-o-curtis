@@ -1,6 +1,6 @@
 ### Hi, I'm Craig 👋
 
-**Frontend Architect · Fullstack Engineer · Chinese Linguist**
+**Product-Minded Frontend Architect, Fullstack Engineer, and Chinese Linguist**
 
 I build small, sharp TypeScript tools — mostly things that fix a problem I got tired of having.
 
