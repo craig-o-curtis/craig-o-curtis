@@ -4,11 +4,11 @@
 
 I build small, sharp TypeScript tools — mostly things that fix a problem I got tired of having.
 
+Here's my CV/resume, in your terminal, in a green-screen mainframe UI. It's also one of the projects pinned below.
+
 ```bash
 npx run-cv craig
 ```
-
-That's my CV, in your terminal, in a green-screen mainframe UI. It's also one of the projects pinned above.
 
 ---
 
