@@ -55,6 +55,10 @@ Independent open-source engineering. The numbers below are live, refreshed daily
 | [worktree](https://github.com/northguild/worktree) | [`v3.0.0`](https://github.com/northguild/worktree/releases/tag/v3.0.0) | 2026-11-07 | 14 |
 <!-- releases:end -->
 
+<a href="https://craig-o-curtis.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg"><img src="assets/portfolio-light.svg" width="100%" alt="There's more at craig-o-curtis.github.io: my portfolio, an interactive dashboard of my work, stack, open source and agent workflows, over Helsinki's skyline from the harbour. Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track. Still locked: Mainframe, Retro 82, Solid, Rain and NorthGuild."></picture></a>
+
+<p align="center"><a href="https://craig-o-curtis.github.io/"><b>craig-o-curtis.github.io</b></a></p>
+
 ### Contributions
 
 <picture>

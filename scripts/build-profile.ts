@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 import { type CardInput, renderCard } from "./lib/card.ts";
 import { EMPTY, fetchSnapshot, type Release, type Snapshot } from "./lib/data.ts";
 import { renderHero } from "./lib/hero.ts";
+import { HELSINKI_DARK, HELSINKI_LIGHT, type PortfolioInput, renderPortfolio } from "./lib/portfolio.ts";
 import { renderTip, type TipInput } from "./lib/tip.ts";
 import { DARK, LIGHT } from "./lib/theme.ts";
 
@@ -63,6 +64,17 @@ export const TIP: TipInput = {
   text: "My CV/resume runs in your terminal, in a green-screen mainframe UI.",
   command: "npx run-cv craig",
   note: "No terminal handy? Click to run it in the browser →",
+};
+
+export const PORTFOLIO: PortfolioInput = {
+  url: "https://craig-o-curtis.github.io/",
+  host: "craig-o-curtis.github.io",
+  lines: [
+    "My portfolio: an interactive dashboard of my work, stack, open source and agent workflows.",
+    "Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track:",
+  ],
+  locked: ["Mainframe", "Retro 82", "Solid", "Rain", "NorthGuild"],
+  unlocks: 12,
 };
 
 export function cards(s: Snapshot): Record<string, CardInput> {
@@ -189,6 +201,9 @@ async function main() {
   for (const [theme, palette] of [["dark", DARK], ["light", LIGHT]] as const) {
     writes.push(writeFile(path.join(ASSETS, `tip-${theme}.svg`), renderTip(TIP, palette)));
   }
+  for (const [theme, palette] of [["dark", HELSINKI_DARK], ["light", HELSINKI_LIGHT]] as const) {
+    writes.push(writeFile(path.join(ASSETS, `portfolio-${theme}.svg`), renderPortfolio(PORTFOLIO, palette)));
+  }
   for (const [key, card] of Object.entries(cards(snapshot))) {
     writes.push(writeFile(path.join(ASSETS, `card-${key}-dark.svg`), renderCard(card, DARK)));
     writes.push(writeFile(path.join(ASSETS, `card-${key}-light.svg`), renderCard(card, LIGHT)));
@@ -198,7 +213,7 @@ async function main() {
   const readme = await readFile(README, "utf8");
   await writeFile(README, replaceSection(readme, "releases", releasesMarkdown(snapshot)));
 
-  console.log(`profile built: hero, tip, ${Object.keys(cards(snapshot)).length} cards × 2 themes, ${snapshot.releases.length} releases`);
+  console.log(`profile built: hero, tip, portfolio, ${Object.keys(cards(snapshot)).length} cards × 2 themes, ${snapshot.releases.length} releases`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

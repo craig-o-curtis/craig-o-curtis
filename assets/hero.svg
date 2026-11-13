@@ -17,8 +17,8 @@
   .l3 { animation: appear .4s ease-out 3.25s both; }
   .l4 { animation: appear .4s ease-out 3.55s both; }
   .l5 { animation: appear .01s linear 3.95s both; }
-  .roll { animation: roll 0.75s steps(5) infinite; }
-  .scan { animation: scan 7s linear 1s infinite both; }
+  .roll { animation: roll 0.75s steps(5) 2.55s 4 both; }
+  .scan { animation: scan 4s linear 1s both; }
   @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
   .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
   @media (prefers-reduced-motion: reduce) {

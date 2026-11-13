@@ -30,6 +30,8 @@ const NAME_TOP = 110;
 // run-cv's App.tsx: these five stops, rotated one place every 150 ms.
 const LOGO_STOPS = ["#00ff00", "#008000", "#003300", "#008000", "#00ff00"];
 const LOGO_TICK = 0.15;
+// The gradient rolls a few laps as the name lands, then settles; every lap ends on the all-lit frame.
+const LOGO_LAPS = 4;
 
 /**
  * `phase` starts the gradient so that its dark middle stop sits on the first blank column after the
@@ -77,8 +79,8 @@ export function renderHero(input: HeroInput): string {
   .l3 { animation: appear .4s ease-out ${t(1.55)}s both; }
   .l4 { animation: appear .4s ease-out ${t(1.85)}s both; }
   .l5 { animation: appear .01s linear ${t(2.25)}s both; }
-  .roll { animation: roll ${(LOGO_STOPS.length * LOGO_TICK).toFixed(2)}s steps(${LOGO_STOPS.length}) infinite; }
-  .scan { animation: scan 7s linear 1s infinite both; }
+  .roll { animation: roll ${(LOGO_STOPS.length * LOGO_TICK).toFixed(2)}s steps(${LOGO_STOPS.length}) ${t(0.85)}s ${LOGO_LAPS} both; }
+  .scan { animation: scan 4s linear 1s both; }
   ${FRAME_CSS}
   ${REDUCED_MOTION}
 </style>
