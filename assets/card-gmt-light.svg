@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="220" viewBox="0 0 410 220" role="img" aria-labelledby="title">
+<title id="title">gmt v1.21.0: Give Me Temporal. Date &amp; time for JS/TS, built on TC39 Temporal. Never touches Date. 75,622 tests, 773 functions, 262 npm / week.</title>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
+  @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes pulse { from { r: 3px; opacity: .9; } to { r: 11px; opacity: 0; } }
+  @keyframes type { from { transform: translateX(0); } to { transform: translateX(17.5px); } }
+  .spark { stroke-dasharray: 1; animation: draw 2.4s ease-out .4s both; }
+  .area { animation: appear .8s ease-out 2.2s both; }
+  .dot { animation: appear .2s linear 2.7s both; }
+  .pulse { animation: pulse 1.8s ease-out 2.9s infinite both; }
+  .typing { animation: type 0.06s steps(1) .6s both; }
+  .r1 { animation: appear .3s ease-out 0.96s both; }
+  .r2 { animation: appear .3s ease-out 1.66s both; }
+  @media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+  .motion-only { display: none; }
+}
+</style>
+<defs>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b5d1e" stop-opacity=".28"/><stop offset="1" stop-color="#0b5d1e" stop-opacity="0"/></linearGradient>
+</defs>
+<rect x="1" y="1" width="408" height="218" rx="10" fill="#f4fbf4" stroke="#2e7d32" stroke-width="1.5"/>
+<text x="20" y="38" font-size="20" font-weight="700" fill="#0b5d1e"><tspan fill="#3f7a4f">▸ </tspan>gmt</text>
+<rect x="323.6" y="22" width="66.4" height="22" rx="11" fill="#d3ebd3" stroke="#2e7d32"/>
+<text x="356.8" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">v1.21.0</text>
+<text x="20" y="62" font-size="12.5" fill="#3f7a4f">Give Me Temporal. Date &amp; time for JS/TS,</text>
+<text x="20" y="79" font-size="12.5" fill="#3f7a4f">built on TC39 Temporal. Never touches Date.</text>
+<text x="20" y="112" font-size="19" font-weight="700" fill="#0b5d1e">75,622</text>
+  <text x="20" y="130" font-size="11" fill="#3f7a4f">tests</text>
+  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#0b5d1e">773</text>
+  <text x="143.33333333333331" y="130" font-size="11" fill="#3f7a4f">functions</text>
+  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#0b5d1e">262</text>
+  <text x="266.66666666666663" y="130" font-size="11" fill="#3f7a4f">npm / week</text>
+<path class="area" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 185.1 L242 188.5 L256.8 180.5 L271.6 172.8 L286.4 150 L301.2 180.1 L316 176.6 L330.8 188.7 L345.6 175.9 L360.4 167.4 L375.2 172.2 L390 177 L390 190 L20 190 Z" fill="url(#fade)"/>
+  <path class="spark" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 185.1 L242 188.5 L256.8 180.5 L271.6 172.8 L286.4 150 L301.2 180.1 L316 176.6 L330.8 188.7 L345.6 175.9 L360.4 167.4 L375.2 172.2 L390 177" pathLength="1" fill="none" stroke="#0b5d1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle class="pulse motion-only" cx="390" cy="177" r="3" fill="none" stroke="#006d77"/>
+  <circle class="dot" cx="390" cy="177" r="3" fill="#006d77"/>
+<text x="20" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85">npm downloads · 26 weeks</text>
+<text x="390" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85" text-anchor="end">★ 9</text>
+</svg>
