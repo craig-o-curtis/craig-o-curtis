@@ -1,0 +1,41 @@
+name: CI
+
+# The checks a pull request must pass: the tests, and an offline build that renders every asset and README
+# section from the committed snapshot (data/profile.json), with no network calls. That catches a broken
+# renderer or a README whose markers went missing before it reaches main, where profile.yml builds live.
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      # GitHub-owned actions only, pinned to full commit SHAs (see profile.yml).
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      # No dependencies to install: Node runs the TypeScript directly.
+      - run: npm test
+
+      - run: npm run build:offline
+
+      # Informational: the generated files main's next run would rewrite. A stale asset in a PR is not an
+      # error, because profile.yml regenerates everything after the merge.
+      - name: Generated files that differ from the snapshot build
+        run: git status --short assets data README.md
