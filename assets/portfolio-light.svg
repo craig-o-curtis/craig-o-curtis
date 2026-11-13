@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="852" height="298" viewBox="0 0 852 298" role="img" aria-labelledby="title">
+<title id="title">craig-o-curtis.github.io: My portfolio: an interactive dashboard of my work, stack, open source and agent workflows. Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track: Still locked: Mainframe, Retro 82, Solid, Rain, NorthGuild.</title>
+<style>
+  text { white-space: pre; }
+  @keyframes appear { from { opacity: 0; } }
+  @keyframes slide { from { opacity: 0; transform: translateX(14px); } 70% { transform: translateX(-2px); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes lock { from { opacity: 0; transform: scale(1.25); } 60% { opacity: 1; transform: scale(1); } 75% { opacity: .25; } to { opacity: 1; } }
+  @keyframes turn { to { transform: rotate(360deg); } }
+  .turn { transform-box: fill-box; transform-origin: center; animation: turn 120s linear infinite; }
+  .dusk { animation: appear 2s ease-out .6s both; }
+  
+  .tag { animation: slide .7s ease-out 1.1s both; }
+  .arrow { animation: appear .3s 1.6s both, blink 1s step-end 1.9s 3; }
+  .lock { transform-box: fill-box; transform-origin: center; animation: lock .9s ease-out .6s both; }
+  @media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+  .motion-only { display: none; }
+}
+</style>
+<defs>
+  <clipPath id="card"><rect width="840" height="286" rx="10"/></clipPath>
+  <linearGradient id="sky" x1="0" y1="100" x2="0" y2="240" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#dbe7f3" stop-opacity="0"/><stop offset="1" stop-color="#dbe7f3"/></linearGradient>
+  <linearGradient id="depth" x1="0" y1="240" x2="0" y2="286" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="water"><rect y="240" width="840" height="46" fill="url(#depth)"/></mask>
+  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  
+</defs>
+<g transform="translate(6 6)">
+<g clip-path="url(#card)">
+  <rect width="840" height="286" fill="#f6f4ef"/>
+  <rect y="100" width="840" height="140" fill="url(#sky)"/>
+  <rect y="240" width="840" height="46" fill="#dbe7f3"/>
+  <g id="city" transform="translate(-315 73) scale(0.525)">
+    <path d="M0 318V274H56V265H91V258H133V263H171V234H204V274H231V286H258V256H303V287H339V282H361V278H395V265H451V287H476V262H507V212H546V268H604V271H655V224H678V256H716V260H770V264H800V271H830V257H864V286H916V279H971V267H1007V278H1055V277H1096V261H1129V268H1164V264H1193V273H1235V283H1274V284H1303V262H1357V276H1382V266H1402V258H1455V256H1514V258H1570V277H1591V283H1636V266H1671V268H1710V278H1742V274H1792V280H1813V266H1862V275H1881V270H1931V283H1974V255H1999V285H2020V282H2067V264H2093V207H2134V219H2173V285H2215V212H2244V257H2265V262H2316V275H2350V283H2383V271H2414V283H2457V283H2513V229H2553V275H2593V258H2652V227H2708V271H2741V207H2776V269H2800V318Z" transform="translate(37 0)" fill="#e4e8ee"/>
+    <path d="M0 318V274H59V300H104V271H123V269H142V271H162V272H183V282H209V278H257V297H276V297H331V293H374V231H417V280H454V245H486V268H511V297H565V284H599V300H645V280H687V295H718V294H752V293H771V296H829V294H855V303H911V299H969V296H991V296H1030V296H1081V300H1102V302H1152V302H1174V294H1222V303H1264V297H1324V298H1355V303H1394V301H1451V302H1502V291H1542V292H1587V301H1646V291H1681V304H1701V298H1756V293H1793V301H1837V300H1865V291H1901V296H1938V298H1966V291H2009V298H2048V297H2107V276H2165V274H2197V286H2229V286H2268V291H2288V287H2316V288H2365V276H2387V297H2439V271H2480V280H2511V292H2549V288H2595V300H2635V252H2686V290H2710V269H2764V273H2793V283H2800V318ZM740 168h9v150h-9ZM735 152h19v16h-19ZM743 136h3v16h-3ZM870 200h28v118h-28ZM868 200L884 154L900 200ZM882 142h4v14h-4ZM898 266h74v52h-74ZM898 266L935 248L972 266ZM1050 280h170v38h-170ZM1110 280C1110 260 1160 260 1160 280ZM1044 202h26v116h-26ZM1047 192h20v10h-20ZM1051 185h12v7h-12ZM1051 185C1051 177 1063 177 1063 185ZM1056.5 171h1v9h-1ZM1244 306h192v12h-192ZM1266 244h148v62h-148ZM1306 244L1340 228L1374 244ZM1315 214h50v30h-50ZM1307 214C1307 174.1 1373 174.1 1373 214ZM1336 174h8v12h-8ZM1294 230h10v14h-10ZM1293 230C1293 220.7 1305 220.7 1305 230ZM1376 230h10v14h-10ZM1375 230C1375 220.7 1387 220.7 1387 230ZM1278 232h12v12h-12ZM1276 232C1276 220 1292 220 1292 232ZM1390 232h12v12h-12ZM1388 232C1388 220 1404 220 1404 232ZM1338.8 221h2.4v7h-2.4ZM1304.8 237h2.4v7h-2.4ZM1372.8 237h2.4v7h-2.4ZM1266.8 237h2.4v7h-2.4ZM1410.8 237h2.4v7h-2.4ZM1500 266h96v52h-96ZM1536 214h24v52h-24ZM1538.2 214C1527 198.3 1546.6 189.5 1548 179C1549.4 189.5 1569 198.3 1557.8 214ZM1506 248h16v18h-16ZM1507.7 248C1500.5 237.9 1513.1 232.3 1514 225.5C1514.9 232.3 1527.5 237.9 1520.3 248ZM1572 248h16v18h-16ZM1573.7 248C1566.5 237.9 1579.1 232.3 1580 225.5C1580.9 232.3 1593.5 237.9 1586.3 248ZM1524 256h12v10h-12ZM1525.8 256C1521 249.3 1529.4 245.5 1530 241C1530.6 245.5 1539 249.3 1534.2 256ZM1560 256h12v10h-12ZM1561.8 256C1557 249.3 1565.4 245.5 1566 241C1566.6 245.5 1575 249.3 1570.2 256ZM1666 318L1697 240L1703 240L1674 318ZM1734 318L1703 240L1697 240L1726 318ZM1830 222h8v96h-8ZM1800 218h100v6h-100ZM1880 224h6v20h-6ZM1916 318L1910 300H2086L2098 302L2084 318ZM1930 290h140v10h-140ZM1942 281h112v9h-112ZM1960 274h70v7h-70ZM1980 274L1983 262H1997L1995 274Z" fill="none" stroke="rgb(42 81 128 / 0.34)" stroke-width="3.8" stroke-linejoin="round"/>
+    <path d="M0 318V274H59V300H104V271H123V269H142V271H162V272H183V282H209V278H257V297H276V297H331V293H374V231H417V280H454V245H486V268H511V297H565V284H599V300H645V280H687V295H718V294H752V293H771V296H829V294H855V303H911V299H969V296H991V296H1030V296H1081V300H1102V302H1152V302H1174V294H1222V303H1264V297H1324V298H1355V303H1394V301H1451V302H1502V291H1542V292H1587V301H1646V291H1681V304H1701V298H1756V293H1793V301H1837V300H1865V291H1901V296H1938V298H1966V291H2009V298H2048V297H2107V276H2165V274H2197V286H2229V286H2268V291H2288V287H2316V288H2365V276H2387V297H2439V271H2480V280H2511V292H2549V288H2595V300H2635V252H2686V290H2710V269H2764V273H2793V283H2800V318ZM740 168h9v150h-9ZM735 152h19v16h-19ZM743 136h3v16h-3ZM870 200h28v118h-28ZM868 200L884 154L900 200ZM882 142h4v14h-4ZM898 266h74v52h-74ZM898 266L935 248L972 266ZM1050 280h170v38h-170ZM1110 280C1110 260 1160 260 1160 280ZM1044 202h26v116h-26ZM1047 192h20v10h-20ZM1051 185h12v7h-12ZM1051 185C1051 177 1063 177 1063 185ZM1056.5 171h1v9h-1ZM1244 306h192v12h-192ZM1266 244h148v62h-148ZM1306 244L1340 228L1374 244ZM1315 214h50v30h-50ZM1307 214C1307 174.1 1373 174.1 1373 214ZM1336 174h8v12h-8ZM1294 230h10v14h-10ZM1293 230C1293 220.7 1305 220.7 1305 230ZM1376 230h10v14h-10ZM1375 230C1375 220.7 1387 220.7 1387 230ZM1278 232h12v12h-12ZM1276 232C1276 220 1292 220 1292 232ZM1390 232h12v12h-12ZM1388 232C1388 220 1404 220 1404 232ZM1338.8 221h2.4v7h-2.4ZM1304.8 237h2.4v7h-2.4ZM1372.8 237h2.4v7h-2.4ZM1266.8 237h2.4v7h-2.4ZM1410.8 237h2.4v7h-2.4ZM1500 266h96v52h-96ZM1536 214h24v52h-24ZM1538.2 214C1527 198.3 1546.6 189.5 1548 179C1549.4 189.5 1569 198.3 1557.8 214ZM1506 248h16v18h-16ZM1507.7 248C1500.5 237.9 1513.1 232.3 1514 225.5C1514.9 232.3 1527.5 237.9 1520.3 248ZM1572 248h16v18h-16ZM1573.7 248C1566.5 237.9 1579.1 232.3 1580 225.5C1580.9 232.3 1593.5 237.9 1586.3 248ZM1524 256h12v10h-12ZM1525.8 256C1521 249.3 1529.4 245.5 1530 241C1530.6 245.5 1539 249.3 1534.2 256ZM1560 256h12v10h-12ZM1561.8 256C1557 249.3 1565.4 245.5 1566 241C1566.6 245.5 1575 249.3 1570.2 256ZM1666 318L1697 240L1703 240L1674 318ZM1734 318L1703 240L1697 240L1726 318ZM1830 222h8v96h-8ZM1800 218h100v6h-100ZM1880 224h6v20h-6ZM1916 318L1910 300H2086L2098 302L2084 318ZM1930 290h140v10h-140ZM1942 281h112v9h-112ZM1960 274h70v7h-70ZM1980 274L1983 262H1997L1995 274Z" fill="#d8dee6"/>
+    
+    <path d="M735 158h19M735 162h19M877 208v16M884 208v16M891 208v16M870 228h28M1063 222m-6 0a6 6 0 1 0 12 0a6 6 0 1 0 -12 0M1116 318V296A19 19 0 0 1 1154 296V318M1098 318V300h4V318M1100 300m-1.6 0a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0M1106 318V300h4V318M1108 300m-1.6 0a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0M1160 318V300h4V318M1162 300m-1.6 0a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0M1168 318V300h4V318M1170 300m-1.6 0a1.6 1.6 0 1 0 3.2 0a1.6 1.6 0 1 0 -3.2 0M1284 220v-6M1282 216h4M1396 220v-6M1394 216h4M1340 174v-12M1335 166h10M1244 306h192M1306 244L1340 228L1374 244ZM1315 214h50M1324 214V198.4M1334 214V189.4M1346 214V189.4M1356 214V198.4M1310 304v-44M1322 304v-44M1334 304v-44M1346 304v-44M1358 304v-44M1370 304v-44M1548 179v-12M1544 172h8M1512 314v-16M1530 314v-16M1566 314v-16M1584 314v-16M1883 224v30M1912 310H2090" fill="none" stroke="rgb(42 81 128 / 0.34)" stroke-width="1.9"/>
+    
+    
+    <g transform="translate(1700 240)"><g class="turn"><g fill="none" stroke="rgb(42 81 128 / 0.34)" stroke-width="1.9"><circle r="62"/><circle r="11.2"/><path d="M11.2 0L62 0M10.3 4.3L57.3 23.7M7.9 7.9L43.8 43.8M4.3 10.3L23.7 57.3M0 11.2L0 62M-4.3 10.3L-23.7 57.3M-7.9 7.9L-43.8 43.8M-10.3 4.3L-57.3 23.7M-11.2 0L-62 0M-10.3 -4.3L-57.3 -23.7M-7.9 -7.9L-43.8 -43.8M-4.3 -10.3L-23.7 -57.3M0 -11.2L0 -62M4.3 -10.3L23.7 -57.3M7.9 -7.9L43.8 -43.8M10.3 -4.3L57.3 -23.7"/></g>
+    <g fill="#d8dee6" stroke="rgb(42 81 128 / 0.34)" stroke-width="1.9"><circle cx="62" cy="0" r="3.4"/><circle cx="57.3" cy="23.7" r="3.4"/><circle cx="43.8" cy="43.8" r="3.4"/><circle cx="23.7" cy="57.3" r="3.4"/><circle cx="0" cy="62" r="3.4"/><circle cx="-23.7" cy="57.3" r="3.4"/><circle cx="-43.8" cy="43.8" r="3.4"/><circle cx="-57.3" cy="23.7" r="3.4"/><circle cx="-62" cy="0" r="3.4"/><circle cx="-57.3" cy="-23.7" r="3.4"/><circle cx="-43.8" cy="-43.8" r="3.4"/><circle cx="-23.7" cy="-57.3" r="3.4"/><circle cx="0" cy="-62" r="3.4"/><circle cx="23.7" cy="-57.3" r="3.4"/><circle cx="43.8" cy="-43.8" r="3.4"/><circle cx="57.3" cy="-23.7" r="3.4"/></g></g></g>
+  </g>
+  <g mask="url(#water)"><use href="#city" xlink:href="#city" transform="translate(0 480) scale(1 -1)"/></g>
+  
+  <g transform="translate(-315 73) scale(0.525)"><path d="M982 341L1030 345M982 341L1030 338" fill="none" stroke="rgb(42 81 128 / 0.34)" stroke-width="1.9"/>
+    <path d="M938 335H982L978 340H941ZM947 335V329H971V335ZM955 329V325H965V329Z" fill="#d8dee6" stroke="rgb(42 81 128 / 0.34)" stroke-width="1.9"/></g>
+  <path d="M0 240H840" stroke="rgb(42 81 128 / 0.34)"/>
+
+  <text x="26" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#1d1d1b">There’s more at <tspan fill="#2a5180">craig-o-curtis.github.io</tspan></text>
+  <text x="26" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" fill="#48443c">My portfolio: an interactive dashboard of my work, stack, open source and agent workflows.</text>
+  <text x="26" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" fill="#48443c">Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track:</text>
+  <g class="chips">
+    <rect x="26" y="114" width="92.1" height="22" rx="4" fill="#f6f4ef" fill-opacity=".6" stroke="#8a8375" stroke-dasharray="3 2"/>
+    <path d="M36.5 123.5V122a2.5 2.5 0 0 1 5 0V123.5" fill="none" stroke="#8a8375" stroke-width="1.2"/><rect x="35" y="123.5" width="8" height="6" rx="1" fill="#8a8375"/>
+    <text x="48" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#48443c" textLength="62.1" lengthAdjust="spacingAndGlyphs">Mainframe</text>
+    <rect x="126.1" y="114" width="85.2" height="22" rx="4" fill="#f6f4ef" fill-opacity=".6" stroke="#8a8375" stroke-dasharray="3 2"/>
+    <path d="M136.6 123.5V122a2.5 2.5 0 0 1 5 0V123.5" fill="none" stroke="#8a8375" stroke-width="1.2"/><rect x="135.1" y="123.5" width="8" height="6" rx="1" fill="#8a8375"/>
+    <text x="148.1" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#48443c" textLength="55.2" lengthAdjust="spacingAndGlyphs">Retro 82</text>
+    <rect x="219.29999999999998" y="114" width="64.5" height="22" rx="4" fill="#f6f4ef" fill-opacity=".6" stroke="#8a8375" stroke-dasharray="3 2"/>
+    <path d="M229.79999999999998 123.5V122a2.5 2.5 0 0 1 5 0V123.5" fill="none" stroke="#8a8375" stroke-width="1.2"/><rect x="228.29999999999998" y="123.5" width="8" height="6" rx="1" fill="#8a8375"/>
+    <text x="241.29999999999998" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#48443c" textLength="34.5" lengthAdjust="spacingAndGlyphs">Solid</text>
+    <rect x="291.79999999999995" y="114" width="57.6" height="22" rx="4" fill="#f6f4ef" fill-opacity=".6" stroke="#8a8375" stroke-dasharray="3 2"/>
+    <path d="M302.29999999999995 123.5V122a2.5 2.5 0 0 1 5 0V123.5" fill="none" stroke="#8a8375" stroke-width="1.2"/><rect x="300.79999999999995" y="123.5" width="8" height="6" rx="1" fill="#8a8375"/>
+    <text x="313.79999999999995" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#48443c" textLength="27.6" lengthAdjust="spacingAndGlyphs">Rain</text>
+    <rect x="357.4" y="114" width="99" height="22" rx="4" fill="#f6f4ef" fill-opacity=".6" stroke="#8a8375" stroke-dasharray="3 2"/>
+    <path d="M367.9 123.5V122a2.5 2.5 0 0 1 5 0V123.5" fill="none" stroke="#8a8375" stroke-width="1.2"/><rect x="366.4" y="123.5" width="8" height="6" rx="1" fill="#8a8375"/>
+    <text x="379.4" y="129" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#48443c" textLength="69" lengthAdjust="spacingAndGlyphs">NorthGuild</text>
+  </g>
+
+  <g class="tag">
+    <rect x="276" y="252" width="194.1" height="22" rx="4" fill="#7a5200"/>
+    <rect x="288" y="257" width="12" height="12" rx="1.5" transform="rotate(45 294 263)" fill="#ffffff"/>
+    <text x="294" y="267" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" fill="#7a5200">!</text>
+    <text x="310" y="267" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#ffffff" textLength="62.1" lengthAdjust="spacingAndGlyphs">New quest</text>
+    <path d="M380.6 257V269" stroke="#ffffff" stroke-opacity=".5"/>
+    <text x="389.1" y="267" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#ffffff" textLength="69" lengthAdjust="spacingAndGlyphs">12 unlocks</text>
+  </g>
+  <text class="arrow" x="266" y="266.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="9" text-anchor="middle" fill="#7a5200">◀</text>
+  <rect x="20" y="250" width="232" height="26" rx="3" fill="#f6f4ef" fill-opacity=".82" stroke="rgb(29 29 27 / 0.14)"/>
+  <text x="28" y="267.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#48443c">Guide</text>
+  <g fill="none" stroke="#8a8375" stroke-width="1.2"><rect x="72" y="257" width="7" height="12" rx="1.5"/><rect x="83" y="257" width="7" height="12" rx="1.5"/><rect x="94" y="257" width="7" height="12" rx="1.5"/><rect x="105" y="257" width="7" height="12" rx="1.5"/><rect x="116" y="257" width="7" height="12" rx="1.5"/><rect x="127" y="257" width="7" height="12" rx="1.5"/><rect x="138" y="257" width="7" height="12" rx="1.5"/><rect x="149" y="257" width="7" height="12" rx="1.5"/><rect x="160" y="257" width="7" height="12" rx="1.5"/><rect x="171" y="257" width="7" height="12" rx="1.5"/><rect x="182" y="257" width="7" height="12" rx="1.5"/><rect x="193" y="257" width="7" height="12" rx="1.5"/></g>
+  <text x="210" y="267.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="12" fill="#5e5028" textLength="36" lengthAdjust="spacingAndGlyphs">00/12</text>
+  <path class="lock" d="M18 255V248H25M247 248H254V255M254 271V278H247M25 278H18V271" fill="none" stroke="#7a5200" stroke-width="2"/>
+</g>
+<rect width="840" height="286" rx="10" fill="none" stroke="rgb(29 29 27 / 0.14)" stroke-width="1.5"/>
+</g>
+</svg>

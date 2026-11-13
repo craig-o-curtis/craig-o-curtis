@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { cards, majorOf, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
+import { cards, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
 import { renderCard, TAGLINE_MAX } from "./lib/card.ts";
 import { countCommands, EMPTY, fetchSnapshot, type Snapshot } from "./lib/data.ts";
 import { renderHero } from "./lib/hero.ts";
 import { DARK, esc, LIGHT } from "./lib/theme.ts";
 import { tinyBitmap } from "./lib/tiny.ts";
+import { HELSINKI_DARK, HELSINKI_LIGHT, renderPortfolio } from "./lib/portfolio.ts";
 import { renderTip } from "./lib/tip.ts";
 import { raven } from "./lib/raven.ts";
 
@@ -208,6 +209,27 @@ describe("renderTip", () => {
       assert.doesNotMatch(svg, /rx=|NaN|undefined/);
     });
   }
+});
+
+describe("renderPortfolio", () => {
+  const dark = renderPortfolio(PORTFOLIO, HELSINKI_DARK);
+  const light = renderPortfolio(PORTFOLIO, HELSINKI_LIGHT);
+  it("renders a titled panel with the site, the quest and every locked skin", () => {
+    for (const svg of [dark, light]) {
+      assert.match(svg, /<title id="title">[^<]+<\/title>/);
+      assert.match(svg, />craig-o-curtis\.github\.io</);
+      assert.match(svg, />New quest</);
+      assert.match(svg, />00\/12</);
+      for (const skin of PORTFOLIO.locked) assert.match(svg, new RegExp(`>${skin}<`));
+      assert.doesNotMatch(svg, /NaN|undefined/);
+    }
+  });
+  it("lights the city only at night, and keeps nothing busy looping but the wheel", () => {
+    assert.match(dark, /class="w0"/);
+    assert.match(dark, /url\(#flood0\)/);
+    assert.doesNotMatch(light, /class="w\d"|flood0/);
+    for (const svg of [dark, light]) assert.deepEqual(svg.match(/\binfinite\b/g), ["infinite"]);
+  });
 });
 
 describe("fetchSnapshot", () => {
