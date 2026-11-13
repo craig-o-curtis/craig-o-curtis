@@ -12,8 +12,9 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { type CardInput, renderCard } from "./lib/card.ts";
-import { EMPTY, fetchSnapshot, type Snapshot } from "./lib/data.ts";
+import { EMPTY, fetchSnapshot, type Release, type Snapshot } from "./lib/data.ts";
 import { renderHero } from "./lib/hero.ts";
+import { renderTip, type TipInput } from "./lib/tip.ts";
 import { DARK, LIGHT } from "./lib/theme.ts";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,18 +28,48 @@ export const PROJECTS = [
 ] as const;
 
 const num = (n: number | undefined) => (n === undefined ? "—" : new Intl.NumberFormat("en-US").format(n));
+const compact = (n: number | undefined) =>
+  n === undefined ? "—" : new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 }).format(n);
 const day = (iso: string | undefined) =>
   iso ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(iso)) : "—";
 const isoDay = (iso: string) => iso.slice(0, 10);
 
+/**
+ * A project's own releases, newest first. In a monorepo (gmt publishes its lint plugins from the same
+ * repo) only the main package's count, when it names them `<pkg>@<version>`; otherwise every release does.
+ */
+export function ownReleases(s: Snapshot, pkg: string, repo: string): Release[] {
+  const all = s.releases.filter((r) => r.repo === repo);
+  const main = all.filter((r) => r.name.startsWith(`${pkg}@`));
+  return main.length > 0 ? main : all;
+}
+
+/** The major version of an `x.0.0` release (x ≥ 1), read from its tag; undefined for anything else. */
+export function majorOf(r: Release): number | undefined {
+  const tag = decodeURIComponent(r.url.split("/tag/")[1] ?? r.name);
+  const m = /(?:^v?|@)(\d+)\.0\.0$/.exec(tag);
+  return m && Number(m[1]) > 0 ? Number(m[1]) : undefined;
+}
+
+/** A column label for an IANA zone: a two-word city's initials, else its first three letters. */
+export function zoneLabel(zone: string): string {
+  const city = zone.split("/").at(-1) ?? zone;
+  const words = city.split("_");
+  return (words.length > 1 ? words.map((w) => w[0]).join("") : city.slice(0, 3)).toUpperCase();
+}
+
+export const TIP: TipInput = {
+  label: "TIP",
+  text: "My CV/resume runs in your terminal, in a green-screen mainframe UI.",
+  command: "npx run-cv craig",
+  note: "No terminal handy? Click to run it in the browser →",
+};
+
 export function cards(s: Snapshot): Record<string, CardInput> {
   const pkg = (name: string) => s.packages[name] ?? {};
-  const perWeek = (name: string) => num(pkg(name).weekly?.at(-1));
-  const spark = (name: string) => ({
-    kind: "sparkline" as const,
-    series: pkg(name).weekly ?? [],
-    caption: "npm downloads · 26 weeks",
-  });
+  const zones = s.gmt.timezones ?? [];
+  const nodes = s.gmt.nodes ?? [];
+  const wt = ownReleases(s, "@northguild/worktree", "northguild/worktree");
   return {
     gmt: {
       title: "gmt",
@@ -46,22 +77,27 @@ export function cards(s: Snapshot): Record<string, CardInput> {
       tagline: ["Give Me Temporal. Date & time for JS/TS,", "built on TC39 Temporal. Never touches Date."],
       stats: [
         { value: num(s.gmt.tests), label: "tests" },
+        { value: compact(s.gmt.executions), label: "test runs" },
         { value: num(s.gmt.functions), label: "functions" },
-        { value: perWeek("@northguild/gmt"), label: "npm / week" },
       ],
-      body: spark("@northguild/gmt"),
-      footer: `★ ${num(pkg("@northguild/gmt").stars)}`,
+      body: {
+        kind: "matrix",
+        rows: nodes.map((n) => `node ${n}`),
+        cols: zones.map(zoneLabel),
+        caption: `${zones.length} time zones × ${nodes.length} Node versions`,
+      },
+      footer: s.gmt.locales === undefined ? "" : `${s.gmt.locales} locales`,
     },
     worktree: {
       title: "worktree",
       pill: `v${pkg("@northguild/worktree").version ?? "?"}`,
       tagline: ["Git worktrees without the ceremony.", "Hands each new worktree to a coding agent."],
       stats: [
-        { value: perWeek("@northguild/worktree"), label: "npm / week" },
-        { value: `★ ${num(pkg("@northguild/worktree").stars)}`, label: "stars" },
+        { value: wt.length > 0 ? num(wt.length) : "—", label: "releases" },
+        { value: num(s.worktree.commands), label: "commands" },
         { value: day(pkg("@northguild/worktree").lastRelease), label: "last release" },
       ],
-      body: spark("@northguild/worktree"),
+      body: { kind: "timeline", releases: wt.map((r) => ({ date: r.date, major: majorOf(r) })), caption: "release history" },
       footer: "npx @northguild/worktree",
     },
     dox: {
@@ -78,20 +114,32 @@ export function cards(s: Snapshot): Record<string, CardInput> {
       },
       footer: "ask it anything",
     },
+    // Facts from the sites' own sources: northguild.dev's apps/site/src/scripts/aurora.worker.ts, gmt's
+    // apps/dox/src/lib/globe/webgpu/renderer-webgpu.ts and worktree's docs/src/hero/particles.ts.
+    northguild: {
+      title: "northguild.dev",
+      pill: "GPU",
+      tagline: ["The docs sites draw live on the GPU:", "WebGPU and WebGL, on custom-built shaders."],
+      stats: [],
+      body: {
+        kind: "scene",
+        rows: [
+          ["/", "aurora over real stars · WebGL worker"],
+          ["/gmt", "WebGPU globe · 4× MSAA · live sun"],
+          ["/worktree", "particles: leaf → git graph → wordmark"],
+        ],
+        caption: "northguild.dev",
+      },
+      footer: "WGSL · GLSL · OffscreenCanvas",
+    },
   };
 }
 
-/**
- * One row per project: its latest release and how many it shipped in the last 90 days. In a monorepo
- * (gmt publishes its lint plugins from the same repo) only the main package's releases count, when it
- * names them `<pkg>@<version>`; otherwise every release in the repo does.
- */
+/** One row per project: its latest release and how many it shipped in the last 90 days (see ownReleases). */
 export function releasesMarkdown(s: Snapshot, projects: ReadonlyArray<{ pkg: string; repo: string }> = PROJECTS, now = Date.now()): string {
   const since = now - 90 * 24 * 60 * 60 * 1000;
   const rows = projects.flatMap(({ pkg, repo }) => {
-    const all = s.releases.filter((r) => r.repo === repo);
-    const main = all.filter((r) => r.name.startsWith(`${pkg}@`));
-    const own = main.length > 0 ? main : all;
+    const own = ownReleases(s, pkg, repo);
     const [latest] = own;
     if (!latest) return [];
     const recent = own.filter((r) => Date.parse(r.date) >= since).length;
@@ -138,6 +186,9 @@ async function main() {
       }),
     ),
   ];
+  for (const [theme, palette] of [["dark", DARK], ["light", LIGHT]] as const) {
+    writes.push(writeFile(path.join(ASSETS, `tip-${theme}.svg`), renderTip(TIP, palette)));
+  }
   for (const [key, card] of Object.entries(cards(snapshot))) {
     writes.push(writeFile(path.join(ASSETS, `card-${key}-dark.svg`), renderCard(card, DARK)));
     writes.push(writeFile(path.join(ASSETS, `card-${key}-light.svg`), renderCard(card, LIGHT)));
@@ -147,7 +198,7 @@ async function main() {
   const readme = await readFile(README, "utf8");
   await writeFile(README, replaceSection(readme, "releases", releasesMarkdown(snapshot)));
 
-  console.log(`profile built: hero, ${Object.keys(cards(snapshot)).length} cards × 2 themes, ${snapshot.releases.length} releases`);
+  console.log(`profile built: hero, tip, ${Object.keys(cards(snapshot)).length} cards × 2 themes, ${snapshot.releases.length} releases`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

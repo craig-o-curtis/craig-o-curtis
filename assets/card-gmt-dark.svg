@@ -1,42 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="410" height="220" viewBox="0 0 410 220" role="img" aria-labelledby="title">
-<title id="title">gmt v1.21.0: Give Me Temporal. Date &amp; time for JS/TS, built on TC39 Temporal. Never touches Date. 75,622 tests, 773 functions, 262 npm / week.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="232" viewBox="0 0 422 232" role="img" aria-labelledby="title">
+<title id="title">gmt v1.21.0: Give Me Temporal. Date &amp; time for JS/TS, built on TC39 Temporal. Never touches Date. 75,622 tests, 2.27M test runs, 773 functions.</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
-  @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-  @keyframes pulse { from { r: 3px; opacity: .9; } to { r: 11px; opacity: 0; } }
-  @keyframes type { from { transform: translateX(0); } to { transform: translateX(17.5px); } }
-  .spark { stroke-dasharray: 1; animation: draw 2.4s ease-out .4s both; }
-  .area { animation: appear .8s ease-out 2.2s both; }
-  .dot { animation: appear .2s linear 2.7s both; }
-  .pulse { animation: pulse 1.8s ease-out 2.9s infinite both; }
-  .typing { animation: type 0.06s steps(1) .6s both; }
-  .r1 { animation: appear .3s ease-out 0.96s both; }
-  .r2 { animation: appear .3s ease-out 1.66s both; }
+  @keyframes appear { from { opacity: 0; } }
+  @keyframes sweep { from { transform: translateX(0); } to { transform: translateX(324.0px); } }
+  .cell { animation: appear .25s ease-out both; }
+  .sweep { animation: sweep 3.50s steps(10) 1.85s infinite both; }
+  @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
+  .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
   @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; }
   .motion-only { display: none; }
 }
 </style>
-<defs>
-  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff00" stop-opacity=".28"/><stop offset="1" stop-color="#00ff00" stop-opacity="0"/></linearGradient>
-</defs>
-<rect x="1" y="1" width="408" height="218" rx="10" fill="#0d0d0d" stroke="#008000" stroke-width="1.5"/>
-<text x="20" y="38" font-size="20" font-weight="700" fill="#00ff00"><tspan fill="#00a000">▸ </tspan>gmt</text>
-<rect x="323.6" y="22" width="66.4" height="22" rx="11" fill="#003300" stroke="#008000"/>
-<text x="356.8" y="37.5" font-size="12" fill="#00ff00" text-anchor="middle">v1.21.0</text>
-<text x="20" y="62" font-size="12.5" fill="#00a000">Give Me Temporal. Date &amp; time for JS/TS,</text>
-<text x="20" y="79" font-size="12.5" fill="#00a000">built on TC39 Temporal. Never touches Date.</text>
-<text x="20" y="112" font-size="19" font-weight="700" fill="#00ff00">75,622</text>
+<g transform="translate(6 6)">
+  <rect width="410" height="220" fill="#0d0d0d"/>
+  <text x="20" y="38" font-size="20" font-weight="700" fill="#00ff00"><tspan fill="#00a000">▸ </tspan>gmt</text>
+  <rect x="323.6" y="22" width="66.4" height="22" fill="#003300" stroke="#008000"/>
+  <text x="356.8" y="37.5" font-size="12" fill="#00ff00" text-anchor="middle">v1.21.0</text>
+  <text x="20" y="62" font-size="12.5" fill="#00a000">Give Me Temporal. Date &amp; time for JS/TS,</text>
+  <text x="20" y="79" font-size="12.5" fill="#00a000">built on TC39 Temporal. Never touches Date.</text>
+  <text x="20" y="112" font-size="19" font-weight="700" fill="#00ff00">75,622</text>
   <text x="20" y="130" font-size="11" fill="#00a000">tests</text>
-  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#00ff00">773</text>
-  <text x="143.33333333333331" y="130" font-size="11" fill="#00a000">functions</text>
-  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#00ff00">262</text>
-  <text x="266.66666666666663" y="130" font-size="11" fill="#00a000">npm / week</text>
-<path class="area" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 185.1 L242 188.5 L256.8 180.5 L271.6 172.8 L286.4 150 L301.2 180.1 L316 176.6 L330.8 188.7 L345.6 175.9 L360.4 167.4 L375.2 172.2 L390 177 L390 190 L20 190 Z" fill="url(#fade)"/>
-  <path class="spark" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 185.1 L242 188.5 L256.8 180.5 L271.6 172.8 L286.4 150 L301.2 180.1 L316 176.6 L330.8 188.7 L345.6 175.9 L360.4 167.4 L375.2 172.2 L390 177" pathLength="1" fill="none" stroke="#00ff00" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <circle class="pulse motion-only" cx="390" cy="177" r="3" fill="none" stroke="#00ffff"/>
-  <circle class="dot" cx="390" cy="177" r="3" fill="#00ffff"/>
-<text x="20" y="212" font-size="10.5" fill="#00a000" opacity=".85">npm downloads · 26 weeks</text>
-<text x="390" y="212" font-size="10.5" fill="#00a000" opacity=".85" text-anchor="end">★ 9</text>
+  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#00ff00">2.27M</text>
+  <text x="143.33333333333331" y="130" font-size="11" fill="#00a000">test runs</text>
+  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#00ff00">773</text>
+  <text x="266.66666666666663" y="130" font-size="11" fill="#00a000">functions</text>
+  <text x="80.2" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">NIU</text>
+  <text x="112.6" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">NY</text>
+  <text x="145.0" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">UTC</text>
+  <text x="177.4" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">LON</text>
+  <text x="209.8" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">KOL</text>
+  <text x="242.2" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">KAT</text>
+  <text x="274.6" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">SHA</text>
+  <text x="307.0" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">LH</text>
+  <text x="339.4" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">CHA</text>
+  <text x="371.8" y="150" font-size="8.5" fill="#00a000" text-anchor="middle">API</text>
+  <text x="20" y="163.5" font-size="9.5" fill="#00a000">node 22</text>
+  <rect class="cell" x="66.0" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.50s"/>
+  <rect class="cell" x="98.4" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.60s"/>
+  <rect class="cell" x="130.8" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.71s"/>
+  <rect class="cell" x="163.2" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.82s"/>
+  <rect class="cell" x="195.6" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.92s"/>
+  <rect class="cell" x="228.0" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.02s"/>
+  <rect class="cell" x="260.4" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.13s"/>
+  <rect class="cell" x="292.8" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.24s"/>
+  <rect class="cell" x="325.2" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.34s"/>
+  <rect class="cell" x="357.6" y="155" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.45s"/>
+  <text x="20" y="176.5" font-size="9.5" fill="#00a000">node 24</text>
+  <rect class="cell" x="66.0" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.54s"/>
+  <rect class="cell" x="98.4" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.64s"/>
+  <rect class="cell" x="130.8" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.74s"/>
+  <rect class="cell" x="163.2" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.85s"/>
+  <rect class="cell" x="195.6" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.96s"/>
+  <rect class="cell" x="228.0" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.06s"/>
+  <rect class="cell" x="260.4" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.17s"/>
+  <rect class="cell" x="292.8" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.27s"/>
+  <rect class="cell" x="325.2" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.38s"/>
+  <rect class="cell" x="357.6" y="168" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.48s"/>
+  <text x="20" y="189.5" font-size="9.5" fill="#00a000">node 26</text>
+  <rect class="cell" x="66.0" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.57s"/>
+  <rect class="cell" x="98.4" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.68s"/>
+  <rect class="cell" x="130.8" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.78s"/>
+  <rect class="cell" x="163.2" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.89s"/>
+  <rect class="cell" x="195.6" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:0.99s"/>
+  <rect class="cell" x="228.0" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.10s"/>
+  <rect class="cell" x="260.4" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.20s"/>
+  <rect class="cell" x="292.8" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.31s"/>
+  <rect class="cell" x="325.2" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.41s"/>
+  <rect class="cell" x="357.6" y="181" width="28.4" height="10" fill="#00ff00" opacity=".8" style="animation-delay:1.52s"/>
+  <rect class="sweep motion-only" x="64.0" y="153" width="32.4" height="40" fill="none" stroke="#00ffff" stroke-width="1.5"/>
+  <text x="20" y="212" font-size="10.5" fill="#00a000" opacity=".85">10 time zones × 3 Node versions</text>
+  <text x="390" y="212" font-size="10.5" fill="#00a000" opacity=".85" text-anchor="end">17 locales</text>
+</g>
+<rect x="6" y="6" width="410" height="220" fill="none" stroke="#008000" stroke-width="1.5"/>
+<path class="lock" d="M1.25 17.25 V1.25 H17.25 M404.75 1.25 H420.75 V17.25 M420.75 214.75 V230.75 H404.75 M17.25 230.75 H1.25 V214.75" fill="none" stroke="#00ff00" stroke-width="2.5" stroke-linecap="square"/>
 </svg>
