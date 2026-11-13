@@ -1,0 +1,14 @@
+{
+  "name": "craig-o-curtis-profile",
+  "private": true,
+  "description": "Builds the generated parts of the GitHub profile README: animated SVGs, live project cards, latest releases.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build-profile.ts",
+    "build:offline": "node scripts/build-profile.ts --offline",
+    "test": "node --test scripts/*.test.ts"
+  }
+}
