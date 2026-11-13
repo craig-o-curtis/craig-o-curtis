@@ -1,38 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="410" height="220" viewBox="0 0 410 220" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="232" viewBox="0 0 422 232" role="img" aria-labelledby="title">
 <title id="title">Dox RAG: Two RAG assistants live in my docs sites. Dox for gmt even runs the library's tools. .</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
-  @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-  @keyframes pulse { from { r: 3px; opacity: .9; } to { r: 11px; opacity: 0; } }
+  @keyframes appear { from { opacity: 0; } }
   @keyframes type { from { transform: translateX(0); } to { transform: translateX(280px); } }
-  .spark { stroke-dasharray: 1; animation: draw 2.4s ease-out .4s both; }
-  .area { animation: appear .8s ease-out 2.2s both; }
-  .dot { animation: appear .2s linear 2.7s both; }
-  .pulse { animation: pulse 1.8s ease-out 2.9s infinite both; }
   .typing { animation: type 2.16s steps(36) .6s both; }
   .r1 { animation: appear .3s ease-out 3.06s both; }
   .r2 { animation: appear .3s ease-out 3.76s both; }
+  @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
+  .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
   @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; }
   .motion-only { display: none; }
 }
 </style>
-<defs>
-  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b5d1e" stop-opacity=".28"/><stop offset="1" stop-color="#0b5d1e" stop-opacity="0"/></linearGradient>
-</defs>
-<rect x="1" y="1" width="408" height="218" rx="10" fill="#f4fbf4" stroke="#2e7d32" stroke-width="1.5"/>
-<text x="20" y="38" font-size="20" font-weight="700" fill="#0b5d1e"><tspan fill="#3f7a4f">▸ </tspan>Dox</text>
-<rect x="352.4" y="22" width="37.599999999999994" height="22" rx="11" fill="#d3ebd3" stroke="#2e7d32"/>
-<text x="371.2" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">RAG</text>
-<text x="20" y="62" font-size="12.5" fill="#3f7a4f">Two RAG assistants live in my docs sites.</text>
-<text x="20" y="79" font-size="12.5" fill="#3f7a4f">Dox for gmt even runs the library's tools.</text>
-
-<text x="20" y="114" font-size="12.5" fill="#3f7a4f">ask›</text>
+<g transform="translate(6 6)">
+  <rect width="410" height="220" fill="#f4fbf4"/>
+  <text x="20" y="38" font-size="20" font-weight="700" fill="#0b5d1e"><tspan fill="#3f7a4f">▸ </tspan>Dox</text>
+  <rect x="352.4" y="22" width="37.599999999999994" height="22" fill="#d3ebd3" stroke="#2e7d32"/>
+  <text x="371.2" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">RAG</text>
+  <text x="20" y="62" font-size="12.5" fill="#3f7a4f">Two RAG assistants live in my docs sites.</text>
+  <text x="20" y="79" font-size="12.5" fill="#3f7a4f">Dox for gmt even runs the library's tools.</text>
+  
+  <text x="20" y="114" font-size="12.5" fill="#3f7a4f">ask›</text>
   <text x="57.5" y="114" font-size="12.5" fill="#0b5d1e" textLength="270" lengthAdjust="spacing">what's one month after Jan 31, 2024?</text>
   <rect class="typing motion-only" x="57.5" y="98" width="280" height="24" fill="#f4fbf4"/>
   <text class="r1" x="20" y="142" font-size="12.5" fill="#3f7a4f">  → <tspan fill="#006d77">addDate(&quot;2024-01-31&quot;, { months: 1 })</tspan></text>
   <text class="r2" x="20" y="166" font-size="12.5" fill="#0b5d1e">  &quot;2024-02-29&quot;  ← clamped, leap year</text>
-<text x="20" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85">northguild.dev/gmt/dox</text>
-<text x="390" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85" text-anchor="end">ask it anything</text>
+  <text x="20" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85">northguild.dev/gmt/dox</text>
+  <text x="390" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85" text-anchor="end">ask it anything</text>
+</g>
+<rect x="6" y="6" width="410" height="220" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
+<path class="lock" d="M1.25 17.25 V1.25 H17.25 M404.75 1.25 H420.75 V17.25 M420.75 214.75 V230.75 H404.75 M17.25 230.75 H1.25 V214.75" fill="none" stroke="#0b5d1e" stroke-width="2.5" stroke-linecap="square"/>
 </svg>

@@ -2,75 +2,39 @@
   "packages": {
     "@northguild/worktree": {
       "version": "3.0.0",
-      "stars": 3,
-      "weekly": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        253,
-        37,
-        450,
-        554,
-        28,
-        269,
-        255,
-        10,
-        30,
-        8,
-        19,
-        237
-      ],
       "lastRelease": "2026-11-07T15:04:57Z"
     },
     "@northguild/gmt": {
       "version": "1.21.0",
-      "stars": 9,
-      "weekly": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        98,
-        30,
-        191,
-        347,
-        805,
-        200,
-        270,
-        26,
-        283,
-        455,
-        359,
-        262
-      ],
       "lastRelease": "2026-11-03T10:54:19Z"
     }
   },
   "gmt": {
     "tests": 75622,
     "functions": 773,
-    "executions": 2268660
+    "executions": 2268660,
+    "timezones": [
+      "Pacific/Niue",
+      "America/New_York",
+      "UTC",
+      "Europe/London",
+      "Asia/Kolkata",
+      "Asia/Kathmandu",
+      "Asia/Shanghai",
+      "Australia/Lord_Howe",
+      "Pacific/Chatham",
+      "Pacific/Apia"
+    ],
+    "nodes": [
+      "22",
+      "24",
+      "26"
+    ],
+    "locales": 17,
+    "namespaces": 19
+  },
+  "worktree": {
+    "commands": 9
   },
   "releases": [
     {
@@ -456,6 +420,12 @@
       "name": "@burglekitt/gmt-oxlint@1.0.0",
       "url": "https://github.com/northguild/gmt/releases/tag/%40burglekitt/gmt-oxlint%401.0.0",
       "date": "2026-05-16T12:13:21Z"
+    },
+    {
+      "repo": "northguild/gmt",
+      "name": "@burglekitt/gmt-eslint@1.0.0",
+      "url": "https://github.com/northguild/gmt/releases/tag/%40burglekitt/gmt-eslint%401.0.0",
+      "date": "2026-05-16T12:13:20Z"
     },
     {
       "repo": "northguild/worktree",

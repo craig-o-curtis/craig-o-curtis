@@ -19,26 +19,22 @@
 
 I build small, sharp TypeScript tools, mostly things that fix a problem I got tired of having. I build them AI-accelerated: agent-ready APIs, two RAG assistants embedded in my docs sites, and daily Claude Code / Cursor workflows. I build the tooling, not just use it.
 
-> [!TIP]
-> My CV/resume runs in your terminal, in a green-screen mainframe UI. It's also one of the projects pinned below.
->
-> ```bash
-> npx run-cv craig
-> ```
->
-> No terminal handy? [Run it in the browser](https://northguild.github.io/run-cv/).
+<a href="https://northguild.github.io/run-cv/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tip-dark.svg"><img src="assets/tip-light.svg" width="100%" alt="Tip: my CV/resume runs in your terminal, in a green-screen mainframe UI. Run npx run-cv craig, or click to run it in the browser."></picture></a>
+
+<p align="center"><code>npx run-cv craig</code> · <a href="https://northguild.github.io/run-cv/">Run it in the browser</a></p>
 
 ## What I'm building at [@northguild](https://github.com/northguild)
 
 Independent open-source engineering. The numbers below are live, refreshed daily.
 
 <p align="center">
-  <a href="https://northguild.dev/gmt/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-gmt-dark.svg"><img src="assets/card-gmt-light.svg" width="48%" alt="gmt: date and time library for JavaScript and TypeScript, built on TC39 Temporal. Test count, function count and weekly npm downloads."></picture></a>
-  <a href="https://northguild.dev/worktree/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-worktree-dark.svg"><img src="assets/card-worktree-light.svg" width="48%" alt="worktree: a CLI for Git worktrees that hands new worktrees to coding agents. Weekly npm downloads, stars and last release."></picture></a>
+  <a href="https://northguild.dev/gmt/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-gmt-dark.svg"><img src="assets/card-gmt-light.svg" width="48%" alt="gmt: date and time library for JavaScript and TypeScript, built on TC39 Temporal. Its test count, test runs and functions, and its test matrix of time zones by Node versions."></picture></a>
+  <a href="https://northguild.dev/worktree/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-worktree-dark.svg"><img src="assets/card-worktree-light.svg" width="48%" alt="worktree: a CLI for Git worktrees that hands new worktrees to coding agents. Its releases, commands and last release, and its release history."></picture></a>
 </p>
 
 <p align="center">
   <a href="https://northguild.dev/gmt/dox/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-dox-dark.svg"><img src="assets/card-dox-light.svg" width="48%" alt="Dox: the RAG assistant in gmt's docs, answering a date question by running a gmt function."></picture></a>
+  <a href="https://northguild.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-northguild-dark.svg"><img src="assets/card-northguild-light.svg" width="48%" alt="northguild.dev: the docs sites draw live on the GPU. An aurora over real stars in a WebGL worker, gmt's WebGPU globe, and worktree's particles that turn a leaf into a git graph."></picture></a>
 </p>
 
 <details>

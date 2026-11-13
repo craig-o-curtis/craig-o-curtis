@@ -1,42 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="410" height="220" viewBox="0 0 410 220" role="img" aria-labelledby="title">
-<title id="title">worktree v3.0.0: Git worktrees without the ceremony. Hands each new worktree to a coding agent. 237 npm / week, ★ 3 stars, Nov 7 last release.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="232" viewBox="0 0 422 232" role="img" aria-labelledby="title">
+<title id="title">worktree v3.0.0: Git worktrees without the ceremony. Hands each new worktree to a coding agent. 25 releases, 9 commands, Nov 7 last release.</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
-  @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes appear { from { opacity: 0; } }
   @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
   @keyframes pulse { from { r: 3px; opacity: .9; } to { r: 11px; opacity: 0; } }
-  @keyframes type { from { transform: translateX(0); } to { transform: translateX(17.5px); } }
-  .spark { stroke-dasharray: 1; animation: draw 2.4s ease-out .4s both; }
-  .area { animation: appear .8s ease-out 2.2s both; }
-  .dot { animation: appear .2s linear 2.7s both; }
-  .pulse { animation: pulse 1.8s ease-out 2.9s infinite both; }
-  .typing { animation: type 0.06s steps(1) .6s both; }
-  .r1 { animation: appear .3s ease-out 0.96s both; }
-  .r2 { animation: appear .3s ease-out 1.66s both; }
+  .axis { stroke-dasharray: 1; animation: draw 1s ease-out .3s both; }
+  .tick { animation: appear .2s ease-out both; }
+  .pulse { animation: pulse 1.8s ease-out 2.6s infinite both; }
+  @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
+  .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
   @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; }
   .motion-only { display: none; }
 }
 </style>
-<defs>
-  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b5d1e" stop-opacity=".28"/><stop offset="1" stop-color="#0b5d1e" stop-opacity="0"/></linearGradient>
-</defs>
-<rect x="1" y="1" width="408" height="218" rx="10" fill="#f4fbf4" stroke="#2e7d32" stroke-width="1.5"/>
-<text x="20" y="38" font-size="20" font-weight="700" fill="#0b5d1e"><tspan fill="#3f7a4f">▸ </tspan>worktree</text>
-<rect x="330.8" y="22" width="59.199999999999996" height="22" rx="11" fill="#d3ebd3" stroke="#2e7d32"/>
-<text x="360.4" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">v3.0.0</text>
-<text x="20" y="62" font-size="12.5" fill="#3f7a4f">Git worktrees without the ceremony.</text>
-<text x="20" y="79" font-size="12.5" fill="#3f7a4f">Hands each new worktree to a coding agent.</text>
-<text x="20" y="112" font-size="19" font-weight="700" fill="#0b5d1e">237</text>
-  <text x="20" y="130" font-size="11" fill="#3f7a4f">npm / week</text>
-  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#0b5d1e">★ 3</text>
-  <text x="143.33333333333331" y="130" font-size="11" fill="#3f7a4f">stars</text>
+<g transform="translate(6 6)">
+  <rect width="410" height="220" fill="#f4fbf4"/>
+  <text x="20" y="38" font-size="20" font-weight="700" fill="#0b5d1e"><tspan fill="#3f7a4f">▸ </tspan>worktree</text>
+  <rect x="330.8" y="22" width="59.199999999999996" height="22" fill="#d3ebd3" stroke="#2e7d32"/>
+  <text x="360.4" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">v3.0.0</text>
+  <text x="20" y="62" font-size="12.5" fill="#3f7a4f">Git worktrees without the ceremony.</text>
+  <text x="20" y="79" font-size="12.5" fill="#3f7a4f">Hands each new worktree to a coding agent.</text>
+  <text x="20" y="112" font-size="19" font-weight="700" fill="#0b5d1e">25</text>
+  <text x="20" y="130" font-size="11" fill="#3f7a4f">releases</text>
+  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#0b5d1e">9</text>
+  <text x="143.33333333333331" y="130" font-size="11" fill="#3f7a4f">commands</text>
   <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#0b5d1e">Nov 7</text>
   <text x="266.66666666666663" y="130" font-size="11" fill="#3f7a4f">last release</text>
-<path class="area" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 171.7 L242 187.3 L256.8 157.5 L271.6 150 L286.4 188 L301.2 170.6 L316 171.6 L330.8 189.3 L345.6 187.8 L360.4 189.4 L375.2 188.6 L390 172.9 L390 190 L20 190 Z" fill="url(#fade)"/>
-  <path class="spark" d="M20 190 L34.8 190 L49.6 190 L64.4 190 L79.2 190 L94 190 L108.8 190 L123.6 190 L138.4 190 L153.2 190 L168 190 L182.8 190 L197.6 190 L212.4 190 L227.2 171.7 L242 187.3 L256.8 157.5 L271.6 150 L286.4 188 L301.2 170.6 L316 171.6 L330.8 189.3 L345.6 187.8 L360.4 189.4 L375.2 188.6 L390 172.9" pathLength="1" fill="none" stroke="#0b5d1e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-  <circle class="pulse motion-only" cx="390" cy="172.9" r="3" fill="none" stroke="#006d77"/>
-  <circle class="dot" cx="390" cy="172.9" r="3" fill="#006d77"/>
-<text x="20" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85">npm downloads · 26 weeks</text>
-<text x="390" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85" text-anchor="end">npx @northguild/worktree</text>
+  <line class="axis" x1="20" y1="178" x2="390" y2="178" stroke="#2e7d32" stroke-width="1.5" pathLength="1"/>
+  <line x1="20.0" y1="178" x2="20.0" y2="182" stroke="#2e7d32"/>
+  <text x="40.9" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Mar</text>
+  <line x1="61.7" y1="178" x2="61.7" y2="182" stroke="#2e7d32"/>
+  <text x="81.9" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Apr</text>
+  <line x1="102.1" y1="178" x2="102.1" y2="182" stroke="#2e7d32"/>
+  <text x="122.9" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">May</text>
+  <line x1="143.8" y1="178" x2="143.8" y2="182" stroke="#2e7d32"/>
+  <text x="164.0" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Jun</text>
+  <line x1="184.1" y1="178" x2="184.1" y2="182" stroke="#2e7d32"/>
+  <text x="205.0" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Jul</text>
+  <line x1="225.9" y1="178" x2="225.9" y2="182" stroke="#2e7d32"/>
+  <text x="246.7" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Aug</text>
+  <line x1="267.6" y1="178" x2="267.6" y2="182" stroke="#2e7d32"/>
+  <text x="287.7" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Sep</text>
+  <line x1="307.9" y1="178" x2="307.9" y2="182" stroke="#2e7d32"/>
+  <text x="328.8" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Oct</text>
+  <line x1="349.6" y1="178" x2="349.6" y2="182" stroke="#2e7d32"/>
+  <text x="369.8" y="192" font-size="9" fill="#3f7a4f" text-anchor="middle">Nov</text>
+  <line class="tick" x1="37.1" y1="169" x2="37.1" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.57s"/>
+  <line class="tick" x1="38.1" y1="169" x2="38.1" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.58s"/>
+  <line class="tick" x1="38.2" y1="169" x2="38.2" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.58s"/>
+  <line class="tick" x1="38.3" y1="169" x2="38.3" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.58s"/>
+  <line class="tick" x1="38.4" y1="169" x2="38.4" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.58s"/>
+  <g class="tick" style="animation-delay:0.59s"><line x1="40.8" y1="154" x2="40.8" y2="178" stroke="#0b5d1e" stroke-width="2"/><text x="40.8" y="150" font-size="10" font-weight="700" fill="#006d77" text-anchor="middle">v1</text></g>
+  <line class="tick" x1="50.5" y1="169" x2="50.5" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.63s"/>
+  <line class="tick" x1="59.7" y1="169" x2="59.7" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.67s"/>
+  <line class="tick" x1="80.0" y1="169" x2="80.0" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.76s"/>
+  <line class="tick" x1="81.2" y1="169" x2="81.2" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.76s"/>
+  <line class="tick" x1="82.7" y1="169" x2="82.7" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:0.77s"/>
+  <line class="tick" x1="259.3" y1="169" x2="259.3" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.53s"/>
+  <line class="tick" x1="260.2" y1="169" x2="260.2" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.54s"/>
+  <line class="tick" x1="260.2" y1="169" x2="260.2" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.54s"/>
+  <line class="tick" x1="275.4" y1="169" x2="275.4" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.60s"/>
+  <line class="tick" x1="278.9" y1="169" x2="278.9" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.62s"/>
+  <line class="tick" x1="279.3" y1="169" x2="279.3" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.62s"/>
+  <line class="tick" x1="281.8" y1="169" x2="281.8" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.63s"/>
+  <line class="tick" x1="282.0" y1="169" x2="282.0" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.63s"/>
+  <line class="tick" x1="283.3" y1="169" x2="283.3" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.64s"/>
+  <g class="tick" style="animation-delay:1.75s"><line x1="308.8" y1="154" x2="308.8" y2="178" stroke="#0b5d1e" stroke-width="2"/><text x="308.8" y="150" font-size="10" font-weight="700" fill="#006d77" text-anchor="middle">v2</text></g>
+  <line class="tick" x1="309.2" y1="169" x2="309.2" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.75s"/>
+  <line class="tick" x1="313.1" y1="169" x2="313.1" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.77s"/>
+  <line class="tick" x1="326.5" y1="169" x2="326.5" y2="178" stroke="#3f7a4f" stroke-width="1.5" style="animation-delay:1.83s"/>
+  <g class="tick" style="animation-delay:1.96s"><line x1="358.6" y1="154" x2="358.6" y2="178" stroke="#0b5d1e" stroke-width="2"/><text x="358.6" y="150" font-size="10" font-weight="700" fill="#006d77" text-anchor="middle">v3</text></g>
+  <circle class="pulse motion-only" cx="358.6" cy="178" r="3" fill="none" stroke="#006d77"/>
+  <circle class="tick" cx="358.6" cy="178" r="3" fill="#006d77" style="animation-delay:2.20s"/>
+  <text x="20" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85">release history</text>
+  <text x="390" y="212" font-size="10.5" fill="#3f7a4f" opacity=".85" text-anchor="end">npx @northguild/worktree</text>
+</g>
+<rect x="6" y="6" width="410" height="220" fill="none" stroke="#2e7d32" stroke-width="1.5"/>
+<path class="lock" d="M1.25 17.25 V1.25 H17.25 M404.75 1.25 H420.75 V17.25 M420.75 214.75 V230.75 H404.75 M17.25 230.75 H1.25 V214.75" fill="none" stroke="#0b5d1e" stroke-width="2.5" stroke-linecap="square"/>
 </svg>

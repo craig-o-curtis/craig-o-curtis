@@ -1,43 +1,78 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { cards, releasesMarkdown, replaceSection } from "./build-profile.ts";
-import { renderCard, sparkPoints, TAGLINE_MAX } from "./lib/card.ts";
-import { EMPTY, fetchSnapshot, type Snapshot, toWeekly } from "./lib/data.ts";
+import { cards, majorOf, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
+import { renderCard, TAGLINE_MAX } from "./lib/card.ts";
+import { countCommands, EMPTY, fetchSnapshot, type Snapshot } from "./lib/data.ts";
 import { renderHero } from "./lib/hero.ts";
 import { DARK, esc, LIGHT } from "./lib/theme.ts";
+import { tinyBitmap } from "./lib/tiny.ts";
+import { renderTip } from "./lib/tip.ts";
+import { raven } from "./lib/raven.ts";
 
 const SNAP: Snapshot = {
   packages: {
-    "@northguild/gmt": { version: "1.21.0", stars: 9, weekly: [0, 5, 262], lastRelease: "2026-11-03T10:54:24Z" },
-    "@northguild/worktree": { version: "3.0.0", stars: 3, weekly: [1, 2, 237], lastRelease: "2026-11-07T15:04:57Z" },
-    "run-cv": { version: "0.2.4", stars: 2, weekly: [0, 0, 18], lastRelease: "2026-09-13T09:51:22Z" },
+    "@northguild/gmt": { version: "1.21.0", lastRelease: "2026-11-03T10:54:24Z" },
+    "@northguild/worktree": { version: "3.0.0", lastRelease: "2026-11-07T15:04:57Z" },
+    "run-cv": { version: "0.2.4", lastRelease: "2026-09-13T09:51:22Z" },
   },
-  gmt: { tests: 75622, functions: 773 },
+  gmt: {
+    tests: 75622,
+    functions: 773,
+    executions: 2268660,
+    timezones: ["Pacific/Niue", "America/New_York", "UTC", "Australia/Lord_Howe"],
+    nodes: ["22", "24", "26"],
+    locales: 17,
+    namespaces: 19,
+  },
+  worktree: { commands: 9 },
   releases: [
-    { repo: "northguild/worktree", name: "v3.0.0", url: "https://example.test/w", date: "2026-11-07T15:04:57Z" },
+    { repo: "northguild/worktree", name: "v3.0.0", url: "https://example.test/tag/v3.0.0", date: "2026-11-07T15:04:57Z" },
+    { repo: "northguild/worktree", name: "v2.1.2", url: "https://example.test/tag/v2.1.2", date: "2026-10-14T20:00:00Z" },
     { repo: "northguild/gmt", name: "@northguild/gmt-oxlint@1.2.2", url: "https://example.test/g", date: "2026-11-03T10:54:24Z" },
   ],
 };
 
-describe("toWeekly", () => {
-  it("sums days into weeks, ending at the last day", () => {
-    assert.deepEqual(toWeekly([1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2], 2), [7, 14]);
+describe("majorOf", () => {
+  const r = (tag: string) => ({ repo: "r", name: "n", url: `https://example.test/tag/${tag}`, date: "" });
+  it("reads a major from a v-tag or a monorepo tag", () => {
+    assert.equal(majorOf(r("v3.0.0")), 3);
+    assert.equal(majorOf(r("%40northguild/gmt%402.0.0")), 2);
   });
-  it("pads a short history with zero weeks at the front", () => {
-    assert.deepEqual(toWeekly([3, 3, 3], 3), [0, 0, 9]);
-  });
-  it("puts a partial week first, not last", () => {
-    assert.deepEqual(toWeekly([5, 1, 1, 1, 1, 1, 1, 1], 2), [5, 7]);
+  it("ignores minors, patches and 0.0.0", () => {
+    assert.equal(majorOf(r("v1.20.0")), undefined);
+    assert.equal(majorOf(r("v2.1.0")), undefined);
+    assert.equal(majorOf(r("v0.0.0")), undefined);
   });
 });
 
-describe("sparkPoints", () => {
-  const box = { x: 0, y: 0, w: 100, h: 10 };
-  it("puts the peak at the top and zero on the baseline", () => {
-    assert.deepEqual(sparkPoints([0, 5, 10], box), [[0, 10], [50, 5], [100, 0]]);
+describe("zoneLabel", () => {
+  it("uses initials for a two-word city and three letters otherwise", () => {
+    assert.deepEqual(["America/New_York", "Australia/Lord_Howe", "Asia/Kolkata", "UTC"].map(zoneLabel), ["NY", "LH", "KOL", "UTC"]);
   });
-  it("keeps an all-zero series on the baseline instead of dividing by zero", () => {
-    assert.deepEqual(sparkPoints([0, 0], box), [[0, 10], [100, 10]]);
+});
+
+describe("countCommands", () => {
+  it("counts command files, not their tests or folders", () => {
+    const listing = [
+      { name: "list.ts", type: "file" },
+      { name: "list.test.ts", type: "file" },
+      { name: "config-user.test.ts", type: "file" },
+      { name: "helpers", type: "dir" },
+    ];
+    assert.equal(countCommands(listing), 1);
+  });
+  it("says nothing when the listing failed", () => {
+    assert.equal(countCommands(null), undefined);
+  });
+});
+
+describe("tinyBitmap", () => {
+  it("draws run-cv's tiny lettering four pixels tall", () => {
+    const rows = tinyBitmap("CI").map((row) => row.map((on) => (on ? "#" : ".")).join(""));
+    assert.deepEqual(rows, ["###.#", "#...#", "#...#", "###.#"]);
+  });
+  it("refuses a letter it has no glyph for", () => {
+    assert.throws(() => tinyBitmap("Q"), /no tiny glyph/);
   });
 });
 
@@ -112,24 +147,67 @@ describe("cards", () => {
   it("shows live figures", () => {
     const svg = renderCard(cards(SNAP).gmt, DARK);
     assert.match(svg, /75,622/);
+    assert.match(svg, /2\.27M/);
     assert.match(svg, /v1\.21\.0/);
-    assert.match(svg, />262</);
+    assert.match(svg, />LH</);
+    assert.equal(svg.match(/class="cell"/g)?.length, 12);
+  });
+  it("labels worktree's majors on its release timeline", () => {
+    const svg = renderCard(cards(SNAP).worktree, DARK);
+    assert.match(svg, />v3</);
+    assert.doesNotMatch(svg, />v2</);
+    assert.match(svg, />Oct<[\s\S]*>Nov</);
+  });
+  it("frames every card with square corners and lock brackets", () => {
+    for (const card of Object.values(cards(SNAP))) {
+      const svg = renderCard(card, DARK);
+      assert.doesNotMatch(svg, /rx=/);
+      assert.match(svg, /class="lock"/);
+    }
   });
   it("shows a dash, not a crash, for a package with no data", () => {
-    const svg = renderCard(cards(EMPTY).worktree, DARK);
-    assert.match(svg, /—/);
-    assert.doesNotMatch(svg, /NaN|undefined/);
+    for (const card of Object.values(cards(EMPTY))) {
+      const svg = renderCard(card, DARK);
+      assert.doesNotMatch(svg, /NaN|undefined/);
+    }
+    assert.match(renderCard(cards(EMPTY).worktree, DARK), /—/);
   });
 });
 
 describe("renderHero", () => {
-  const svg = renderHero({ command: "npx run-cv craig", name: "A & B", roles: "r", tagline: "t" });
+  const svg = renderHero({ command: "npx run-cv craig", name: "CRAIG", roles: "A & B", tagline: "t" });
   it("escapes text", () => {
     assert.match(svg, /A &amp; B/);
   });
   it("hides the typing machinery under reduced motion", () => {
     assert.match(svg, /prefers-reduced-motion[\s\S]*\.motion-only \{ display: none; \}/);
   });
+  it("has square corners and lock brackets", () => {
+    assert.doesNotMatch(svg, /rx=/);
+    assert.match(svg, /class="lock"/);
+  });
+});
+
+describe("raven", () => {
+  const r = raven({ near: "#0f0", far: "#0a0" }, { width: 370, y0: 22, y1: 12, scale: 0.6, cycle: 18, start: 3 });
+  it("draws six wingbeat frames and a glide, hidden under reduced motion", () => {
+    assert.equal(r.svg.match(/class="beat"/g)?.length, 6);
+    assert.match(r.svg, /class="glide"/);
+    assert.match(r.svg, /class="raven motion-only"/);
+    assert.doesNotMatch(r.svg + r.css, /NaN|undefined/);
+  });
+});
+
+describe("renderTip", () => {
+  for (const palette of [DARK, LIGHT]) {
+    const svg = renderTip(TIP, palette);
+    it("renders a titled, framed panel with the command", () => {
+      assert.match(svg, /<title id="title">[^<]+<\/title>/);
+      assert.match(svg, />npx run-cv craig</);
+      assert.match(svg, /class="lock"/);
+      assert.doesNotMatch(svg, /rx=|NaN|undefined/);
+    });
+  }
 });
 
 describe("fetchSnapshot", () => {
@@ -137,6 +215,7 @@ describe("fetchSnapshot", () => {
     const snap = await fetchSnapshot([{ pkg: "@northguild/gmt", repo: "northguild/gmt" }], SNAP, async () => null);
     assert.deepEqual(snap.packages["@northguild/gmt"], SNAP.packages["@northguild/gmt"]);
     assert.deepEqual(snap.gmt, SNAP.gmt);
+    assert.deepEqual(snap.worktree, SNAP.worktree);
     assert.deepEqual(snap.releases, SNAP.releases.filter((r) => r.repo === "northguild/gmt"));
   });
 });
