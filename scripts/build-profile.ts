@@ -176,6 +176,17 @@ export function releasesMarkdown(s: Snapshot, projects: ReadonlyArray<{ pkg: str
   return ["| Project | Latest release | Date | Releases, last 90 days |", "| --- | --- | --- | ---: |", ...rows].join("\n");
 }
 
+/** One row per awesome list this profile was submitted to, listed or in review. A PR closed unmerged drops out. */
+export function submissionsMarkdown(s: Snapshot): string {
+  const rows = (s.submissions ?? []).flatMap((sub) => {
+    if (sub.state === "closed") return [];
+    const status = sub.state === "merged" ? `Listed since ${isoDay(sub.merged ?? sub.opened)}` : `In review since ${isoDay(sub.opened)}`;
+    return [`| [${sub.list}](https://github.com/${sub.list}) | ${compact(sub.stars)} | ${sub.category} | [${status}](${sub.url}) |`];
+  });
+  if (rows.length === 0) return "_None yet._";
+  return ["| List | Stars | Category | Status |", "| --- | ---: | --- | --- |", ...rows].join("\n");
+}
+
 /** Replaces what sits between `<!-- name:start -->` and `<!-- name:end -->`. Throws if the markers are missing. */
 export function replaceSection(doc: string, name: string, content: string): string {
   const start = `<!-- ${name}:start -->`;
@@ -245,10 +256,11 @@ async function main() {
   let next = replaceSection(readme, "releases", releasesMarkdown(snapshot));
   next = replaceSection(next, "keys", keysMarkdown(KEYS));
   next = replaceSection(next, "guide", guideMarkdown(question));
+  next = replaceSection(next, "lists", submissionsMarkdown(snapshot));
   await writeFile(README, next);
 
   console.log(
-    `profile built: hero, terminal, portfolio, ${KEYS.length} keys, ${Object.keys(cards(snapshot)).length} cards, git log, city, quiz, chengyu (${idiom.hanzi}), × 2 themes; ${snapshot.releases.length} releases`,
+    `profile built: hero, terminal, portfolio, ${KEYS.length} keys, ${Object.keys(cards(snapshot)).length} cards, git log, city, quiz, chengyu (${idiom.hanzi}), × 2 themes; ${snapshot.releases.length} releases, ${snapshot.submissions?.length ?? 0} list submissions`,
   );
 }
 

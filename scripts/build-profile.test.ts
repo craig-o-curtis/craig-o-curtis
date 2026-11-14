@@ -1,10 +1,21 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { cards, KEYS, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
+import { cards, KEYS, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, submissionsMarkdown, TIP, zoneLabel } from "./build-profile.ts";
 import { decodePng, ink } from "./check-render.ts";
 import { renderCard, TAGLINE_MAX } from "./lib/card.ts";
 import { CITY_DARK, CITY_LIGHT, cityStats, renderCity } from "./lib/city.ts";
-import { ACTIVITY_REPOS, cleanTitle, countCommands, EMPTY, fetchSnapshot, type Snapshot, toCalendar, toMerges } from "./lib/data.ts";
+import {
+  ACTIVITY_REPOS,
+  cleanTitle,
+  countCommands,
+  EMPTY,
+  fetchSnapshot,
+  type Snapshot,
+  SUBMISSIONS,
+  toCalendar,
+  toMerges,
+  toSubmission,
+} from "./lib/data.ts";
 import { clip, renderGitlog } from "./lib/gitlog.ts";
 import {
   guideMarkdown,
@@ -143,6 +154,52 @@ describe("releasesMarkdown", () => {
   });
   it("says so when there are none at all", () => {
     assert.equal(releasesMarkdown(EMPTY, projects, now), "_No releases yet._");
+  });
+});
+
+describe("submissionsMarkdown and toSubmission", () => {
+  const ref = { list: "someone/awesome-profiles", number: 7, category: "Dynamic" };
+  const pr = (state: string, merged_at: string | null) => ({
+    html_url: "https://github.com/someone/awesome-profiles/pull/7",
+    state,
+    created_at: "2026-11-14T19:50:17Z",
+    merged_at,
+    base: { repo: { stargazers_count: 31604 } },
+  });
+  it("reads a pull request's state, dates and the list's stars", () => {
+    assert.deepEqual(toSubmission(ref, pr("closed", "2026-11-16T08:00:00Z")), {
+      ...ref,
+      url: "https://github.com/someone/awesome-profiles/pull/7",
+      state: "merged",
+      opened: "2026-11-14T19:50:17Z",
+      merged: "2026-11-16T08:00:00Z",
+      stars: 31604,
+    });
+    assert.equal(toSubmission(ref, pr("open", null))?.state, "open");
+    assert.equal(toSubmission(ref, pr("closed", null))?.state, "closed");
+    assert.equal(toSubmission(ref, { message: "Not Found" }), undefined);
+    assert.equal(toSubmission(ref, null), undefined);
+  });
+  it("shows a merged PR as listed and an open one as in review, and drops one closed unmerged", () => {
+    const sub = (state: string, merged_at: string | null) => toSubmission(ref, pr(state, merged_at))!;
+    const md = submissionsMarkdown({ ...EMPTY, submissions: [sub("closed", "2026-11-16T08:00:00Z"), sub("open", null), sub("closed", null)] });
+    assert.equal(
+      md,
+      [
+        "| List | Stars | Category | Status |",
+        "| --- | ---: | --- | --- |",
+        "| [someone/awesome-profiles](https://github.com/someone/awesome-profiles) | 31.6K | Dynamic | [Listed since 2026-11-16](https://github.com/someone/awesome-profiles/pull/7) |",
+        "| [someone/awesome-profiles](https://github.com/someone/awesome-profiles) | 31.6K | Dynamic | [In review since 2026-11-14](https://github.com/someone/awesome-profiles/pull/7) |",
+      ].join("\n"),
+    );
+  });
+  it("says so when there are none", () => {
+    assert.equal(submissionsMarkdown(EMPTY), "_None yet._");
+  });
+  it("keeps each submission's last status when its fetch fails", async () => {
+    const prev: Snapshot = { ...SNAP, submissions: SUBMISSIONS.map((r) => toSubmission(r, pr("open", null))!) };
+    const snap = await fetchSnapshot([], prev, async () => null);
+    assert.deepEqual(snap.submissions, prev.submissions);
   });
 });
 

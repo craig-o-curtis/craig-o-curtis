@@ -30,8 +30,22 @@ export interface Snapshot {
   releases: Release[];
   /** The last year of the contribution graph, one entry per day from `start`. */
   contributions?: Calendar;
+  /** The profile's own pull requests to awesome lists (SUBMISSIONS), in that order. */
+  submissions?: Submission[];
   /** The most recently merged pull requests across ACTIVITY_REPOS, newest first. */
   activity?: Merge[];
+}
+
+export interface Submission {
+  /** The list's repo, owner/name. */
+  list: string;
+  number: number;
+  category: string;
+  url: string;
+  state: "open" | "merged" | "closed";
+  opened: string;
+  merged?: string;
+  stars?: number;
 }
 
 export interface Calendar {
@@ -63,6 +77,12 @@ export const LOGIN = "craig-o-curtis";
  */
 export const ACTIVITY_REPOS = ["northguild/gmt", "northguild/worktree", "northguild/northguild.dev", "northguild/run-cv"];
 const ACTIVITY_LINES = 8;
+
+/** Pull requests adding this profile to curated lists of profile READMEs, and the category each asks for. */
+export const SUBMISSIONS = [
+  { list: "abhisheknaiidu/awesome-github-profile-readme", number: 1906, category: "GitHub Actions" },
+  { list: "roypriyanshu02/awesome-github-profile-readme", number: 137, category: "Dynamic" },
+] as const;
 
 /** A GET, or a POST when `body` is given (GraphQL). */
 type Fetcher = (url: string, headers?: Record<string, string>, body?: unknown) => Promise<unknown>;
@@ -145,6 +165,26 @@ export function toMerges(repo: string, listing: unknown): Merge[] | undefined {
     }));
 }
 
+/** One submission from its pull request's API reply; undefined if the reply isn't a pull request. */
+export function toSubmission(ref: { list: string; number: number; category: string }, reply: unknown): Submission | undefined {
+  const pr = reply as {
+    html_url?: string;
+    state?: string;
+    created_at?: string;
+    merged_at?: string | null;
+    base?: { repo?: { stargazers_count?: number } };
+  } | null;
+  if (!pr?.html_url || !pr.created_at) return undefined;
+  return {
+    ...ref,
+    url: pr.html_url,
+    state: pr.merged_at ? "merged" : pr.state === "open" ? "open" : "closed",
+    opened: pr.created_at,
+    ...(pr.merged_at ? { merged: pr.merged_at } : {}),
+    ...(pr.base?.repo?.stargazers_count === undefined ? {} : { stars: pr.base.repo.stargazers_count }),
+  };
+}
+
 export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetcher = getJson): Promise<Snapshot> {
   const gh = process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {};
 
@@ -178,6 +218,12 @@ export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetc
     }),
   );
 
+  const pulls = await Promise.all(SUBMISSIONS.map(({ list, number }) => get(`https://api.github.com/repos/${list}/pulls/${number}`, gh)));
+  const submissions = SUBMISSIONS.flatMap((ref, i) => {
+    const s = toSubmission(ref, pulls[i]) ?? prev.submissions?.find((p) => p.list === ref.list && p.number === ref.number);
+    return s ? [s] : [];
+  });
+
   const [stats, commands, calendar, ...listings] = await Promise.all([
     // gmt publishes its own figures (written by its scripts/stats.mjs, drift-checked in its CI).
     get("https://raw.githubusercontent.com/northguild/gmt/main/apps/dox/src/data/gmt-stats.json") as Promise<GmtStats | null>,
@@ -207,6 +253,7 @@ export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetc
     worktree: { commands: countCommands(commands) ?? prev.worktree?.commands },
     releases: releases.sort((a, b) => b.date.localeCompare(a.date)),
     contributions: toCalendar(calendar) ?? prev.contributions,
+    submissions,
     activity: merges.sort((a, b) => b.date.localeCompare(a.date)).slice(0, ACTIVITY_LINES),
   };
 }

@@ -180,6 +180,19 @@ A decade of production code lives in employers' private repositories. What's pub
 
 </details>
 
+### Awesome lists · 精选列表
+
+This page is up for a place in curated lists of GitHub profile READMEs. The status below refreshes every morning.
+
+这个页面已提交到几个精选的 GitHub 个人主页 README 列表，下面的状态每天早上自动更新。
+
+<!-- lists:start -->
+| List | Stars | Category | Status |
+| --- | ---: | --- | --- |
+| [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) | 31.61K | GitHub Actions | [In review since 2026-11-14](https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906) |
+| [roypriyanshu02/awesome-github-profile-readme](https://github.com/roypriyanshu02/awesome-github-profile-readme) | 198 | Dynamic | [In review since 2026-11-14](https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137) |
+<!-- lists:end -->
+
 ### Contributions · 贡献
 
 <a href="https://github.com/craig-o-curtis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/city-dark.svg"><img src="assets/city-light.svg" width="100%" alt="My GitHub contributions over the last year, drawn as a street of flats, malls, an old manor and towers along the tracks, in a valley between two pine-topped rock hills: a column of windows a week, one window a day. Huginn the raven flies over and poops on each roof, splattering that week's windows in the shade of each day's contributions; then the splats slide down the glass, building by building, and he comes back for more."></picture></a>
