@@ -55,7 +55,7 @@ I also read, write and speak Mandarin at a professional level. A language with n
 
 我的中文听说读写都达到专业水平。中文不分词、没有时态，意思全靠上下文；读惯了中文，再读一份没人写文档的代码库，也就不觉得难了。每天一个成语，以及它在键盘前的意思：
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/idiom-dark.svg"><img src="assets/idiom-light.svg" width="100%" alt="Today's chengyu, a four-character Chinese idiom, with its pinyin, a word-for-word gloss and what it means for software."></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/idiom-dark.svg"><img src="assets/idiom-light.svg" width="100%" alt="Today's chengyu, a four-character Chinese idiom, writing itself on a practice grid in real stroke order, first in Simplified and then in Traditional, with its pinyin, a word-for-word gloss and what it means for software."></picture>
 
 <a href="https://northguild.github.io/run-cv/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tip-dark.svg"><img src="assets/tip-light.svg" width="100%" alt="A terminal window: my CV/resume runs in your terminal, in a green-screen mainframe UI. Run npx run-cv craig, or click to run it in the browser."></picture></a>
 

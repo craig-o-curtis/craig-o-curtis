@@ -17,7 +17,7 @@ import {
   renderGuide,
   wrap,
 } from "./lib/guide.ts";
-import { glyph, IDIOMS, idiomOfTheDay, renderIdiom } from "./lib/idioms.ts";
+import { IDIOMS, idiomOfTheDay, medianLength, renderIdiom, strokesOf } from "./lib/idioms.ts";
 import { keysMarkdown, keyWidth, renderKey } from "./lib/keys.ts";
 import { renderHero } from "./lib/hero.ts";
 import { DARK, esc, LIGHT } from "./lib/theme.ts";
@@ -458,11 +458,26 @@ describe("pop quiz", () => {
 });
 
 describe("chengyu", () => {
-  it("has four characters and a bitmap for each, for every idiom", () => {
+  it("has four characters in each script, with strokes for every one, for every idiom", () => {
     for (const i of IDIOMS) {
       assert.equal([...i.hanzi].length, 4, i.hanzi);
-      for (const ch of i.hanzi) assert.equal(glyph(ch).length, 16, ch);
+      assert.equal([...i.traditional].length, 4, i.traditional);
+      for (const [text, variant] of [[i.hanzi, "simplified"], [i.traditional, "traditional"]] as const) {
+        for (const ch of text) {
+          const s = strokesOf(ch, variant);
+          assert.ok(s.strokes.length > 0 && s.strokes.length === s.medians.length, `${variant} ${ch}`);
+        }
+      }
     }
+  });
+  it("writes Traditional in Taiwan's stroke order where it differs", () => {
+    // 艹 is three strokes on the mainland and four in Taiwan.
+    assert.equal(strokesOf("药", "simplified").strokes.length, 9);
+    assert.equal(strokesOf("藥", "traditional").strokes.length, 19);
+    assert.equal(strokesOf("葉", "traditional").from, "animCJK zh-Hant");
+  });
+  it("measures a median along its points", () => {
+    assert.equal(medianLength("M0 0L3 4L3 10"), 11);
   });
   it("rotates one a day", () => {
     assert.notEqual(idiomOfTheDay(0).hanzi, idiomOfTheDay(86_400_000).hanzi);
@@ -471,8 +486,12 @@ describe("chengyu", () => {
     for (const i of IDIOMS) {
       for (const p of [DARK, LIGHT]) {
         const svg = renderIdiom(i, p);
-        assert.match(svg, new RegExp(`<title id="title">Chengyu of the day: ${i.hanzi}`));
+        assert.match(svg, new RegExp(`<title id="title">Chengyu of the day: ${i.hanzi} \\(traditional ${i.traditional}\\)`));
         assert.doesNotMatch(svg, /NaN|undefined/);
+        // A brush per stroke, in both scripts, and Traditional hidden unless it's animating.
+        const strokes = [...i.hanzi].reduce((n, ch) => n + strokesOf(ch, "simplified").strokes.length, 0) + [...i.traditional].reduce((n, ch) => n + strokesOf(ch, "traditional").strokes.length, 0);
+        assert.equal(svg.match(/class="st"/g)?.length, strokes);
+        assert.match(svg, /\.v1 \{ opacity: 0;/);
       }
     }
   });
