@@ -1309,5 +1309,25 @@
       "date": "2026-11-13T08:49:44Z",
       "url": "https://github.com/northguild/gmt/pull/513"
     }
+  ],
+  "submissions": [
+    {
+      "list": "abhisheknaiidu/awesome-github-profile-readme",
+      "number": 1906,
+      "category": "GitHub Actions",
+      "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
+      "state": "open",
+      "opened": "2026-11-14T18:46:26Z",
+      "stars": 31605
+    },
+    {
+      "list": "roypriyanshu02/awesome-github-profile-readme",
+      "number": 137,
+      "category": "Dynamic",
+      "url": "https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137",
+      "state": "open",
+      "opened": "2026-11-14T19:50:12Z",
+      "stars": 198
+    }
   ]
 }
