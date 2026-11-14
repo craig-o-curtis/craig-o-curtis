@@ -339,13 +339,25 @@ describe("renderCity", () => {
       assert.doesNotMatch(svg, /NaN|undefined/);
     });
   }
-  it("lights only the days that had contributions, a week at a time", () => {
+  it("splats only the days that had contributions, one dropping per busy week", () => {
     const svg = renderCity(cal, DARK, CITY_DARK);
     assert.equal(svg.match(/class="wk"/g)?.length, 1);
-    assert.match(svg, new RegExp(`fill="${CITY_DARK.windows[4]}"`));
+    assert.equal(svg.match(/class="sp"/g)?.length, 3);
+    assert.equal(svg.match(/class="drop"/g)?.length, 1);
+    assert.match(svg, new RegExp(`class="sp" d="[^"]+" fill="${CITY_DARK.windows[4]}"`));
+    // He flies one pass and stays gone; the droppings are hidden unless they're falling.
+    assert.match(svg, /\.raven \{ animation: raven [\d.]+s linear 1\.5s 1 both; \}/);
+    assert.match(svg, /\.drop \{ opacity: 0; \}/);
+  });
+  it("lands each splat after its dropping, top floor first", () => {
+    const svg = renderCity(cal, DARK, CITY_DARK);
+    const [, dur, release] = svg.match(/animation:d1 ([\d.]+)s \S+ ([\d.]+)s forwards/) ?? [];
+    const delays = [...svg.matchAll(/class="sp"[^>]*animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
+    assert.ok(delays.every((d) => d >= Number(release) + Number(dur)));
+    assert.deepEqual(delays, [...delays].sort((a, b) => a - b));
   });
   it("draws an empty city, not a crash, with no calendar", () => {
-    assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"/);
+    assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"|class="drop"/);
   });
 });
 

@@ -113,10 +113,6 @@ Where I'm from, under purple rain.
 </details>
 <!-- guide:end -->
 
-### Contributions
-
-<a href="https://github.com/craig-o-curtis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/city-dark.svg"><img src="assets/city-light.svg" width="100%" alt="My GitHub contributions over the last year, drawn as a city in front of Helsinki: one tower a week, one window a day, lit by that day's contributions."></picture></a>
-
 <a href="https://craig-o-curtis.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg"><img src="assets/portfolio-light.svg" width="100%" alt="There's more at craig-o-curtis.github.io: my portfolio, an interactive dashboard of my work, stack, open source and agent workflows, over Helsinki's skyline from the harbour. Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track. Still locked: Mainframe, Retro 82, Solid, Rain and NorthGuild."></picture></a>
 
 <p align="center"><a href="https://craig-o-curtis.github.io/"><b>craig-o-curtis.github.io</b></a></p>
@@ -163,3 +159,7 @@ No dependencies: Node 24 runs the TypeScript in [scripts/](scripts/) directly, a
 Most of my production work over the last decade lived in organizations I no longer have access to. What's left under my personal account is largely a decade of learning exercises and course demos — I've kept them public because the trail is worth more than a tidy profile. The open-source I own and actively maintain is under [@northguild](https://github.com/northguild), pinned below.
 
 </details>
+
+### Contributions
+
+<a href="https://github.com/craig-o-curtis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/city-dark.svg"><img src="assets/city-light.svg" width="100%" alt="My GitHub contributions over the last year, drawn as a city in front of Helsinki: one tower a week, one window a day. Huginn the raven flies over and poops on each tower, splattering that week's windows in the shade of each day's contributions."></picture></a>
