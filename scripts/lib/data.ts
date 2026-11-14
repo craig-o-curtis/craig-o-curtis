@@ -28,16 +28,51 @@ export interface Snapshot {
   };
   worktree: { commands?: number };
   releases: Release[];
+  /** The last year of the contribution graph, one entry per day from `start`. */
+  contributions?: Calendar;
+  /** The most recently merged pull requests across ACTIVITY_REPOS, newest first. */
+  activity?: Merge[];
+}
+
+export interface Calendar {
+  /** The first day (a Sunday, as GitHub's graph starts its weeks), YYYY-MM-DD. */
+  start: string;
+  total: number;
+  counts: number[];
+  /** GitHub's own shading for each day, 0 (none) to 4 (its top quartile). */
+  levels: number[];
+}
+
+export interface Merge {
+  repo: string;
+  number: number;
+  sha: string;
+  title: string;
+  date: string;
+  url: string;
 }
 
 export const EMPTY: Snapshot = { packages: {}, gmt: {}, worktree: {}, releases: [] };
 
-type Fetcher = (url: string, headers?: Record<string, string>) => Promise<unknown>;
+/** Whose contribution graph the skyline draws. */
+export const LOGIN = "craig-o-curtis";
 
-export const getJson: Fetcher = async (url, headers = {}) => {
+/**
+ * The repos the activity log reads, by name. An allowlist, never the org's listing: a token that can see a
+ * private repo must still never put it on the profile.
+ */
+export const ACTIVITY_REPOS = ["northguild/gmt", "northguild/worktree", "northguild/northguild.dev", "northguild/run-cv"];
+const ACTIVITY_LINES = 8;
+
+/** A GET, or a POST when `body` is given (GraphQL). */
+type Fetcher = (url: string, headers?: Record<string, string>, body?: unknown) => Promise<unknown>;
+
+export const getJson: Fetcher = async (url, headers = {}, body) => {
   try {
     const res = await fetch(url, {
-      headers: { "user-agent": "profile-readme-builder", ...headers },
+      method: body === undefined ? "GET" : "POST",
+      headers: { "user-agent": "profile-readme-builder", ...(body === undefined ? {} : { "content-type": "application/json" }), ...headers },
+      body: body === undefined ? undefined : JSON.stringify(body),
       signal: AbortSignal.timeout(15_000),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -67,6 +102,47 @@ interface GmtStats {
 export function countCommands(listing: unknown): number | undefined {
   if (!Array.isArray(listing)) return undefined;
   return listing.filter((f: { name?: string; type?: string }) => f.type === "file" && /^[^.]+\.ts$/.test(f.name ?? "")).length;
+}
+
+const LEVELS: Record<string, number> = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
+
+const CALENDAR_QUERY = `query($login: String!) { user(login: $login) { contributionsCollection { contributionCalendar {
+  totalContributions weeks { contributionDays { date contributionCount contributionLevel } } } } } }`;
+
+/** The GraphQL contribution calendar, flattened to one entry per day; undefined if the reply isn't one. */
+export function toCalendar(reply: unknown): Calendar | undefined {
+  const cal = (reply as { data?: { user?: { contributionsCollection?: { contributionCalendar?: unknown } } } } | null)?.data?.user
+    ?.contributionsCollection?.contributionCalendar as
+    | { totalContributions: number; weeks: Array<{ contributionDays: Array<{ date: string; contributionCount: number; contributionLevel: string }> }> }
+    | undefined;
+  const days = cal?.weeks?.flatMap((w) => w.contributionDays) ?? [];
+  if (!cal || days.length === 0) return undefined;
+  return {
+    start: days[0].date,
+    total: cal.totalContributions,
+    counts: days.map((d) => d.contributionCount),
+    levels: days.map((d) => LEVELS[d.contributionLevel] ?? 0),
+  };
+}
+
+/** A PR title without the issue or ticket reference some repos append, e.g. `(#519)` or `(RAI-99, #407)`. */
+export function cleanTitle(title: string): string {
+  return title.replace(/\s*\((?:[A-Z][A-Z0-9]*-\d+,\s*)*#\d+\)\s*$/, "").trim();
+}
+
+/** Merged PRs from one repo's closed-PR listing; undefined if the listing failed. */
+export function toMerges(repo: string, listing: unknown): Merge[] | undefined {
+  if (!Array.isArray(listing)) return undefined;
+  return (listing as Array<Record<string, unknown>>)
+    .filter((pr) => pr.merged_at && pr.merge_commit_sha)
+    .map((pr) => ({
+      repo,
+      number: Number(pr.number),
+      sha: String(pr.merge_commit_sha).slice(0, 7),
+      title: cleanTitle(String(pr.title)),
+      date: String(pr.merged_at),
+      url: String(pr.html_url),
+    }));
 }
 
 export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetcher = getJson): Promise<Snapshot> {
@@ -102,11 +178,18 @@ export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetc
     }),
   );
 
-  const [stats, commands] = await Promise.all([
+  const [stats, commands, calendar, ...listings] = await Promise.all([
     // gmt publishes its own figures (written by its scripts/stats.mjs, drift-checked in its CI).
     get("https://raw.githubusercontent.com/northguild/gmt/main/apps/dox/src/data/gmt-stats.json") as Promise<GmtStats | null>,
     get("https://api.github.com/repos/northguild/worktree/contents/src/commands", gh),
+    // GraphQL needs a token (the workflow's own will do); without one, keep the last calendar.
+    process.env.GITHUB_TOKEN
+      ? get("https://api.github.com/graphql", gh, { query: CALENDAR_QUERY, variables: { login: LOGIN } })
+      : Promise.resolve(null),
+    ...ACTIVITY_REPOS.map((repo) => get(`https://api.github.com/repos/${repo}/pulls?state=closed&sort=updated&direction=desc&per_page=30`, gh)),
   ]);
+
+  const merges = ACTIVITY_REPOS.flatMap((repo, i) => toMerges(repo, listings[i]) ?? (prev.activity ?? []).filter((m) => m.repo === repo));
 
   return {
     packages,
@@ -123,5 +206,7 @@ export async function fetchSnapshot(sources: Source[], prev: Snapshot, get: Fetc
       : prev.gmt,
     worktree: { commands: countCommands(commands) ?? prev.worktree?.commands },
     releases: releases.sort((a, b) => b.date.localeCompare(a.date)),
+    contributions: toCalendar(calendar) ?? prev.contributions,
+    activity: merges.sort((a, b) => b.date.localeCompare(a.date)).slice(0, ACTIVITY_LINES),
   };
 }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="56" viewBox="0 0 422 56" role="img" aria-labelledby="title">
+<title id="title">Answer C: Chicago</title>
+<g transform="translate(6 6)">
+  <rect width="410" height="44" rx="7" fill="#efe7f7" stroke="rgb(107 47 179 / 0.4)" stroke-width="1.5"/>
+  <rect x="10" y="9" width="28" height="26" rx="4" fill="#7a5a00"/>
+  <text x="24" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="15" font-weight="700" text-anchor="middle" fill="#efe7f7">C</text>
+  <text x="52" y="27.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" fill="#1e1328">Chicago</text>
+</g>
+</svg>

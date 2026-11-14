@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="177" height="42" viewBox="0 0 177 42" role="img" aria-labelledby="title">
+<title id="title">F2 LINKEDIN: my LinkedIn profile</title>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
+  @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
+  .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
+  .lock { animation-delay: 0.51s; }
+  @media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+  .motion-only { display: none; }
+}
+</style>
+<g transform="translate(4 4)">
+  <rect width="169" height="34" fill="#0d0d0d"/>
+  <rect x="8" y="7" width="29.4" height="20" fill="#00ff00"/>
+  <text x="22.7" y="21.5" font-size="13" font-weight="700" fill="#0d0d0d" text-anchor="middle">F2</text>
+  <text x="45.4" y="21.5" font-size="13" font-weight="700" fill="#00ff00" letter-spacing="0" textLength="62.4" lengthAdjust="spacingAndGlyphs">LINKEDIN</text>
+</g>
+<rect x="4" y="4" width="169" height="34" fill="none" stroke="#008000" stroke-width="1"/>
+<path class="lock" d="M1 8 V1 H8 M169 1 H176 V8 M176 34 V41 H169 M8 41 H1 V34" fill="none" stroke="#00ff00" stroke-width="2" stroke-linecap="square"/>
+</svg>

@@ -12,8 +12,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { type CardInput, renderCard } from "./lib/card.ts";
+import { CITY_DARK, CITY_LIGHT, renderCity } from "./lib/city.ts";
 import { EMPTY, fetchSnapshot, type Release, type Snapshot } from "./lib/data.ts";
+import { renderGitlog } from "./lib/gitlog.ts";
+import { guideMarkdown, LETTERS, QUIZ, RAIN_DARK, RAIN_LIGHT, renderAnswer, renderGuide } from "./lib/guide.ts";
 import { renderHero } from "./lib/hero.ts";
+import { idiomOfTheDay, renderIdiom } from "./lib/idioms.ts";
+import { type Key, keysMarkdown, keyWidth, renderKey } from "./lib/keys.ts";
 import { HELSINKI_DARK, HELSINKI_LIGHT, type PortfolioInput, renderPortfolio } from "./lib/portfolio.ts";
 import { renderTip, type TipInput } from "./lib/tip.ts";
 import { DARK, LIGHT } from "./lib/theme.ts";
@@ -76,6 +81,14 @@ export const PORTFOLIO: PortfolioInput = {
   locked: ["Mainframe", "Retro 82", "Solid", "Rain", "NorthGuild"],
   unlocks: 12,
 };
+
+/** The links under the hero, as function keys. */
+export const KEYS: Key[] = [
+  { slug: "portfolio", label: "PORTFOLIO", url: "https://craig-o-curtis.github.io/", alt: "my portfolio, craig-o-curtis.github.io" },
+  { slug: "linkedin", label: "LINKEDIN", url: "https://www.linkedin.com/in/craigocurtis/", alt: "my LinkedIn profile" },
+  { slug: "northguild", label: "@NORTHGUILD", url: "https://github.com/northguild", alt: "the northguild organisation on GitHub" },
+  { slug: "northguild-dev", label: "NORTHGUILD.DEV", url: "https://northguild.dev", alt: "northguild.dev, the docs sites" },
+];
 
 export function cards(s: Snapshot): Record<string, CardInput> {
   const pkg = (name: string) => s.packages[name] ?? {};
@@ -204,6 +217,23 @@ async function main() {
   for (const [theme, palette] of [["dark", HELSINKI_DARK], ["light", HELSINKI_LIGHT]] as const) {
     writes.push(writeFile(path.join(ASSETS, `portfolio-${theme}.svg`), renderPortfolio(PORTFOLIO, palette)));
   }
+  for (const [theme, palette, colors] of [["dark", DARK, CITY_DARK], ["light", LIGHT, CITY_LIGHT]] as const) {
+    writes.push(writeFile(path.join(ASSETS, `city-${theme}.svg`), renderCity(snapshot.contributions, palette, colors)));
+    writes.push(writeFile(path.join(ASSETS, `gitlog-${theme}.svg`), renderGitlog(snapshot.activity ?? [], palette)));
+  }
+  const kw = keyWidth(KEYS);
+  const question = QUIZ;
+  const idiom = idiomOfTheDay();
+  for (const [theme, palette] of [["dark", DARK], ["light", LIGHT]] as const) {
+    writes.push(writeFile(path.join(ASSETS, `idiom-${theme}.svg`), renderIdiom(idiom, palette)));
+    KEYS.forEach((k, i) => writes.push(writeFile(path.join(ASSETS, `key-${k.slug}-${theme}.svg`), renderKey(k, i + 1, kw, palette))));
+  }
+  for (const [theme, rain] of [["dark", RAIN_DARK], ["light", RAIN_LIGHT]] as const) {
+    writes.push(writeFile(path.join(ASSETS, `guide-${theme}.svg`), renderGuide(question, rain)));
+    question.options.forEach((o, i) =>
+      writes.push(writeFile(path.join(ASSETS, `answer-${LETTERS[i].toLowerCase()}-${theme}.svg`), renderAnswer(LETTERS[i], o, rain))),
+    );
+  }
   for (const [key, card] of Object.entries(cards(snapshot))) {
     writes.push(writeFile(path.join(ASSETS, `card-${key}-dark.svg`), renderCard(card, DARK)));
     writes.push(writeFile(path.join(ASSETS, `card-${key}-light.svg`), renderCard(card, LIGHT)));
@@ -211,9 +241,14 @@ async function main() {
   await Promise.all(writes);
 
   const readme = await readFile(README, "utf8");
-  await writeFile(README, replaceSection(readme, "releases", releasesMarkdown(snapshot)));
+  let next = replaceSection(readme, "releases", releasesMarkdown(snapshot));
+  next = replaceSection(next, "keys", keysMarkdown(KEYS));
+  next = replaceSection(next, "guide", guideMarkdown(question));
+  await writeFile(README, next);
 
-  console.log(`profile built: hero, tip, portfolio, ${Object.keys(cards(snapshot)).length} cards × 2 themes, ${snapshot.releases.length} releases`);
+  console.log(
+    `profile built: hero, tip, portfolio, ${KEYS.length} keys, ${Object.keys(cards(snapshot)).length} cards, git log, city, quiz, chengyu (${idiom.hanzi}), × 2 themes; ${snapshot.releases.length} releases`,
+  );
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) await main();

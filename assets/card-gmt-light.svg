@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="422" height="232" viewBox="0 0 422 232" role="img" aria-labelledby="title">
-<title id="title">gmt v1.21.0: Give Me Temporal. Date &amp; time for JS/TS, built on TC39 Temporal. Never touches Date. 75,622 tests, 2.27M test runs, 773 functions.</title>
+<title id="title">gmt v1.21.0: Give Me Temporal. Date &amp; time for JS/TS, built on TC39 Temporal. Never touches Date. 75,852 tests, 2.28M test runs, 776 functions.</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -20,11 +20,11 @@
   <text x="356.8" y="37.5" font-size="12" fill="#0b5d1e" text-anchor="middle">v1.21.0</text>
   <text x="20" y="62" font-size="12.5" fill="#3f7a4f">Give Me Temporal. Date &amp; time for JS/TS,</text>
   <text x="20" y="79" font-size="12.5" fill="#3f7a4f">built on TC39 Temporal. Never touches Date.</text>
-  <text x="20" y="112" font-size="19" font-weight="700" fill="#0b5d1e">75,622</text>
+  <text x="20" y="112" font-size="19" font-weight="700" fill="#0b5d1e">75,852</text>
   <text x="20" y="130" font-size="11" fill="#3f7a4f">tests</text>
-  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#0b5d1e">2.27M</text>
+  <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#0b5d1e">2.28M</text>
   <text x="143.33333333333331" y="130" font-size="11" fill="#3f7a4f">test runs</text>
-  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#0b5d1e">773</text>
+  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#0b5d1e">776</text>
   <text x="266.66666666666663" y="130" font-size="11" fill="#3f7a4f">functions</text>
   <text x="80.2" y="150" font-size="8.5" fill="#3f7a4f" text-anchor="middle">NIU</text>
   <text x="112.6" y="150" font-size="8.5" fill="#3f7a4f" text-anchor="middle">NY</text>

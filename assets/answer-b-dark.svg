@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="422" height="56" viewBox="0 0 422 56" role="img" aria-labelledby="title">
+<title id="title">Answer B: Minneapolis</title>
+<g transform="translate(6 6)">
+  <rect width="410" height="44" rx="7" fill="#1d0f2a" stroke="rgb(192 132 252 / 0.32)" stroke-width="1.5"/>
+  <rect x="10" y="9" width="28" height="26" rx="4" fill="#e8c35a"/>
+  <text x="24" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="15" font-weight="700" text-anchor="middle" fill="#1d0f2a">B</text>
+  <text x="52" y="27.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" fill="#f1e8fb">Minneapolis</text>
+</g>
+</svg>
