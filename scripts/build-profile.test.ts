@@ -215,12 +215,26 @@ describe("raven", () => {
   });
 });
 
+describe("northguild.dev scene", () => {
+  const svg = renderCard(cards(SNAP).northguild, DARK);
+  it("swaps Helsinki for Ísafjörður each time Huginn leaves the right edge", () => {
+    assert.match(svg, /<g class="helsinki">/);
+    assert.match(svg, /<g class="isafjordur motion-only">/);
+    // raven cycle 18s from 3s, out of view at 45%: first swap at 11.1s, so -6.9s into a 36s loop.
+    assert.match(svg, /\.helsinki \{ animation: helsinki 36s step-end -6\.90s infinite; \}/);
+    assert.match(svg, /\.isafjordur \{ opacity: 0; animation: isafjordur 36s step-end -6\.90s infinite; \}/);
+    assert.doesNotMatch(svg, /NaN|undefined/);
+  });
+});
+
 describe("renderTip", () => {
   for (const palette of [DARK, LIGHT]) {
     const svg = renderTip(TIP, palette);
     it("renders a titled, framed panel with the command", () => {
       assert.match(svg, /<title id="title">[^<]+<\/title>/);
       assert.match(svg, />npx run-cv craig</);
+      assert.match(svg, />TERMINAL ── RUN-CV</);
+      assert.doesNotMatch(svg, /\bTIP\b/);
       assert.match(svg, /class="lock"/);
       assert.doesNotMatch(svg, /rx=|NaN|undefined/);
     });
@@ -385,7 +399,9 @@ describe("pop quiz", () => {
     for (const p of [RAIN_DARK, RAIN_LIGHT]) {
       const card = renderGuide(QUIZ, p);
       assert.match(card, />POP QUIZ</);
-      assert.doesNotMatch(card, /Prince/);
+      // The title lists the four options, the answer among them; nowhere else may name it.
+      const withoutOptions = card.replace(/ Options: [^<]*</, "<");
+      assert.doesNotMatch(withoutOptions, new RegExp(`Prince|${QUIZ.answer}`));
       assert.doesNotMatch(card, /NaN|undefined/);
     }
     const md = guideMarkdown(QUIZ);

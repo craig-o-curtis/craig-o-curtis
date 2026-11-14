@@ -65,7 +65,8 @@ export function zoneLabel(zone: string): string {
 }
 
 export const TIP: TipInput = {
-  label: "TIP",
+  title: "TERMINAL ── RUN-CV",
+  status: "READY",
   text: "My CV/resume runs in your terminal, in a green-screen mainframe UI.",
   command: "npx run-cv craig",
   note: "No terminal handy? Click to run it in the browser →",
@@ -247,7 +248,7 @@ async function main() {
   await writeFile(README, next);
 
   console.log(
-    `profile built: hero, tip, portfolio, ${KEYS.length} keys, ${Object.keys(cards(snapshot)).length} cards, git log, city, quiz, chengyu (${idiom.hanzi}), × 2 themes; ${snapshot.releases.length} releases`,
+    `profile built: hero, terminal, portfolio, ${KEYS.length} keys, ${Object.keys(cards(snapshot)).length} cards, git log, city, quiz, chengyu (${idiom.hanzi}), × 2 themes; ${snapshot.releases.length} releases`,
   );
 }
 

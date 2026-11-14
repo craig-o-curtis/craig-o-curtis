@@ -206,7 +206,8 @@ export function renderGuide(q: Quiz, p: RainPalette): string {
           `<linearGradient id="mflood${i}" gradientUnits="userSpaceOnUse" x1="0" y1="${face.from}" x2="0" y2="${face.to}"><stop offset="0" stop-color="${night.flood}" stop-opacity="0"/><stop offset="1" stop-color="${night.flood}"/></linearGradient>`,
       ).join("")
     : "";
-  const title = `Pop quiz, over Minneapolis in the purple rain: ${q.prompt} Options: ${q.options.map((o, i) => `${LETTERS[i]}, ${o}`).join("; ")}. Pick one below; the answer is under them.`;
+  // The city is the answer, so neither the card nor its title names it.
+  const title = `Pop quiz, over a city skyline in the purple rain: ${q.prompt} Options: ${q.options.map((o, i) => `${LETTERS[i]}, ${o}`).join("; ")}. Pick one below; the answer is under them.`;
   const promptText = lines
     .map((l, i) => `<text x="${PAD}" y="${76 + i * 26}" font-family="${SANS}" font-size="${PROMPT_SIZE}" font-weight="600" fill="${p.fg}">${esc(l)}</text>`)
     .join("\n  ");
@@ -255,7 +256,6 @@ export function renderGuide(q: Quiz, p: RainPalette): string {
   <g class="q">
     <g class="lock"><rect x="${PAD - 1}" y="35" width="11" height="11" rx="1.5" transform="rotate(45 ${PAD + 4.5} 40.5)" fill="${p.gold}"/><text x="${PAD + 4.5}" y="44.5" font-family="${FONT}" font-size="10" font-weight="700" text-anchor="middle" fill="${p.bg}">!</text></g>
     <text x="${PAD + 18}" y="46" font-family="${FONT}" font-size="12" font-weight="700" letter-spacing="1.5" fill="${p.gold}">${esc(label)}</text>
-    <text x="${GUIDE_W - PAD}" y="46" font-family="${FONT}" font-size="11.5" fill="${p.muted}" text-anchor="end">Minneapolis, in the purple rain</text>
     ${promptText}
     <text x="${PAD}" y="${hintY}" font-family="${SANS}" font-size="13.5" fill="${p.muted}">Pick an answer below, then open the answer to check.</text>
   </g>
