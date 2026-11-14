@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="852" height="298" viewBox="0 0 852 298" role="img" aria-labelledby="title">
-<title id="title">My GitHub contributions over the last year, drawn as a city at night in front of Helsinki: one tower a week, one window a day, lit by that day's contributions. 3,070 contributions, longest streak 67 days, busiest Oct 9 (170).</title>
+<title id="title">My GitHub contributions over the last year, drawn as a city at night in front of Helsinki: one tower a week, one window a day, lit by that day's contributions. 3,073 contributions, longest streak 67 days, busiest Oct 9 (170).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -65,7 +65,7 @@
   <text x="654" y="249" font-size="10" fill="#00a000">Sep</text>
   <text x="714.3" y="249" font-size="10" fill="#00a000">Oct</text>
   <text x="789.8" y="249" font-size="10" fill="#00a000">Nov</text>
-  <text x="20" y="272" font-size="11.5" fill="#00ff00">3,070 contributions · longest streak 67 days · busiest Oct 9 (170)</text>
+  <text x="20" y="272" font-size="11.5" fill="#00ff00">3,073 contributions · longest streak 67 days · busiest Oct 9 (170)</text>
   <text x="715" y="272" font-size="10" fill="#00a000" text-anchor="end">less</text>
   <rect x="721" y="265" width="10" height="7" fill="#132013" stroke="#008000" stroke-width=".6"/><rect x="734" y="265" width="10" height="7" fill="#006600" stroke="#008000" stroke-width=".6"/><rect x="747" y="265" width="10" height="7" fill="#00aa00" stroke="#008000" stroke-width=".6"/><rect x="760" y="265" width="10" height="7" fill="#00dd00" stroke="#008000" stroke-width=".6"/><rect x="773" y="265" width="10" height="7" fill="#00ff00" stroke="#008000" stroke-width=".6"/>
   <text x="788" y="272" font-size="10" fill="#00a000">more</text>
