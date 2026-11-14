@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-09",
-    "total": 3073,
+    "total": 3079,
     "counts": [
       0,
       1,
@@ -868,7 +868,7 @@
       39,
       20,
       45,
-      7
+      13
     ],
     "levels": [
       0,
@@ -1247,6 +1247,14 @@
   "activity": [
     {
       "repo": "northguild/gmt",
+      "number": 525,
+      "sha": "dd739fd",
+      "title": "fix(dox): update Astro to 7.4.11 to clear two security advisories",
+      "date": "2026-11-14T07:40:02Z",
+      "url": "https://github.com/northguild/gmt/pull/525"
+    },
+    {
+      "repo": "northguild/gmt",
       "number": 520,
       "sha": "c7caa75",
       "title": "fix(dox): landing keeps its layout on a slow load; /dox strip holds its height",
@@ -1300,14 +1308,6 @@
       "title": "fix(docs): header height matches northguild.dev, GitHub link goes to the repo",
       "date": "2026-11-12T15:43:49Z",
       "url": "https://github.com/northguild/worktree/pull/351"
-    },
-    {
-      "repo": "northguild/northguild.dev",
-      "number": 24,
-      "sha": "ed40087",
-      "title": "Vary Huginn's fly-in, and let him soar",
-      "date": "2026-11-12T14:57:58Z",
-      "url": "https://github.com/northguild/northguild.dev/pull/24"
     }
   ]
 }
