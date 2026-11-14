@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="856" height="316" viewBox="0 0 856 316" role="img" aria-labelledby="title">
-<title id="title">CRAIG CURTIS: Frontend Architect · Fullstack Developer · Chinese Linguist. AI-accelerated TypeScript tooling — building at @northguild</title>
+<title id="title">CRAIG CURTIS: Frontend Architect · Full-Stack Engineer · Mandarin Linguist. Tools other developers build on — building at @northguild</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
@@ -52,8 +52,8 @@
   <g filter="url(#glow)">
     <text class="l1" x="28" y="96" font-size="14" fill="#00a000">  resolving profile 'craig' <tspan fill="#003300">................................</tspan> <tspan fill="#00ffff">OK</tspan></text>
     <g class="l2"><g clip-path="url(#name)"><rect class="roll" x="28" y="110" width="1312" height="64" fill="url(#logo)"/></g></g>
-    <text class="l3" x="28" y="200" font-size="16" fill="#00ffff">Frontend Architect · Fullstack Developer · Chinese Linguist</text>
-    <text class="l4" x="28" y="226" font-size="14" fill="#00a000">AI-accelerated TypeScript tooling — building at @northguild</text>
+    <text class="l3" x="28" y="200" font-size="16" fill="#00ffff">Frontend Architect · Full-Stack Engineer · Mandarin Linguist</text>
+    <text class="l4" x="28" y="226" font-size="14" fill="#00a000">Tools other developers build on — building at @northguild</text>
     <g class="l5"><text x="28" y="258" font-size="16" fill="#00a000">$</text><rect class="blink" x="47.2" y="244" width="9.6" height="18" fill="#00ff00"/></g>
   </g>
 
