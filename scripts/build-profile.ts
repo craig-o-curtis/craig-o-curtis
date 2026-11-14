@@ -207,8 +207,8 @@ async function main() {
       renderHero({
         command: "npx run-cv craig",
         name: "CRAIG CURTIS",
-        roles: "Frontend Architect · Fullstack Developer · Chinese Linguist",
-        tagline: "AI-accelerated TypeScript tooling — building at @northguild",
+        roles: "Frontend Architect · Full-Stack Engineer · Mandarin Linguist",
+        tagline: "Tools other developers build on — building at @northguild",
       }),
     ),
   ];

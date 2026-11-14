@@ -30,15 +30,17 @@ export interface Quiz {
   prompt: string;
   options: string[];
   answer: string;
-  /** Shown when the answer is opened. */
+  /** Shown when the answer is opened, and again in Simplified Chinese under it. */
   reveal: string;
+  zh?: { answer: string; reveal: string };
 }
 
 export const QUIZ: Quiz = {
-  prompt: "Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it?",
+  prompt: "Craig is from the hometown of the artist who gave the world “Purple Rain.”",
   options: ["Detroit", "Minneapolis", "Chicago", "Memphis"],
   answer: "Minneapolis",
   reveal: "Prince’s hometown, and mine. The purple rain falling on the skyline above is for him.",
+  zh: { answer: "明尼阿波利斯", reveal: "王子（Prince）的家乡，也是我的家乡。上面天际线上落下的紫雨，是献给他的。" },
 };
 
 export const LETTERS = ["A", "B", "C", "D"];
@@ -305,6 +307,6 @@ export function guideMarkdown(q: Quiz): string {
     "",
     `<p align="center">\n  ${answers.slice(0, 2).join("\n  ")}\n  <br>\n  ${answers.slice(2).join("\n  ")}\n</p>`,
     "",
-    `<details>\n<summary><b>Answer</b></summary>\n<br>\n\n**${q.answer}.** ${q.reveal}\n\n</details>`,
+    `<details>\n<summary><b>Answer${q.zh ? " · 答案" : ""}</b></summary>\n<br>\n\n**${q.answer}.** ${q.reveal}\n\n${q.zh ? `**${q.zh.answer}。**${q.zh.reveal}\n\n` : ""}</details>`,
   ].join("\n");
 }

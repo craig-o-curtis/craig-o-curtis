@@ -17,7 +17,7 @@ import {
   renderGuide,
   wrap,
 } from "./lib/guide.ts";
-import { glyph, IDIOMS, idiomOfTheDay, renderIdiom } from "./lib/idioms.ts";
+import { IDIOMS, idiomOfTheDay, medianLength, renderIdiom, strokesOf } from "./lib/idioms.ts";
 import { keysMarkdown, keyWidth, renderKey } from "./lib/keys.ts";
 import { renderHero } from "./lib/hero.ts";
 import { DARK, esc, LIGHT } from "./lib/theme.ts";
@@ -345,16 +345,39 @@ describe("renderCity", () => {
     assert.equal(svg.match(/class="sp"/g)?.length, 3);
     assert.equal(svg.match(/class="drop"/g)?.length, 1);
     assert.match(svg, new RegExp(`class="sp" d="[^"]+" fill="${CITY_DARK.windows[4]}"`));
-    // He flies one pass and stays gone; the droppings are hidden unless they're falling.
-    assert.match(svg, /\.raven \{ animation: raven [\d.]+s linear 1\.5s 1 both; \}/);
+    // The droppings are hidden unless they're falling.
     assert.match(svg, /\.drop \{ opacity: 0; \}/);
   });
-  it("lands each splat after its dropping, top floor first", () => {
+  it("loops everything on one cycle: the raven, the droppings, the splats, the slides and the train", () => {
     const svg = renderCity(cal, DARK, CITY_DARK);
-    const [, dur, release] = svg.match(/animation:d1 ([\d.]+)s \S+ ([\d.]+)s forwards/) ?? [];
+    const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s linear 1\.5s infinite both; \}/) ?? [];
+    assert.ok(Number(cycle) > 0);
+    for (const rule of [/animation:d1 ([\d.]+)s linear [\d.]+s infinite/, /\.wk \{ animation: ([\d.]+)s linear infinite both; \}/, /\.dr \{[^}]*animation: drip ([\d.]+)s infinite; \}/, /\.sp \{[^}]*animation: splat ([\d.]+)s ease-out infinite both; \}/, /\.train \{[^}]*animation: train ([\d.]+)s linear infinite; \}/]) {
+      assert.equal(svg.match(rule)?.[1], cycle, String(rule));
+    }
+  });
+  it("lands each splat after its dropping, top floor first, and slides it off only after the raven has gone", () => {
+    const svg = renderCity(cal, DARK, CITY_DARK);
+    const [, release] = svg.match(/animation:d1 [\d.]+s linear ([\d.]+)s infinite/) ?? [];
+    const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s/) ?? [];
+    const [, across] = svg.match(/@keyframes raven \{.*?([\d.]+)% \{ transform: translate\([\d.]+px/) ?? [];
+    const hit = Number(svg.match(/@keyframes w1 \{ 0%, ([\d.]+)%/)?.[1]) / 100 * Number(cycle);
     const delays = [...svg.matchAll(/class="sp"[^>]*animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
-    assert.ok(delays.every((d) => d >= Number(release) + Number(dur)));
+    assert.ok(hit > Number(release));
+    assert.ok(delays.every((d) => d >= hit));
     assert.deepEqual(delays, [...delays].sort((a, b) => a - b));
+    const gone = 1.5 + (Number(across) / 100) * Number(cycle);
+    const slides = [...svg.matchAll(/class="dr" style="animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
+    assert.equal(slides.length, 3);
+    assert.ok(slides.every((d) => d >= gone && d < Number(cycle)));
+  });
+  it("slides the towers off in the order they were splattered", () => {
+    const busy = { start: "2026-01-04", total: 21, counts: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 7 : 0)), levels: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 4 : 0)) };
+    const svg = renderCity(busy, LIGHT, CITY_LIGHT);
+    const firstSlide = [...svg.matchAll(/<g class="wk" style="animation-name:w(\d+)"><g class="dr" style="animation-delay:([\d.]+)s/g)].map((m) => [Number(m[1]), Number(m[2])]);
+    assert.deepEqual(firstSlide.map(([w]) => w), [0, 1, 2]);
+    // Each splat starts a little late, so neighbours can overlap; across the city the order holds.
+    assert.ok(firstSlide[0][1] < firstSlide[2][1]);
   });
   it("draws an empty city, not a crash, with no calendar", () => {
     assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"|class="drop"/);
@@ -418,7 +441,9 @@ describe("pop quiz", () => {
     }
     const md = guideMarkdown(QUIZ);
     assert.equal(md.match(new RegExp(`<a href="#${QUIZ_ANCHOR}">`, "g"))?.length, 4);
-    assert.match(md, /<details>\n<summary><b>Answer<\/b><\/summary>[\s\S]*\*\*Minneapolis\.\*\* Prince/);
+    assert.match(md, /<details>\n<summary><b>Answer · 答案<\/b><\/summary>[\s\S]*\*\*Minneapolis\.\*\* Prince[\s\S]*\*\*明尼阿波利斯。\*\*/);
+    // The card stays English-only and doesn't give the answer away in Chinese either.
+    assert.doesNotMatch(renderGuide(QUIZ, RAIN_DARK), /明尼阿波利斯/);
     QUIZ.options.forEach((o, i) => assert.match(renderAnswer(LETTERS[i], o, RAIN_DARK), new RegExp(`<title id="title">Answer ${LETTERS[i]}: ${o}<`)));
   });
   it("loops the rain by exactly one tile, so it has no seam", () => {
@@ -433,11 +458,26 @@ describe("pop quiz", () => {
 });
 
 describe("chengyu", () => {
-  it("has four characters and a bitmap for each, for every idiom", () => {
+  it("has four characters in each script, with strokes for every one, for every idiom", () => {
     for (const i of IDIOMS) {
       assert.equal([...i.hanzi].length, 4, i.hanzi);
-      for (const ch of i.hanzi) assert.equal(glyph(ch).length, 16, ch);
+      assert.equal([...i.traditional].length, 4, i.traditional);
+      for (const [text, variant] of [[i.hanzi, "simplified"], [i.traditional, "traditional"]] as const) {
+        for (const ch of text) {
+          const s = strokesOf(ch, variant);
+          assert.ok(s.strokes.length > 0 && s.strokes.length === s.medians.length, `${variant} ${ch}`);
+        }
+      }
     }
+  });
+  it("writes Traditional in Taiwan's stroke order where it differs", () => {
+    // 艹 is three strokes on the mainland and four in Taiwan.
+    assert.equal(strokesOf("药", "simplified").strokes.length, 9);
+    assert.equal(strokesOf("藥", "traditional").strokes.length, 19);
+    assert.equal(strokesOf("葉", "traditional").from, "animCJK zh-Hant");
+  });
+  it("measures a median along its points", () => {
+    assert.equal(medianLength("M0 0L3 4L3 10"), 11);
   });
   it("rotates one a day", () => {
     assert.notEqual(idiomOfTheDay(0).hanzi, idiomOfTheDay(86_400_000).hanzi);
@@ -446,8 +486,12 @@ describe("chengyu", () => {
     for (const i of IDIOMS) {
       for (const p of [DARK, LIGHT]) {
         const svg = renderIdiom(i, p);
-        assert.match(svg, new RegExp(`<title id="title">Chengyu of the day: ${i.hanzi}`));
+        assert.match(svg, new RegExp(`<title id="title">Chengyu of the day: ${i.hanzi} \\(traditional ${i.traditional}\\)`));
         assert.doesNotMatch(svg, /NaN|undefined/);
+        // A brush per stroke, in both scripts, and Traditional hidden unless it's animating.
+        const strokes = [...i.hanzi].reduce((n, ch) => n + strokesOf(ch, "simplified").strokes.length, 0) + [...i.traditional].reduce((n, ch) => n + strokesOf(ch, "traditional").strokes.length, 0);
+        assert.equal(svg.match(/class="st"/g)?.length, strokes);
+        assert.match(svg, /\.v1 \{ opacity: 0;/);
       }
     }
   });
