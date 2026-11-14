@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="852" height="338" viewBox="0 0 852 338" role="img" aria-labelledby="title">
-<title id="title">Pop quiz, over a city skyline in the purple rain: Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it? Options: A, Detroit; B, Minneapolis; C, Chicago; D, Memphis. Pick one below; the answer is under them.</title>
+<title id="title">Pop quiz, over a city skyline in the purple rain: Craig is from the hometown of the artist who gave the world “Purple Rain.” Options: A, Detroit; B, Minneapolis; C, Chicago; D, Memphis. Pick one below; the answer is under them.</title>
 <style>
   text { white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -50,9 +50,8 @@
   <g class="q">
     <g class="lock"><rect x="25" y="35" width="11" height="11" rx="1.5" transform="rotate(45 30.5 40.5)" fill="#7a5a00"/><text x="30.5" y="44.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="10" font-weight="700" text-anchor="middle" fill="#f6f2fa">!</text></g>
     <text x="44" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5" fill="#7a5a00">POP QUIZ</text>
-    <text x="26" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#1e1328">Craig is from the hometown of the artist who gave the world “Purple Rain”. Which</text>
-  <text x="26" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#1e1328">city is it?</text>
-    <text x="26" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#4b3d5c">Pick an answer below, then open the answer to check.</text>
+    <text x="26" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#1e1328">Craig is from the hometown of the artist who gave the world “Purple Rain.”</text>
+    <text x="26" y="108" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#4b3d5c">Pick an answer below, then open the answer to check.</text>
   </g>
 </g>
 <rect width="840" height="326" rx="10" fill="none" stroke="rgb(107 47 179 / 0.4)" stroke-width="1.5"/>

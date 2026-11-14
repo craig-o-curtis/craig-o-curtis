@@ -108,7 +108,7 @@ Where I'm from, under purple rain.
 随堂测验：我的家乡，就在紫雨之下。
 
 <!-- guide:start -->
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/guide-dark.svg"><img src="assets/guide-light.svg" width="100%" alt="Pop quiz: Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it?"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/guide-dark.svg"><img src="assets/guide-light.svg" width="100%" alt="Pop quiz: Craig is from the hometown of the artist who gave the world “Purple Rain.”"></picture>
 
 <p align="center">
   <a href="#pop-quiz"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/answer-a-dark.svg"><img src="assets/answer-a-light.svg" width="48%" alt="Answer A: Detroit"></picture></a>

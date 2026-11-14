@@ -36,7 +36,7 @@ export interface Quiz {
 }
 
 export const QUIZ: Quiz = {
-  prompt: "Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it?",
+  prompt: "Craig is from the hometown of the artist who gave the world “Purple Rain.”",
   options: ["Detroit", "Minneapolis", "Chicago", "Memphis"],
   answer: "Minneapolis",
   reveal: "Prince’s hometown, and mine. The purple rain falling on the skyline above is for him.",
