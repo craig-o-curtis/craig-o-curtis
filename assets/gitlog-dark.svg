@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: gmt: fix(dox): update Astro to 7.4.11 to clear two security advisories (Nov 14); gmt: fix(dox): landing keeps its layout on a slow load; /dox strip holds its height (Nov 13); gmt: feat(domination): read and write GTFS time strings (Nov 13); gmt: perf(dox): faster Story consistency and Dox gates, from one site build (Nov 13); northguild.dev: Keep Huginn's drift inside the page (Nov 13); gmt: docs(research): cite SWIFT handbook pages, not private copies (Nov 13); gmt: perf(core): public functions call internal cores, never another public function (Nov 13); worktree: fix(docs): header height matches northguild.dev, GitHub link goes to the repo (Nov 12).</title>
+<title id="title">Recently merged at @northguild, newest first: gmt: feat(dox): US Sunshine Protection Act page, endpoint, chat tool and clock canary (Nov 14); gmt: fix(dox): update Astro to 7.4.11 to clear two security advisories (Nov 14); gmt: fix(dox): landing keeps its layout on a slow load; /dox strip holds its height (Nov 13); gmt: feat(domination): read and write GTFS time strings (Nov 13); gmt: perf(dox): faster Story consistency and Dox gates, from one site build (Nov 13); northguild.dev: Keep Huginn's drift inside the page (Nov 13); gmt: docs(research): cite SWIFT handbook pages, not private copies (Nov 13); gmt: perf(core): public functions call internal cores, never another public function (Nov 13).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,59 +29,59 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#008000"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#00a000">dd739fd</text>
+    <text x="37.6" y="84" font-size="13" fill="#00a000">750bb19</text>
     <text x="100" y="84" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="507" lengthAdjust="spacingAndGlyphs">fix(dox): update Astro to 7.4.11 to clear two security advisories</text>
+    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): US Sunshine Protection Act page, endpoint, chat tool an…</text>
     <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 14</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#00a000">c7caa75</text>
+    <text x="37.6" y="105" font-size="13" fill="#00a000">dd739fd</text>
     <text x="100" y="105" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): landing keeps its layout on a slow load; /dox strip hold…</text>
-    <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="507" lengthAdjust="spacingAndGlyphs">fix(dox): update Astro to 7.4.11 to clear two security advisories</text>
+    <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 14</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#00a000">38c4b8c</text>
+    <text x="37.6" y="126" font-size="13" fill="#00a000">c7caa75</text>
     <text x="100" y="126" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="390" lengthAdjust="spacingAndGlyphs">feat(domination): read and write GTFS time strings</text>
+    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): landing keeps its layout on a slow load; /dox strip hold…</text>
     <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#00a000">392e40b</text>
+    <text x="37.6" y="147" font-size="13" fill="#00a000">38c4b8c</text>
     <text x="100" y="147" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(dox): faster Story consistency and Dox gates, from one site b…</text>
+    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="390" lengthAdjust="spacingAndGlyphs">feat(domination): read and write GTFS time strings</text>
     <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#00a000">013549a</text>
-    <text x="100" y="168" font-size="13" fill="#00ffff">(northguild.dev)</text>
-    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="273" lengthAdjust="spacingAndGlyphs">Keep Huginn's drift inside the page</text>
+    <text x="37.6" y="168" font-size="13" fill="#00a000">392e40b</text>
+    <text x="100" y="168" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(dox): faster Story consistency and Dox gates, from one site b…</text>
     <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#00a000">13cf5ad</text>
-    <text x="100" y="189" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="475.8" lengthAdjust="spacingAndGlyphs">docs(research): cite SWIFT handbook pages, not private copies</text>
+    <text x="37.6" y="189" font-size="13" fill="#00a000">013549a</text>
+    <text x="100" y="189" font-size="13" fill="#00ffff">(northguild.dev)</text>
+    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="273" lengthAdjust="spacingAndGlyphs">Keep Huginn's drift inside the page</text>
     <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#00a000">2489bc4</text>
+    <text x="37.6" y="210" font-size="13" fill="#00a000">13cf5ad</text>
     <text x="100" y="210" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(core): public functions call internal cores, never another pu…</text>
+    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="475.8" lengthAdjust="spacingAndGlyphs">docs(research): cite SWIFT handbook pages, not private copies</text>
     <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#00a000">c12e88c</text>
-    <text x="100" y="231" font-size="13" fill="#00ffff">(worktree)</text>
-    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(docs): header height matches northguild.dev, GitHub link goes…</text>
-    <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 12</text>
+    <text x="37.6" y="231" font-size="13" fill="#00a000">2489bc4</text>
+    <text x="100" y="231" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(core): public functions call internal cores, never another pu…</text>
+    <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#00a000">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#00ff00"/></g>
 </g>

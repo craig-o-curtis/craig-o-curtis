@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="342" viewBox="0 0 852 342" role="img" aria-labelledby="title">
-<title id="title">My GitHub contributions over the last year, drawn as a city at night along the tracks, in a valley between two pine-topped rock hills: one tower a week, one window a day. Huginn the raven flies over and poops on each tower, splattering that week's windows in the shade of each day's contributions; then the splats slide off, tower by tower, and he comes back. 3,079 contributions, longest streak 67 days, busiest Oct 9 (170).</title>
+<title id="title">My GitHub contributions over the last year, drawn as a city at night along the tracks, in a valley between two pine-topped rock hills: one tower a week, one window a day. Huginn the raven flies over and poops on each tower, splattering that week's windows in the shade of each day's contributions; then the splats slide off, tower by tower, and he comes back. 3,086 contributions, longest streak 67 days, busiest Oct 9 (170).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes twinkle { 50% { opacity: .08; } }
@@ -179,7 +179,7 @@
   <text x="654" y="291" font-size="10" fill="#00a000">Sep</text>
   <text x="714.3" y="291" font-size="10" fill="#00a000">Oct</text>
   <text x="789.8" y="291" font-size="10" fill="#00a000">Nov</text>
-  <text x="20" y="316" font-size="11.5" fill="#00ff00">3,079 contributions · longest streak 67 days · busiest Oct 9 (170)</text>
+  <text x="20" y="316" font-size="11.5" fill="#00ff00">3,086 contributions · longest streak 67 days · busiest Oct 9 (170)</text>
   <text x="715" y="316" font-size="10" fill="#00a000" text-anchor="end">less</text>
   <rect x="721" y="309" width="10" height="7" fill="#132013" stroke="#008000" stroke-width=".6"/><rect x="734" y="309" width="10" height="7" fill="#006600" stroke="#008000" stroke-width=".6"/><rect x="747" y="309" width="10" height="7" fill="#00aa00" stroke="#008000" stroke-width=".6"/><rect x="760" y="309" width="10" height="7" fill="#00dd00" stroke="#008000" stroke-width=".6"/><rect x="773" y="309" width="10" height="7" fill="#00ff00" stroke="#008000" stroke-width=".6"/>
   <text x="788" y="316" font-size="10" fill="#00a000">more</text>
