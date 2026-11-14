@@ -345,16 +345,39 @@ describe("renderCity", () => {
     assert.equal(svg.match(/class="sp"/g)?.length, 3);
     assert.equal(svg.match(/class="drop"/g)?.length, 1);
     assert.match(svg, new RegExp(`class="sp" d="[^"]+" fill="${CITY_DARK.windows[4]}"`));
-    // He flies one pass and stays gone; the droppings are hidden unless they're falling.
-    assert.match(svg, /\.raven \{ animation: raven [\d.]+s linear 1\.5s 1 both; \}/);
+    // The droppings are hidden unless they're falling.
     assert.match(svg, /\.drop \{ opacity: 0; \}/);
   });
-  it("lands each splat after its dropping, top floor first", () => {
+  it("loops everything on one cycle: the raven, the droppings, the splats, the slides and the train", () => {
     const svg = renderCity(cal, DARK, CITY_DARK);
-    const [, dur, release] = svg.match(/animation:d1 ([\d.]+)s \S+ ([\d.]+)s forwards/) ?? [];
+    const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s linear 1\.5s infinite both; \}/) ?? [];
+    assert.ok(Number(cycle) > 0);
+    for (const rule of [/animation:d1 ([\d.]+)s linear [\d.]+s infinite/, /\.wk \{ animation: ([\d.]+)s linear infinite both; \}/, /\.dr \{[^}]*animation: drip ([\d.]+)s infinite; \}/, /\.sp \{[^}]*animation: splat ([\d.]+)s ease-out infinite both; \}/, /\.train \{[^}]*animation: train ([\d.]+)s linear infinite; \}/]) {
+      assert.equal(svg.match(rule)?.[1], cycle, String(rule));
+    }
+  });
+  it("lands each splat after its dropping, top floor first, and slides it off only after the raven has gone", () => {
+    const svg = renderCity(cal, DARK, CITY_DARK);
+    const [, release] = svg.match(/animation:d1 [\d.]+s linear ([\d.]+)s infinite/) ?? [];
+    const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s/) ?? [];
+    const [, across] = svg.match(/@keyframes raven \{.*?([\d.]+)% \{ transform: translate\([\d.]+px/) ?? [];
+    const hit = Number(svg.match(/@keyframes w1 \{ 0%, ([\d.]+)%/)?.[1]) / 100 * Number(cycle);
     const delays = [...svg.matchAll(/class="sp"[^>]*animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
-    assert.ok(delays.every((d) => d >= Number(release) + Number(dur)));
+    assert.ok(hit > Number(release));
+    assert.ok(delays.every((d) => d >= hit));
     assert.deepEqual(delays, [...delays].sort((a, b) => a - b));
+    const gone = 1.5 + (Number(across) / 100) * Number(cycle);
+    const slides = [...svg.matchAll(/class="dr" style="animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
+    assert.equal(slides.length, 3);
+    assert.ok(slides.every((d) => d >= gone && d < Number(cycle)));
+  });
+  it("slides the towers off in the order they were splattered", () => {
+    const busy = { start: "2026-01-04", total: 21, counts: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 7 : 0)), levels: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 4 : 0)) };
+    const svg = renderCity(busy, LIGHT, CITY_LIGHT);
+    const firstSlide = [...svg.matchAll(/<g class="wk" style="animation-name:w(\d+)"><g class="dr" style="animation-delay:([\d.]+)s/g)].map((m) => [Number(m[1]), Number(m[2])]);
+    assert.deepEqual(firstSlide.map(([w]) => w), [0, 1, 2]);
+    // Each splat starts a little late, so neighbours can overlap; across the city the order holds.
+    assert.ok(firstSlide[0][1] < firstSlide[2][1]);
   });
   it("draws an empty city, not a crash, with no calendar", () => {
     assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"|class="drop"/);
@@ -418,7 +441,9 @@ describe("pop quiz", () => {
     }
     const md = guideMarkdown(QUIZ);
     assert.equal(md.match(new RegExp(`<a href="#${QUIZ_ANCHOR}">`, "g"))?.length, 4);
-    assert.match(md, /<details>\n<summary><b>Answer<\/b><\/summary>[\s\S]*\*\*Minneapolis\.\*\* Prince/);
+    assert.match(md, /<details>\n<summary><b>Answer · 答案<\/b><\/summary>[\s\S]*\*\*Minneapolis\.\*\* Prince[\s\S]*\*\*明尼阿波利斯。\*\*/);
+    // The card stays English-only and doesn't give the answer away in Chinese either.
+    assert.doesNotMatch(renderGuide(QUIZ, RAIN_DARK), /明尼阿波利斯/);
     QUIZ.options.forEach((o, i) => assert.match(renderAnswer(LETTERS[i], o, RAIN_DARK), new RegExp(`<title id="title">Answer ${LETTERS[i]}: ${o}<`)));
   });
   it("loops the rain by exactly one tile, so it has no seam", () => {
