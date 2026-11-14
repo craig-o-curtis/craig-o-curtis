@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
+<title id="title">Recently merged at @northguild, newest first: gmt: fix(dox): landing keeps its layout on a slow load; /dox strip holds its height (Nov 13); gmt: feat(domination): read and write GTFS time strings (Nov 13); gmt: perf(dox): faster Story consistency and Dox gates, from one site build (Nov 13); northguild.dev: Keep Huginn's drift inside the page (Nov 13); gmt: docs(research): cite SWIFT handbook pages, not private copies (Nov 13); gmt: perf(core): public functions call internal cores, never another public function (Nov 13); worktree: fix(docs): header height matches northguild.dev, GitHub link goes to the repo (Nov 12); northguild.dev: Vary Huginn's fly-in, and let him soar (Nov 12).</title>
+<style>
+  text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
+  @keyframes appear { from { opacity: 0; } }
+  @keyframes type { from { transform: translateX(0); } to { transform: translateX(273px); } }
+  @keyframes blink { 50% { opacity: 0; } }
+  .typing { animation: type 1.53s steps(34) .5s both; }
+  .comment { animation: appear .3s ease-out 2.03s both; }
+  .ln { animation: appear .12s linear both; }
+  .end { animation: appear .01s linear 3.92s both; }
+  .blink { animation: blink 1s step-end infinite; }
+  @keyframes lock { 0% { opacity: 0; transform: scale(1.05); } 55% { opacity: 1; transform: scale(1); } 65% { opacity: .2; } 75% { opacity: 1; } 85% { opacity: .2; } 100% { opacity: 1; transform: scale(1); } }
+  .lock { transform-box: view-box; transform-origin: 50% 50%; animation: lock .9s ease-out .1s both; }
+  @media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; }
+  .motion-only { display: none; }
+}
+</style>
+<g transform="translate(6 6)">
+  <rect width="840" height="298" fill="#0d0d0d"/>
+  <rect width="840" height="28" fill="#001a00"/>
+  <text x="14" y="19" font-size="11.5" fill="#00a000" letter-spacing="1">NORTHGUILD ── MERGED TO MAIN</text>
+  <text x="826" y="19" font-size="11.5" fill="#00a000" text-anchor="end" letter-spacing="1">LIVE, DAILY <tspan class="blink" fill="#00ff00">●</tspan></text>
+  <text x="22" y="54" font-size="13" fill="#00a000">$</text>
+  <text x="37.6" y="54" font-size="13" fill="#00ff00" textLength="265.2" lengthAdjust="spacing">git log --oneline --graph --merges</text>
+  <rect class="typing motion-only" x="37.6" y="38" width="273" height="22" fill="#0d0d0d"/>
+  <!-- After the cover, which ends its slide just where the comment starts. -->
+  <text class="comment" x="318.4" y="54" font-size="13" fill="#008000"># @northguild, every repo, main</text>
+  <g class="ln" style="animation-delay:2.28s">
+    <text x="22" y="84" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="84" font-size="13" fill="#00a000">c7caa75</text>
+    <text x="100" y="84" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): landing keeps its layout on a slow load; /dox strip hold…</text>
+    <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:2.46s">
+    <text x="22" y="105" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="105" font-size="13" fill="#00a000">38c4b8c</text>
+    <text x="100" y="105" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="390" lengthAdjust="spacingAndGlyphs">feat(domination): read and write GTFS time strings</text>
+    <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:2.64s">
+    <text x="22" y="126" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="126" font-size="13" fill="#00a000">392e40b</text>
+    <text x="100" y="126" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(dox): faster Story consistency and Dox gates, from one site b…</text>
+    <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:2.82s">
+    <text x="22" y="147" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="147" font-size="13" fill="#00a000">013549a</text>
+    <text x="100" y="147" font-size="13" fill="#00ffff">(northguild.dev)</text>
+    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="273" lengthAdjust="spacingAndGlyphs">Keep Huginn's drift inside the page</text>
+    <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:3.00s">
+    <text x="22" y="168" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="168" font-size="13" fill="#00a000">13cf5ad</text>
+    <text x="100" y="168" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="475.8" lengthAdjust="spacingAndGlyphs">docs(research): cite SWIFT handbook pages, not private copies</text>
+    <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:3.18s">
+    <text x="22" y="189" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="189" font-size="13" fill="#00a000">2489bc4</text>
+    <text x="100" y="189" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">perf(core): public functions call internal cores, never another pu…</text>
+    <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 13</text>
+  </g>
+  <g class="ln" style="animation-delay:3.36s">
+    <text x="22" y="210" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="210" font-size="13" fill="#00a000">c12e88c</text>
+    <text x="100" y="210" font-size="13" fill="#00ffff">(worktree)</text>
+    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(docs): header height matches northguild.dev, GitHub link goes…</text>
+    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 12</text>
+  </g>
+  <g class="ln" style="animation-delay:3.54s">
+    <text x="22" y="231" font-size="13" fill="#00ff00">*</text>
+    <text x="37.6" y="231" font-size="13" fill="#00a000">ed40087</text>
+    <text x="100" y="231" font-size="13" fill="#00ffff">(northguild.dev)</text>
+    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="296.4" lengthAdjust="spacingAndGlyphs">Vary Huginn's fly-in, and let him soar</text>
+    <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 12</text>
+  </g>
+  <g class="end"><text x="22" y="272" font-size="13" fill="#00a000">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#00ff00"/></g>
+</g>
+<rect x="6" y="6" width="840" height="298" fill="none" stroke="#008000" stroke-width="1.5"/>
+<path class="lock" d="M1.25 19.25 V1.25 H19.25 M832.75 1.25 H850.75 V19.25 M850.75 290.75 V308.75 H832.75 M19.25 308.75 H1.25 V290.75" fill="none" stroke="#00ff00" stroke-width="2.5" stroke-linecap="square"/>
+</svg>

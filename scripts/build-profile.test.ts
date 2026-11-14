@@ -1,8 +1,24 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { cards, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
+import { cards, KEYS, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, TIP, zoneLabel } from "./build-profile.ts";
+import { decodePng, ink } from "./check-render.ts";
 import { renderCard, TAGLINE_MAX } from "./lib/card.ts";
-import { countCommands, EMPTY, fetchSnapshot, type Snapshot } from "./lib/data.ts";
+import { CITY_DARK, CITY_LIGHT, cityStats, renderCity } from "./lib/city.ts";
+import { ACTIVITY_REPOS, cleanTitle, countCommands, EMPTY, fetchSnapshot, type Snapshot, toCalendar, toMerges } from "./lib/data.ts";
+import { clip, renderGitlog } from "./lib/gitlog.ts";
+import {
+  guideMarkdown,
+  LETTERS,
+  QUIZ,
+  QUIZ_ANCHOR,
+  RAIN_DARK,
+  RAIN_LIGHT,
+  renderAnswer,
+  renderGuide,
+  wrap,
+} from "./lib/guide.ts";
+import { glyph, IDIOMS, idiomOfTheDay, renderIdiom } from "./lib/idioms.ts";
+import { keysMarkdown, keyWidth, renderKey } from "./lib/keys.ts";
 import { renderHero } from "./lib/hero.ts";
 import { DARK, esc, LIGHT } from "./lib/theme.ts";
 import { tinyBitmap } from "./lib/tiny.ts";
@@ -245,5 +261,188 @@ describe("fetchSnapshot", () => {
 describe("esc", () => {
   it("escapes the XML specials", () => {
     assert.equal(esc(`<a href="x">&</a>`), "&lt;a href=&quot;x&quot;&gt;&amp;&lt;/a&gt;");
+  });
+});
+
+describe("toCalendar", () => {
+  const reply = (days: Array<[string, number, string]>) => ({
+    data: { user: { contributionsCollection: { contributionCalendar: { totalContributions: 9, weeks: [{ contributionDays: days.map(([date, contributionCount, contributionLevel]) => ({ date, contributionCount, contributionLevel })) }] } } } },
+  });
+  it("flattens GitHub's calendar to one entry a day, levels as 0 to 4", () => {
+    const cal = toCalendar(reply([["2026-01-04", 0, "NONE"], ["2026-01-05", 9, "FOURTH_QUARTILE"]]));
+    assert.deepEqual(cal, { start: "2026-01-04", total: 9, counts: [0, 9], levels: [0, 4] });
+  });
+  it("says nothing for an error reply", () => {
+    assert.equal(toCalendar({ errors: [{ message: "Bad credentials" }] }), undefined);
+    assert.equal(toCalendar(null), undefined);
+  });
+});
+
+describe("toMerges and cleanTitle", () => {
+  it("keeps merged PRs only, with a short hash and a title without its trailing refs", () => {
+    const listing = [
+      { number: 2, merged_at: "2026-11-13T00:00:00Z", merge_commit_sha: "c7caa75abcdef", title: "feat(x): read GTFS (RAI-99, #407)", html_url: "u2" },
+      { number: 1, merged_at: null, merge_commit_sha: "0000000", title: "closed unmerged", html_url: "u1" },
+    ];
+    assert.deepEqual(toMerges("northguild/gmt", listing), [
+      { repo: "northguild/gmt", number: 2, sha: "c7caa75", title: "feat(x): read GTFS", date: "2026-11-13T00:00:00Z", url: "u2" },
+    ]);
+    assert.equal(toMerges("northguild/gmt", null), undefined);
+    assert.equal(cleanTitle("fix(dox): landing keeps its layout (#519)"), "fix(dox): landing keeps its layout");
+    assert.equal(cleanTitle("Keep Huginn's drift inside the page"), "Keep Huginn's drift inside the page");
+  });
+  it("reads only allowlisted, public repos", () => {
+    assert.ok(ACTIVITY_REPOS.every((r) => r.startsWith("northguild/")));
+    assert.ok(!ACTIVITY_REPOS.some((r) => /huginn|code-reviewer|spacetime|system-designer/.test(r)));
+  });
+});
+
+describe("fetchSnapshot, new sources", () => {
+  it("keeps the last calendar and each repo's last merges when their fetches fail", async () => {
+    const prev: Snapshot = {
+      ...SNAP,
+      contributions: { start: "2026-01-04", total: 1, counts: [1], levels: [1] },
+      activity: [{ repo: "northguild/gmt", number: 1, sha: "abc1234", title: "t", date: "2026-11-01T00:00:00Z", url: "u" }],
+    };
+    const snap = await fetchSnapshot([], prev, async () => null);
+    assert.deepEqual(snap.contributions, prev.contributions);
+    assert.deepEqual(snap.activity, prev.activity);
+  });
+});
+
+describe("renderCity", () => {
+  // Two weeks: a quiet one and a busy Wednesday.
+  const cal = { start: "2026-01-04", total: 15, counts: [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 12, 0, 0, 0], levels: [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 4, 0, 0, 0] };
+  it("counts the streak and the busiest day", () => {
+    assert.deepEqual(cityStats(cal), { total: 15, longest: 2, busiest: { date: "Jan 14", count: 12 } });
+  });
+  for (const [palette, colors] of [[DARK, CITY_DARK], [LIGHT, CITY_LIGHT]] as const) {
+    const svg = renderCity(cal, palette, colors);
+    it("draws a titled, framed city with the year's figures", () => {
+      assert.match(svg, /<title id="title">[^<]*15 contributions, longest streak 2 days, busiest Jan 14 \(12\)/);
+      assert.match(svg, /class="lock"/);
+      assert.match(svg, /prefers-reduced-motion/);
+      assert.doesNotMatch(svg, /NaN|undefined/);
+    });
+  }
+  it("lights only the days that had contributions, a week at a time", () => {
+    const svg = renderCity(cal, DARK, CITY_DARK);
+    assert.equal(svg.match(/class="wk"/g)?.length, 1);
+    assert.match(svg, new RegExp(`fill="${CITY_DARK.windows[4]}"`));
+  });
+  it("draws an empty city, not a crash, with no calendar", () => {
+    assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"/);
+  });
+});
+
+describe("renderGitlog", () => {
+  const merges = [
+    { repo: "northguild/gmt", number: 2, sha: "c7caa75", title: "x".repeat(200), date: "2026-11-13T00:00:00Z", url: "u" },
+    { repo: "northguild/worktree", number: 1, sha: "abc1234", title: "fix: <tags> & things", date: "2026-11-12T00:00:00Z", url: "u" },
+  ];
+  const svg = renderGitlog(merges, DARK);
+  it("prints a line per merge, escaped, long titles clipped", () => {
+    assert.equal(svg.match(/class="ln"/g)?.length, 2);
+    assert.match(svg, /&lt;tags&gt; &amp; things/);
+    assert.match(svg, /x…</);
+    assert.match(svg, />\(worktree\)</);
+    assert.doesNotMatch(svg, /NaN|undefined/);
+  });
+  it("says so when nothing has merged", () => {
+    assert.match(renderGitlog([], LIGHT), /nothing merged yet/);
+  });
+  it("clips with an ellipsis", () => {
+    assert.equal(clip("abcdef", 4), "abc…");
+    assert.equal(clip("abc", 4), "abc");
+  });
+});
+
+describe("keys", () => {
+  const w = keyWidth(KEYS);
+  it("are all one width, each with its F-number and label", () => {
+    KEYS.forEach((k, i) => {
+      const svg = renderKey(k, i + 1, w, DARK);
+      assert.match(svg, new RegExp(`>F${i + 1}<`));
+      assert.match(svg, new RegExp(`>${k.label.replace(".", "\\.")}<`));
+      assert.match(svg, new RegExp(`width="${w + 8}"`));
+    });
+  });
+  it("link each key on its own in the README row", () => {
+    const md = keysMarkdown(KEYS);
+    assert.equal(md.match(/<a href=/g)?.length, KEYS.length);
+    for (const k of KEYS) assert.ok(md.includes(`href="${k.url}"`));
+  });
+});
+
+describe("pop quiz", () => {
+  it("asks where Craig is from, and the answer is one of its options", () => {
+    assert.match(QUIZ.prompt, /Purple Rain/);
+    assert.equal(QUIZ.answer, "Minneapolis");
+    assert.ok(QUIZ.options.includes(QUIZ.answer));
+    assert.equal(QUIZ.options.length, 4);
+  });
+  it("keeps the answer out of the card and the buttons, and reveals it collapsed", () => {
+    for (const p of [RAIN_DARK, RAIN_LIGHT]) {
+      const card = renderGuide(QUIZ, p);
+      assert.match(card, />POP QUIZ</);
+      assert.doesNotMatch(card, /Prince/);
+      assert.doesNotMatch(card, /NaN|undefined/);
+    }
+    const md = guideMarkdown(QUIZ);
+    assert.equal(md.match(new RegExp(`<a href="#${QUIZ_ANCHOR}">`, "g"))?.length, 4);
+    assert.match(md, /<details>\n<summary><b>Answer<\/b><\/summary>[\s\S]*\*\*Minneapolis\.\*\* Prince/);
+    QUIZ.options.forEach((o, i) => assert.match(renderAnswer(LETTERS[i], o, RAIN_DARK), new RegExp(`<title id="title">Answer ${LETTERS[i]}: ${o}<`)));
+  });
+  it("loops the rain by exactly one tile, so it has no seam", () => {
+    const card = renderGuide(QUIZ, RAIN_DARK);
+    const tile = /<pattern id="streaks0" width="(\d+)" height="(\d+)"/.exec(card);
+    assert.ok(tile);
+    assert.match(card, new RegExp(`translate\\(-${tile[1]}px, ${tile[2]}px\\)`));
+  });
+  it("wraps at spaces", () => {
+    assert.deepEqual(wrap("aa bb cc", 5), ["aa bb", "cc"]);
+  });
+});
+
+describe("chengyu", () => {
+  it("has four characters and a bitmap for each, for every idiom", () => {
+    for (const i of IDIOMS) {
+      assert.equal([...i.hanzi].length, 4, i.hanzi);
+      for (const ch of i.hanzi) assert.equal(glyph(ch).length, 16, ch);
+    }
+  });
+  it("rotates one a day", () => {
+    assert.notEqual(idiomOfTheDay(0).hanzi, idiomOfTheDay(86_400_000).hanzi);
+  });
+  it("renders every idiom in both themes, fitting the card", () => {
+    for (const i of IDIOMS) {
+      for (const p of [DARK, LIGHT]) {
+        const svg = renderIdiom(i, p);
+        assert.match(svg, new RegExp(`<title id="title">Chengyu of the day: ${i.hanzi}`));
+        assert.doesNotMatch(svg, /NaN|undefined/);
+      }
+    }
+  });
+});
+
+describe("check-render", () => {
+  it("decodes a PNG and measures how much is drawn", async () => {
+    const { deflateSync } = await import("node:zlib");
+    // A 2 × 1 RGB PNG: one black pixel, one white.
+    const chunk = (type: string, data: Buffer) => {
+      const len = Buffer.alloc(4);
+      len.writeUInt32BE(data.length);
+      return Buffer.concat([len, Buffer.from(type), data, Buffer.alloc(4)]);
+    };
+    const ihdr = Buffer.from([0, 0, 0, 2, 0, 0, 0, 1, 8, 2, 0, 0, 0]);
+    const png = Buffer.concat([
+      Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
+      chunk("IHDR", ihdr),
+      chunk("IDAT", deflateSync(Buffer.from([0, 0, 0, 0, 255, 255, 255]))),
+      chunk("IEND", Buffer.alloc(0)),
+    ]);
+    const { width, height, rgba } = decodePng(png);
+    assert.deepEqual([width, height], [2, 1]);
+    assert.equal(ink(rgba), 0.5);
   });
 });

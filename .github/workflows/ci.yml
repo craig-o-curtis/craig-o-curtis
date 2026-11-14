@@ -1,8 +1,9 @@
 name: CI
 
-# The checks a pull request must pass: the tests, and an offline build that renders every asset and README
-# section from the committed snapshot (data/profile.json), with no network calls. That catches a broken
-# renderer or a README whose markers went missing before it reaches main, where profile.yml builds live.
+# The checks a pull request must pass: the tests, an offline build that renders every asset and README
+# section from the committed snapshot (data/profile.json) with no network calls, and a look at every SVG in
+# headless Chrome. That catches a broken renderer, a README whose markers went missing, or an SVG that won't
+# parse or draws blank, before it reaches main, where profile.yml builds live.
 
 on:
   pull_request:
@@ -34,6 +35,19 @@ jobs:
       - run: npm test
 
       - run: npm run build:offline
+
+      # Every SVG drawn twice in the runner's preinstalled Chrome: still (reduced motion) and settled (every
+      # animation run to its end). Fails on one that doesn't parse or comes out blank; the PNGs are kept for
+      # review either way.
+      - run: npm run check:render
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: renders
+          path: dist/render/*.png
+          retention-days: 7
+          if-no-files-found: ignore
 
       # Informational: the generated files main's next run would rewrite. A stale asset in a PR is not an
       # error, because profile.yml regenerates everything after the merge.

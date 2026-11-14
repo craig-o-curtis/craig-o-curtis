@@ -9,6 +9,7 @@
   "scripts": {
     "build": "node scripts/build-profile.ts",
     "build:offline": "node scripts/build-profile.ts --offline",
-    "test": "node --test scripts/*.test.ts"
+    "test": "node --test scripts/*.test.ts",
+    "check:render": "node scripts/check-render.ts"
   }
 }
