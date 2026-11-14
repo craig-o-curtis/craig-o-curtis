@@ -2,14 +2,15 @@
 //  - matrix:   a test matrix whose cells light up column by column, then a cursor keeps sweeping it;
 //  - timeline: every release on a month axis, majors labelled, ticks landing left to right;
 //  - chat:     a short typed exchange with a docs assistant;
-//  - scene:    a small night sky (aurora, stars, Helsinki across the water) over a list of what the
-//              sites draw on the GPU.
+//  - scene:    a small night sky (aurora, stars, Huginn) over Helsinki across the water, a list of what
+//              the sites draw on the GPU below it. Each time Huginn leaves the right edge the view changes
+//              to Ísafjörður's fjord, and back, as the site lets a visitor switch between the two.
 //
 // As in hero.ts, the final frame is the default and animations only run *from* hidden, so a viewer with
 // reduced motion sees a complete, still card.
 
 import { raven } from "./raven.ts";
-import { HELSINKI } from "./skyline.ts";
+import { HELSINKI, ISAFJORDUR } from "./skyline.ts";
 import { ADVANCE, esc, FONT, FRAME_CSS, frame, type Palette, REDUCED_MOTION } from "./theme.ts";
 
 export const CARD_W = 410;
@@ -186,22 +187,33 @@ function scene(body: Extract<CardBody, { kind: "scene" }>, p: Palette): Part {
   const pA = w / 2;
   const pB = w / 3;
   // Helsinki across the water from Suomenlinna (skyline.ts), standing on a strip of sea, with a few
-  // lit windows and their reflections.
+  // lit windows and their reflections; Ísafjörður's fjord walls, unlit, in its place every other crossing.
   const shore = 44;
-  const sx = w / HELSINKI.length;
-  const steps = HELSINKI.map((v, i) => `L${(i * sx).toFixed(1)} ${shore - v} L${((i + 1) * sx).toFixed(1)} ${shore - v}`).join(" ");
-  const ridge = `M0 ${shore} ${steps} L${w} ${shore} Z`;
   const lit = rng(11);
   const windows: string[] = [];
+  const hx = w / HELSINKI.length;
   HELSINKI.forEach((v, i) => {
     if (v < 3 || lit() > 0.16) return;
-    const x = (i * sx).toFixed(1);
+    const x = (i * hx).toFixed(1);
     const y = shore - 1.5 - lit() * (v - 2.5);
     windows.push(`<rect x="${x}" y="${y.toFixed(1)}" width="1.2" height="1.2" fill="${p.accent}"/>`);
     windows.push(`<rect x="${x}" y="${(2 * shore - y + 1).toFixed(1)}" width="1.2" height="2.5" fill="${p.accent}" opacity=".35"/>`);
   });
-  const lights = windows.join("");
-  const huginn = raven({ near: p.text, far: p.dim }, { width: w, y0: 22, y1: 12, scale: 0.6, cycle: 18, start: 3 });
+  const ridge = (heights: readonly number[], smooth: boolean) => {
+    const sx = w / heights.length;
+    const pts = smooth
+      ? heights.map((v, i) => `L${((i + 0.5) * sx).toFixed(1)} ${shore - v}`)
+      : heights.map((v, i) => `L${(i * sx).toFixed(1)} ${shore - v} L${((i + 1) * sx).toFixed(1)} ${shore - v}`);
+    const first = smooth ? `L0 ${shore - heights[0]} ` : "";
+    const last = smooth ? ` L${w} ${shore - heights[heights.length - 1]}` : "";
+    return `<path d="M0 ${shore} ${first}${pts.join(" ")}${last} L${w} ${shore} Z" fill="${p.bg}" stroke="${p.border}" stroke-linejoin="${smooth ? "round" : "miter"}"/>`;
+  };
+  const flight = { width: w, y0: 22, y1: 12, scale: 0.6, cycle: 18, start: 3 };
+  const huginn = raven({ near: p.text, far: p.dim }, flight);
+  // He is past the right edge 45% of the way through his cycle (raven.ts); the views swap then, so each
+  // holds for one full cycle. The negative delay puts the first swap on his first exit.
+  const swapAt = flight.start + 0.45 * flight.cycle;
+  const swapDelay = (swapAt - flight.cycle).toFixed(2);
   const rows = body.rows
     .map(
       ([path, what], i) =>
@@ -224,8 +236,8 @@ function scene(body: Extract<CardBody, { kind: "scene" }>, p: Palette): Part {
       <g class="shimmer"><g class="drift-a"><path d="${curtain(pA, 44, [8, 4], 1.3)}" fill="url(#aurora)"/><path d="${curtain(pA, 44, [8, 4], 1.3)}" fill="url(#rays)"/></g></g>
       ${huginn.svg}
       <rect y="${shore}" width="${w}" height="${h - shore}" fill="${p.bg}" opacity=".6"/>
-      <path d="${ridge}" fill="${p.bg}" stroke="${p.border}" stroke-linejoin="miter"/>
-      ${lights}
+      <g class="helsinki">${ridge(HELSINKI, false)}${windows.join("")}</g>
+      <g class="isafjordur motion-only">${ridge(ISAFJORDUR, true)}</g>
     </g>
   </g>
   ${rows}`,
@@ -238,6 +250,10 @@ function scene(body: Extract<CardBody, { kind: "scene" }>, p: Palette): Part {
   .shimmer { animation: shimmer 3.2s ease-in-out infinite alternate; }
   .twinkle { animation: twinkle 2.6s ease-in-out infinite; }
   ${huginn.css}
+  @keyframes helsinki { 0% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes isafjordur { 0% { opacity: 0; } 50%, 100% { opacity: 1; } }
+  .helsinki { animation: helsinki ${2 * flight.cycle}s step-end ${swapDelay}s infinite; }
+  .isafjordur { opacity: 0; animation: isafjordur ${2 * flight.cycle}s step-end ${swapDelay}s infinite; }
   .row { animation: appear .4s ease-out both; }`,
   };
 }

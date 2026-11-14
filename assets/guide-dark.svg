@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="852" height="338" viewBox="0 0 852 338" role="img" aria-labelledby="title">
-<title id="title">Pop quiz, over Minneapolis in the purple rain: Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it? Options: A, Detroit; B, Minneapolis; C, Chicago; D, Memphis. Pick one below; the answer is under them.</title>
+<title id="title">Pop quiz, over a city skyline in the purple rain: Craig is from the hometown of the artist who gave the world “Purple Rain”. Which city is it? Options: A, Detroit; B, Minneapolis; C, Chicago; D, Memphis. Pick one below; the answer is under them.</title>
 <style>
   text { white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -56,7 +56,6 @@
   <g class="q">
     <g class="lock"><rect x="25" y="35" width="11" height="11" rx="1.5" transform="rotate(45 30.5 40.5)" fill="#e8c35a"/><text x="30.5" y="44.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="10" font-weight="700" text-anchor="middle" fill="#120818">!</text></g>
     <text x="44" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="12" font-weight="700" letter-spacing="1.5" fill="#e8c35a">POP QUIZ</text>
-    <text x="814" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace" font-size="11.5" fill="#c9b8dc" text-anchor="end">Minneapolis, in the purple rain</text>
     <text x="26" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#f1e8fb">Craig is from the hometown of the artist who gave the world “Purple Rain”. Which</text>
   <text x="26" y="102" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#f1e8fb">city is it?</text>
     <text x="26" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#c9b8dc">Pick an answer below, then open the answer to check.</text>

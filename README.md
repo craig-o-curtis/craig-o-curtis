@@ -47,7 +47,11 @@
 
 I build small, sharp TypeScript tools, mostly things that fix a problem I got tired of having. I build them AI-accelerated: agent-ready APIs, two RAG assistants embedded in my docs sites, and daily Claude Code / Cursor workflows. I build the tooling, not just use it.
 
-<a href="https://northguild.github.io/run-cv/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tip-dark.svg"><img src="assets/tip-light.svg" width="100%" alt="Tip: my CV/resume runs in your terminal, in a green-screen mainframe UI. Run npx run-cv craig, or click to run it in the browser."></picture></a>
+Also: I read and speak Chinese. Years of parsing a language with no spaces, no tenses, and heavy context-dependence turns out to be decent training for reading unfamiliar codebases. A chengyu a day, and what it means at a keyboard:
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/idiom-dark.svg"><img src="assets/idiom-light.svg" width="100%" alt="Today's chengyu, a four-character Chinese idiom, with its pinyin, a word-for-word gloss and what it means for software."></picture>
+
+<a href="https://northguild.github.io/run-cv/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/tip-dark.svg"><img src="assets/tip-light.svg" width="100%" alt="A terminal window: my CV/resume runs in your terminal, in a green-screen mainframe UI. Run npx run-cv craig, or click to run it in the browser."></picture></a>
 
 <p align="center"><code>npx run-cv craig</code> · <a href="https://northguild.github.io/run-cv/">Run it in the browser</a></p>
 
@@ -62,7 +66,7 @@ Independent open-source engineering. The numbers below are live, refreshed daily
 
 <p align="center">
   <a href="https://northguild.dev/gmt/dox/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-dox-dark.svg"><img src="assets/card-dox-light.svg" width="48%" alt="Dox: the RAG assistant in gmt's docs, answering a date question by running a gmt function."></picture></a>
-  <a href="https://northguild.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-northguild-dark.svg"><img src="assets/card-northguild-light.svg" width="48%" alt="northguild.dev: the docs sites draw live on the GPU. An aurora over real stars in a WebGL worker, gmt's WebGPU globe, and worktree's particles that turn a leaf into a git graph."></picture></a>
+  <a href="https://northguild.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-northguild-dark.svg"><img src="assets/card-northguild-light.svg" width="48%" alt="northguild.dev: the docs sites draw live on the GPU, under a night sky where Huginn the raven flies over Helsinki, then Ísafjörður. An aurora over real stars in a WebGL worker, gmt's WebGPU globe, and worktree's particles that turn a leaf into a git graph."></picture></a>
 </p>
 
 <a href="https://github.com/northguild"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/gitlog-dark.svg"><img src="assets/gitlog-light.svg" width="100%" alt="A terminal running git log across every @northguild repo: the pull requests merged most recently, refreshed daily."></picture></a>
@@ -84,10 +88,6 @@ Independent open-source engineering. The numbers below are live, refreshed daily
 | [gmt](https://github.com/northguild/gmt) | [`@northguild/gmt@1.21.0`](https://github.com/northguild/gmt/releases/tag/%40northguild/gmt%401.21.0) | 2026-11-03 | 8 |
 | [worktree](https://github.com/northguild/worktree) | [`v3.0.0`](https://github.com/northguild/worktree/releases/tag/v3.0.0) | 2026-11-07 | 14 |
 <!-- releases:end -->
-
-<a href="https://craig-o-curtis.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg"><img src="assets/portfolio-light.svg" width="100%" alt="There's more at craig-o-curtis.github.io: my portfolio, an interactive dashboard of my work, stack, open source and agent workflows, over Helsinki's skyline from the harbour. Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track. Still locked: Mainframe, Retro 82, Solid, Rain and NorthGuild."></picture></a>
-
-<p align="center"><a href="https://craig-o-curtis.github.io/"><b>craig-o-curtis.github.io</b></a></p>
 
 ### Pop quiz
 
@@ -117,11 +117,11 @@ Where I'm from, under purple rain.
 
 <a href="https://github.com/craig-o-curtis"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/city-dark.svg"><img src="assets/city-light.svg" width="100%" alt="My GitHub contributions over the last year, drawn as a city in front of Helsinki: one tower a week, one window a day, lit by that day's contributions."></picture></a>
 
+<a href="https://craig-o-curtis.github.io/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/portfolio-dark.svg"><img src="assets/portfolio-light.svg" width="100%" alt="There's more at craig-o-curtis.github.io: my portfolio, an interactive dashboard of my work, stack, open source and agent workflows, over Helsinki's skyline from the harbour. Its field guide asks 12 questions, and each right answer unlocks a skin, a scene or a synth track. Still locked: Mainframe, Retro 82, Solid, Rain and NorthGuild."></picture></a>
+
+<p align="center"><a href="https://craig-o-curtis.github.io/"><b>craig-o-curtis.github.io</b></a></p>
+
 ---
-
-Also: I read and speak Chinese. Years of parsing a language with no spaces, no tenses, and heavy context-dependence turns out to be decent training for reading unfamiliar codebases. A chengyu a day, and what it means at a keyboard:
-
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/idiom-dark.svg"><img src="assets/idiom-light.svg" width="100%" alt="Today's chengyu, a four-character Chinese idiom, with its pinyin, a word-for-word gloss and what it means for software."></picture>
 
 <details>
 <summary><b>How this README builds itself</b></summary>
