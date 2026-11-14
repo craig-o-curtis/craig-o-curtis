@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-09",
-    "total": 3086,
+    "total": 3105,
     "counts": [
       0,
       1,
@@ -868,7 +868,7 @@
       39,
       20,
       45,
-      20
+      39
     ],
     "levels": [
       0,
@@ -1241,9 +1241,29 @@
       2,
       1,
       2,
-      1
+      2
     ]
   },
+  "submissions": [
+    {
+      "list": "abhisheknaiidu/awesome-github-profile-readme",
+      "number": 1906,
+      "category": "GitHub Actions",
+      "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
+      "state": "open",
+      "opened": "2026-11-14T18:46:26Z",
+      "stars": 31605
+    },
+    {
+      "list": "roypriyanshu02/awesome-github-profile-readme",
+      "number": 137,
+      "category": "Dynamic",
+      "url": "https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137",
+      "state": "open",
+      "opened": "2026-11-14T19:50:12Z",
+      "stars": 198
+    }
+  ],
   "activity": [
     {
       "repo": "northguild/gmt",
@@ -1308,26 +1328,6 @@
       "title": "perf(core): public functions call internal cores, never another public function",
       "date": "2026-11-13T08:49:44Z",
       "url": "https://github.com/northguild/gmt/pull/513"
-    }
-  ],
-  "submissions": [
-    {
-      "list": "abhisheknaiidu/awesome-github-profile-readme",
-      "number": 1906,
-      "category": "GitHub Actions",
-      "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
-      "state": "open",
-      "opened": "2026-11-14T18:46:26Z",
-      "stars": 31605
-    },
-    {
-      "list": "roypriyanshu02/awesome-github-profile-readme",
-      "number": 137,
-      "category": "Dynamic",
-      "url": "https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137",
-      "state": "open",
-      "opened": "2026-11-14T19:50:12Z",
-      "stars": 198
     }
   ]
 }
