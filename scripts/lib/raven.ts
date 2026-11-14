@@ -68,32 +68,55 @@ export interface RavenColors {
   far: string;
 }
 
+export interface Flight {
+  width: number;
+  y0: number;
+  y1: number;
+  scale: number;
+  cycle: number;
+  start: number;
+  /** Percent of the cycle he is in view (default 45); 100 spends the whole cycle crossing. */
+  across?: number;
+  /** How far past each edge he starts and ends, in px (default 20). */
+  margin?: number;
+  /** Fly a single pass and stay gone, instead of looping. */
+  once?: boolean;
+}
+
 /**
  * The raven and its CSS. He crosses `width` px of sky once every `cycle` seconds, between `y0` and `y1`,
- * drawn at `scale` (1 = a body 20 px long).
+ * drawn at `scale` (1 = a body 20 px long). `at(s)` is where he is `s` seconds into a crossing, in the same
+ * coordinates as the svg, for anything that has to happen under him.
  */
-export function raven(c: RavenColors, o: { width: number; y0: number; y1: number; scale: number; cycle: number; start: number }): { svg: string; css: string } {
+export function raven(c: RavenColors, o: Flight): { svg: string; css: string; at: (s: number) => P } {
   const n = BEAT.length;
   const frames = BEAT.map((b, i) => `<g class="beat" style="animation-delay:-${f((BEAT_S / n) * (n - i))}s">${pose(b, c.near, c.far)}</g>`).join("");
-  const across = 45; // percent of the cycle he is in view
-  const way = (pct: number) => {
-    const t = pct / across;
-    // A gentle climb with a little sag in the middle.
-    return `${f(-20 + t * (o.width + 40))}px, ${f(o.y0 + (o.y1 - o.y0) * t + Math.sin(t * Math.PI) * 4)}px`;
+  const across = o.across ?? 45;
+  const m = o.margin ?? 20;
+  // A gentle climb with a little sag in the middle; `t` runs 0 to 1 across the sky.
+  const way = (t: number): P => [-m + t * (o.width + 2 * m), o.y0 + (o.y1 - o.y0) * t + Math.sin(t * Math.PI) * 4];
+  const STOPS = 5;
+  const flight = Array.from({ length: STOPS + 1 }, (_, k) => `${f((across * k) / STOPS)}% { transform: translate(${way(k / STOPS).map((v) => `${f(v)}px`).join(", ")}); }`).join(" ");
+  const away = across < 100 ? ` ${f(across + 0.01)}%, 100% { transform: translate(-${2 * m}px, ${o.y0}px); }` : "";
+  // The keyframes run linearly between stops, so he is wherever the straight line between them puts him.
+  const at = (s: number): P => {
+    const t = Math.min(1, Math.max(0, (s / o.cycle) * (100 / across)));
+    const k = Math.min(STOPS - 1, Math.floor(t * STOPS));
+    return lerp(way(k / STOPS), way((k + 1) / STOPS), t * STOPS - k);
   };
-  const flight = [0, 9, 18, 27, 36, 45].map((p) => `${p}% { transform: translate(${way(p)}); }`).join(" ");
   const on = (FLAP_SHARE * 100).toFixed(0);
   return {
+    at,
     svg: `<g class="raven motion-only"><g class="bob"><g transform="scale(${o.scale})">
         <g class="flap">${frames}</g>
         <g class="glide">${pose(GLIDE, c.near, c.far)}</g>
       </g></g></g>`,
-    css: `@keyframes raven { ${flight} 45.01%, 100% { transform: translate(-40px, ${o.y0}px); } }
+    css: `@keyframes raven { ${flight}${away} }
   @keyframes beat { 0% { opacity: 1; } ${f(100 / n)}%, 100% { opacity: 0; } }
   @keyframes flap { 0% { opacity: 1; } ${on}%, 100% { opacity: 0; } }
   @keyframes glide { 0% { opacity: 0; } ${on}%, 100% { opacity: 1; } }
   @keyframes bob { 0% { transform: translateY(0); } ${on}% { transform: translateY(-2.5px); } 100% { transform: translateY(0); } }
-  .raven { animation: raven ${o.cycle}s linear ${o.start}s infinite both; }
+  .raven { animation: raven ${o.cycle}s linear ${o.start}s ${o.once ? 1 : "infinite"} both; }
   .beat { animation: beat ${BEAT_S}s step-end infinite; }
   .flap { animation: flap ${BOUT_S}s step-end infinite; }
   .glide { animation: glide ${BOUT_S}s step-end infinite; }
