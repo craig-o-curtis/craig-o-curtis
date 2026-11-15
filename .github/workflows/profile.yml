@@ -9,9 +9,15 @@ name: Build profile
 # contribution graph comes from GitHub's GraphQL API with the workflow's own token; no third-party action.
 
 on:
+  # GitHub runs schedules late, or drops them, when load is high, and the start of the hour is the busiest;
+  # hence a few minutes past. Each run rebuilds everything, so a late or dropped run is covered by the next.
   schedule:
-    # Daily, 05:17 UTC: npm's download counts for the previous day are in by then.
-    - cron: "17 5 * * *"
+    # Just past midnight UTC: the chengyu turns over with the UTC day.
+    - cron: "5 0 * * *"
+    # Hourly through the working day, 08:05 to 20:05 Helsinki time (DST included): the git log of
+    # @northguild merges, the city and the release cards keep up with the day's work.
+    - cron: "5 8-20 * * *"
+      timezone: "Europe/Helsinki"
   workflow_dispatch:
   push:
     branches: [main]
