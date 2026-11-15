@@ -10,9 +10,9 @@
     }
   },
   "gmt": {
-    "tests": 76990,
-    "functions": 776,
-    "executions": 2309700,
+    "tests": 77455,
+    "functions": 779,
+    "executions": 2323650,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -31,7 +31,7 @@
       "26"
     ],
     "locales": 17,
-    "namespaces": 20
+    "namespaces": 21
   },
   "worktree": {
     "commands": 9
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3118,
+    "total": 3121,
     "counts": [
       0,
       0,
@@ -862,7 +862,7 @@
       20,
       45,
       39,
-      13
+      16
     ],
     "levels": [
       0,
@@ -1240,7 +1240,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "open",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31610
+      "stars": 31612
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1254,6 +1254,14 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 532,
+      "sha": "56ba23c",
+      "title": "feat(domination): PTP timestamps to UTC and back",
+      "date": "2026-11-15T17:03:31Z",
+      "url": "https://github.com/northguild/gmt/pull/532"
+    },
     {
       "repo": "northguild/gmt",
       "number": 523,
@@ -1309,14 +1317,6 @@
       "title": "feat(domination): read and write GTFS time strings",
       "date": "2026-11-13T12:55:12Z",
       "url": "https://github.com/northguild/gmt/pull/516"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 518,
-      "sha": "392e40b",
-      "title": "perf(dox): faster Story consistency and Dox gates, from one site build",
-      "date": "2026-11-13T12:08:18Z",
-      "url": "https://github.com/northguild/gmt/pull/518"
     }
   ]
 }
