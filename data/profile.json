@@ -10,9 +10,9 @@
     }
   },
   "gmt": {
-    "tests": 76522,
+    "tests": 76990,
     "functions": 776,
-    "executions": 2295660,
+    "executions": 2309700,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3116,
+    "total": 3118,
     "counts": [
       0,
       0,
@@ -862,7 +862,7 @@
       20,
       45,
       39,
-      11
+      13
     ],
     "levels": [
       0,
@@ -1240,7 +1240,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "open",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31607
+      "stars": 31610
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1250,10 +1250,18 @@
       "state": "merged",
       "opened": "2026-11-14T19:50:12Z",
       "merged": "2026-11-15T09:05:45Z",
-      "stars": 198
+      "stars": 199
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 523,
+      "sha": "ba5fe2b",
+      "title": "fix(core): right years and complete ranges in formatted dates; add the Pulse page (CORE-112, DOX-G9)",
+      "date": "2026-11-15T12:06:34Z",
+      "url": "https://github.com/northguild/gmt/pull/523"
+    },
     {
       "repo": "northguild/gmt",
       "number": 530,
@@ -1309,14 +1317,6 @@
       "title": "perf(dox): faster Story consistency and Dox gates, from one site build",
       "date": "2026-11-13T12:08:18Z",
       "url": "https://github.com/northguild/gmt/pull/518"
-    },
-    {
-      "repo": "northguild/northguild.dev",
-      "number": 26,
-      "sha": "013549a",
-      "title": "Keep Huginn's drift inside the page",
-      "date": "2026-11-13T10:29:22Z",
-      "url": "https://github.com/northguild/northguild.dev/pull/26"
     }
   ]
 }
