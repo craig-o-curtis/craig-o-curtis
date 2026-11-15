@@ -10,9 +10,9 @@
     }
   },
   "gmt": {
-    "tests": 75852,
+    "tests": 76522,
     "functions": 776,
-    "executions": 2275560,
+    "executions": 2295660,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -495,16 +495,9 @@
     }
   ],
   "contributions": {
-    "start": "2025-11-09",
-    "total": 3105,
+    "start": "2025-11-16",
+    "total": 3116,
     "counts": [
-      0,
-      1,
-      0,
-      2,
-      1,
-      3,
-      0,
       0,
       0,
       3,
@@ -868,17 +861,11 @@
       39,
       20,
       45,
-      39
+      39,
+      11
     ],
     "levels": [
       0,
-      1,
-      0,
-      1,
-      1,
-      1,
-      0,
-      0,
       0,
       1,
       1,
@@ -1241,7 +1228,8 @@
       2,
       1,
       2,
-      2
+      2,
+      1
     ]
   },
   "submissions": [
@@ -1252,19 +1240,36 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "open",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31605
+      "stars": 31607
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
       "number": 137,
       "category": "Dynamic",
       "url": "https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137",
-      "state": "open",
+      "state": "merged",
       "opened": "2026-11-14T19:50:12Z",
+      "merged": "2026-11-15T09:05:45Z",
       "stars": 198
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 530,
+      "sha": "32c82f4",
+      "title": "fix(dox): refresh the US clock-watch snapshot and pace Open States to its limit",
+      "date": "2026-11-15T11:12:31Z",
+      "url": "https://github.com/northguild/gmt/pull/530"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 529,
+      "sha": "2774e57",
+      "title": "fix(core): every function accepts exactly its own input kind",
+      "date": "2026-11-15T08:23:43Z",
+      "url": "https://github.com/northguild/gmt/pull/529"
+    },
     {
       "repo": "northguild/gmt",
       "number": 521,
@@ -1312,22 +1317,6 @@
       "title": "Keep Huginn's drift inside the page",
       "date": "2026-11-13T10:29:22Z",
       "url": "https://github.com/northguild/northguild.dev/pull/26"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 514,
-      "sha": "13cf5ad",
-      "title": "docs(research): cite SWIFT handbook pages, not private copies",
-      "date": "2026-11-13T09:16:53Z",
-      "url": "https://github.com/northguild/gmt/pull/514"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 513,
-      "sha": "2489bc4",
-      "title": "perf(core): public functions call internal cores, never another public function",
-      "date": "2026-11-13T08:49:44Z",
-      "url": "https://github.com/northguild/gmt/pull/513"
     }
   ]
 }
