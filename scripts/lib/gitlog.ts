@@ -82,7 +82,7 @@ export function renderGitlog(merges: Merge[], p: Palette): string {
   <rect width="${GITLOG_W}" height="${H}" fill="${p.bg}"/>
   <rect width="${GITLOG_W}" height="28" fill="${p.bar}"/>
   <text x="${PAD - 8}" y="19" font-size="11.5" fill="${p.dim}" letter-spacing="1">NORTHGUILD ── MERGED TO MAIN</text>
-  <text x="${GITLOG_W - PAD + 8}" y="19" font-size="11.5" fill="${p.dim}" text-anchor="end" letter-spacing="1">LIVE, DAILY <tspan class="blink" fill="${p.text}">●</tspan></text>
+  <text x="${GITLOG_W - PAD + 8}" y="19" font-size="11.5" fill="${p.dim}" text-anchor="end" letter-spacing="1">LIVE, HOURLY <tspan class="blink" fill="${p.text}">●</tspan></text>
   <text x="${PAD}" y="54" font-size="${SIZE}" fill="${p.dim}">$</text>
   <text x="${f(cmdX)}" y="54" font-size="${SIZE}" fill="${p.text}" textLength="${f(cmdW)}" lengthAdjust="spacing">${esc(COMMAND)}</text>
   <rect class="typing motion-only" x="${f(cmdX)}" y="38" width="${f(cmdW + CW)}" height="22" fill="${p.bg}"/>

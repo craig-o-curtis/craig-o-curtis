@@ -1,7 +1,7 @@
 <!--
   Partly generated. Edit anything you like outside the "name:start" / "name:end" marker comments;
   scripts/build-profile.ts rewrites what sits between them (releases, keys, guide), and
-  .github/workflows/profile.yml runs it daily. The images in assets/ are generated too: change scripts/,
+  .github/workflows/profile.yml runs it every hour through the day. The images in assets/ are generated too: change scripts/,
   not the SVGs. Keep the raven comment below: it's an easter egg for whoever reads the raw file.
 -->
 
@@ -63,9 +63,9 @@ I also read, write and speak Mandarin at a professional level. A language with n
 
 ## What I'm building at [@northguild](https://github.com/northguild) · 我在 @northguild 做的东西
 
-Open source, published to npm, with a release most weeks. The figures on these cards are pulled live every morning.
+Open source, published to npm, with a release most weeks. The figures on these cards are pulled live every hour through the day.
 
-开源，发布在 npm 上，几乎每周都有新版本。卡片上的数字每天早上自动拉取最新数据。
+开源，发布在 npm 上，几乎每周都有新版本。卡片上的数字白天每小时自动拉取最新数据。
 
 <p align="center">
   <a href="https://northguild.dev/gmt/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-gmt-dark.svg"><img src="assets/card-gmt-light.svg" width="48%" alt="gmt: date and time library for JavaScript and TypeScript, built on TC39 Temporal. Its test count, test runs and functions, and its test matrix of time zones by Node versions."></picture></a>
@@ -77,7 +77,7 @@ Open source, published to npm, with a release most weeks. The figures on these c
   <a href="https://northguild.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-northguild-dark.svg"><img src="assets/card-northguild-light.svg" width="48%" alt="northguild.dev: the docs sites draw live on the GPU, under a night sky where Huginn the raven flies over Helsinki, then Ísafjörður. An aurora over real stars in a WebGL worker, gmt's WebGPU globe, and worktree's particles that turn a leaf into a git graph."></picture></a>
 </p>
 
-<a href="https://github.com/northguild"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/gitlog-dark.svg"><img src="assets/gitlog-light.svg" width="100%" alt="A terminal running git log across every @northguild repo: the pull requests merged most recently, refreshed daily."></picture></a>
+<a href="https://github.com/northguild"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/gitlog-dark.svg"><img src="assets/gitlog-light.svg" width="100%" alt="A terminal running git log across every @northguild repo: the pull requests merged most recently, refreshed hourly through the day."></picture></a>
 
 <details>
 <summary><b>More on each project · 项目详情</b></summary>
@@ -142,7 +142,7 @@ Where I'm from, under purple rain.
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", "primaryColor": "#0d0d0d", "primaryTextColor": "#00ff00", "primaryBorderColor": "#008000", "secondaryColor": "#0d0d0d", "tertiaryColor": "#0d0d0d", "textColor": "#2e9d3e", "nodeTextColor": "#00ff00", "lineColor": "#2e9d3e", "clusterBkg": "#001a00", "clusterBorder": "#008000", "titleColor": "#00ff00", "edgeLabelBackground": "#0d0d0d"}}}%%
 flowchart TD
-  cron(["daily, 05:17 UTC"]) --> build
+  cron(["00:05 UTC, and hourly 08:05–20:05 Helsinki"]) --> build
   push(["push to main"]) --> build
   pr(["pull request"]) --> ci
   subgraph build ["profile.yml: build job"]
@@ -182,9 +182,9 @@ A decade of production code lives in employers' private repositories. What's pub
 
 ### Awesome lists · 精选列表
 
-This page is up for a place in curated lists of GitHub profile READMEs. The status below refreshes every morning.
+This page is up for a place in curated lists of GitHub profile READMEs. The status below refreshes every hour through the day.
 
-这个页面已提交到几个精选的 GitHub 个人主页 README 列表，下面的状态每天早上自动更新。
+这个页面已提交到几个精选的 GitHub 个人主页 README 列表，下面的状态白天每小时自动更新。
 
 <!-- lists:start -->
 | List | Stars | Category | Status |
