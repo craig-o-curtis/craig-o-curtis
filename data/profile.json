@@ -10,9 +10,9 @@
     }
   },
   "gmt": {
-    "tests": 77455,
-    "functions": 779,
-    "executions": 2323650,
+    "tests": 77745,
+    "functions": 780,
+    "executions": 2332350,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3121,
+    "total": 3114,
     "counts": [
       0,
       0,
@@ -862,7 +862,8 @@
       20,
       45,
       39,
-      16
+      16,
+      0
     ],
     "levels": [
       0,
@@ -1229,7 +1230,8 @@
       1,
       2,
       2,
-      1
+      1,
+      0
     ]
   },
   "submissions": [
@@ -1240,7 +1242,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "open",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31612
+      "stars": 31618
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1254,6 +1256,14 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 533,
+      "sha": "88bfffc",
+      "title": "feat(domination): turn GTFS times into instants",
+      "date": "2026-11-15T19:57:45Z",
+      "url": "https://github.com/northguild/gmt/pull/533"
+    },
     {
       "repo": "northguild/gmt",
       "number": 532,
@@ -1309,14 +1319,6 @@
       "title": "fix(dox): landing keeps its layout on a slow load; /dox strip holds its height",
       "date": "2026-11-13T14:05:36Z",
       "url": "https://github.com/northguild/gmt/pull/520"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 516,
-      "sha": "38c4b8c",
-      "title": "feat(domination): read and write GTFS time strings",
-      "date": "2026-11-13T12:55:12Z",
-      "url": "https://github.com/northguild/gmt/pull/516"
     }
   ]
 }
