@@ -10,9 +10,9 @@
     }
   },
   "gmt": {
-    "tests": 77745,
+    "tests": 77843,
     "functions": 780,
-    "executions": 2332350,
+    "executions": 2335290,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3123,
+    "total": 3140,
     "counts": [
       0,
       0,
@@ -861,10 +861,10 @@
       39,
       20,
       45,
-      39,
+      37,
       16,
-      9,
-      0
+      8,
+      20
     ],
     "levels": [
       0,
@@ -1233,7 +1233,7 @@
       2,
       1,
       1,
-      0
+      1
     ]
   },
   "submissions": [
@@ -1242,9 +1242,9 @@
       "number": 1906,
       "category": "GitHub Actions",
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
-      "state": "open",
+      "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31625
+      "stars": 31626
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1258,6 +1258,38 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 546,
+      "sha": "c7c78ba",
+      "title": "fix(dox): weekly gate legs finish inside their time and report when they cannot",
+      "date": "2026-11-17T13:20:57Z",
+      "url": "https://github.com/northguild/gmt/pull/546"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 545,
+      "sha": "6c99dde",
+      "title": "fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#539–#543)",
+      "date": "2026-11-17T12:57:14Z",
+      "url": "https://github.com/northguild/gmt/pull/545"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 537,
+      "sha": "9eba8d6",
+      "title": "feat(dox): agents in the browser can call each tool page (DOX-G10, #473)",
+      "date": "2026-11-17T12:32:14Z",
+      "url": "https://github.com/northguild/gmt/pull/537"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 544,
+      "sha": "ae008ad",
+      "title": "docs(context): delete finished stories' planning files and trim the rest",
+      "date": "2026-11-17T09:25:29Z",
+      "url": "https://github.com/northguild/gmt/pull/544"
+    },
     {
       "repo": "northguild/gmt",
       "number": 533,
@@ -1289,38 +1321,6 @@
       "title": "fix(dox): refresh the US clock-watch snapshot and pace Open States to its limit",
       "date": "2026-11-15T11:12:31Z",
       "url": "https://github.com/northguild/gmt/pull/530"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 529,
-      "sha": "2774e57",
-      "title": "fix(core): every function accepts exactly its own input kind",
-      "date": "2026-11-15T08:23:43Z",
-      "url": "https://github.com/northguild/gmt/pull/529"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 521,
-      "sha": "750bb19",
-      "title": "feat(dox): US Sunshine Protection Act page, endpoint, chat tool and clock canary",
-      "date": "2026-11-14T11:06:46Z",
-      "url": "https://github.com/northguild/gmt/pull/521"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 525,
-      "sha": "dd739fd",
-      "title": "fix(dox): update Astro to 7.4.11 to clear two security advisories",
-      "date": "2026-11-14T07:40:02Z",
-      "url": "https://github.com/northguild/gmt/pull/525"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 520,
-      "sha": "c7caa75",
-      "title": "fix(dox): landing keeps its layout on a slow load; /dox strip holds its height",
-      "date": "2026-11-13T14:05:36Z",
-      "url": "https://github.com/northguild/gmt/pull/520"
     }
   ]
 }
