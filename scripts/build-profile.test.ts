@@ -4,6 +4,8 @@ import { cards, KEYS, majorOf, PORTFOLIO, releasesMarkdown, replaceSection, subm
 import { decodePng, ink } from "./check-render.ts";
 import { renderCard, TAGLINE_MAX } from "./lib/card.ts";
 import { CITY_DARK, CITY_LIGHT, cityStats, renderCity } from "./lib/city.ts";
+import { huginn } from "./lib/city-huginn.ts";
+import { lights, LIGHTS_ALT } from "./lib/city-lights.ts";
 import {
   ACTIVITY_REPOS,
   cleanTitle,
@@ -388,16 +390,57 @@ describe("renderCity", () => {
     assert.deepEqual(cityStats(cal), { total: 15, longest: 2, busiest: { date: "Jan 14", count: 12 } });
   });
   for (const [palette, colors] of [[DARK, CITY_DARK], [LIGHT, CITY_LIGHT]] as const) {
-    const svg = renderCity(cal, palette, colors);
-    it("draws a titled, framed city with the year's figures", () => {
-      assert.match(svg, /<title id="title">[^<]*15 contributions, longest streak 2 days, busiest Jan 14 \(12\)/);
-      assert.match(svg, /class="lock"/);
-      assert.match(svg, /prefers-reduced-motion/);
-      assert.doesNotMatch(svg, /NaN|undefined/);
-    });
+    for (const act of [lights, huginn]) {
+      const svg = renderCity(cal, palette, colors, act);
+      it("draws a titled, framed city with the year's figures", () => {
+        assert.match(svg, /<title id="title">[^<]*15 contributions, longest streak 2 days, busiest Jan 14 \(12\)/);
+        assert.match(svg, /class="lock"/);
+        assert.match(svg, /prefers-reduced-motion/);
+        assert.doesNotMatch(svg, /NaN|undefined/);
+      });
+    }
   }
+  it("lights only the days that had contributions, in the shade of their level", () => {
+    const svg = renderCity(cal, DARK, CITY_DARK, lights);
+    assert.equal(svg.match(/class="wk"/g)?.length, 1);
+    assert.equal(svg.match(/class="on"/g)?.length, 3);
+    assert.match(svg, new RegExp(`class="on" d="[^"]+" fill="${CITY_DARK.windows[4]}"`));
+    assert.doesNotMatch(svg, /class="raven|class="drop"|class="sp"/);
+  });
+  it("lights each window just after the eastbound train has passed it, and loops everything on one cycle", () => {
+    // Wednesdays twenty weeks apart: far enough that the train's passing, not the walk home, orders them.
+    const days = 7 * 41;
+    const busy = { start: "2026-01-04", total: 21, counts: Array.from({ length: days }, (_, i) => (i % 140 === 3 ? 7 : 0)), levels: Array.from({ length: days }, (_, i) => (i % 140 === 3 ? 4 : 0)) };
+    const svg = renderCity(busy, LIGHT, CITY_LIGHT, lights);
+    const [, cycle] = svg.match(/\.train \{[^}]*animation: train ([\d.]+)s linear infinite; \}/) ?? [];
+    for (const rule of [/\.wk \{ animation: ([\d.]+)s/, /\.on \{ animation: on ([\d.]+)s/]) {
+      assert.equal(svg.match(rule)?.[1], cycle, String(rule));
+    }
+    // The train runs west to east, mirrored to face its way.
+    assert.match(svg, /@keyframes train \{ 0%, [\d.]+% \{ transform: translateX\(-\d+px\); \}/);
+    assert.match(svg, /class="train motion-only"><g transform="matrix\(-1 0 0 1/);
+    const delays = [...svg.matchAll(/class="on"[^>]*animation-delay:([\d.]+)s/g)].map((m) => Number(m[1]));
+    assert.equal(delays.length, 3);
+    assert.deepEqual(delays, [...delays].sort((a, b) => a - b));
+    assert.ok(delays.every((d) => d > 1 && d < Number(cycle)));
+  });
+  it("keeps time in the sky: a moon and fading stars by night, a setting sun by day, resting on the lit city", () => {
+    const night = renderCity(cal, DARK, CITY_DARK, lights);
+    assert.match(night, /<g class="moon">/);
+    assert.match(night, /<g class="stars">/);
+    assert.match(night, /\.tint \{ opacity: 0; animation: glow/);
+    const day = renderCity(cal, LIGHT, CITY_LIGHT, lights);
+    assert.match(day, /<g class="sun">/);
+    assert.doesNotMatch(day, /class="(moon|stars|tint)"/);
+    // With reduced motion the sun rests below the hill: the lit city is the evening's.
+    assert.match(day, /\.sun \{ transform: translate\(75px, 135px\)/);
+  });
+  it("keeps the README's alt text in step with the act on the profile", async () => {
+    const readme = await import("node:fs/promises").then((fs) => fs.readFile(new URL("../README.md", import.meta.url), "utf8"));
+    assert.ok(readme.includes(`alt="${LIGHTS_ALT}"`));
+  });
   it("splats only the days that had contributions, one dropping per busy week", () => {
-    const svg = renderCity(cal, DARK, CITY_DARK);
+    const svg = renderCity(cal, DARK, CITY_DARK, huginn);
     assert.equal(svg.match(/class="wk"/g)?.length, 1);
     assert.equal(svg.match(/class="sp"/g)?.length, 3);
     assert.equal(svg.match(/class="drop"/g)?.length, 1);
@@ -406,7 +449,7 @@ describe("renderCity", () => {
     assert.match(svg, /\.drop \{ opacity: 0; \}/);
   });
   it("loops everything on one cycle: the raven, the droppings, the splats, the slides and the train", () => {
-    const svg = renderCity(cal, DARK, CITY_DARK);
+    const svg = renderCity(cal, DARK, CITY_DARK, huginn);
     const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s linear 1\.5s infinite both; \}/) ?? [];
     assert.ok(Number(cycle) > 0);
     for (const rule of [/animation:d1 ([\d.]+)s linear [\d.]+s infinite/, /\.wk \{ animation: ([\d.]+)s linear infinite both; \}/, /\.dr \{[^}]*animation: drip ([\d.]+)s infinite; \}/, /\.sp \{[^}]*animation: splat ([\d.]+)s ease-out infinite both; \}/, /\.train \{[^}]*animation: train ([\d.]+)s linear infinite; \}/]) {
@@ -414,7 +457,7 @@ describe("renderCity", () => {
     }
   });
   it("lands each splat after its dropping, top floor first, and slides it off only after the raven has gone", () => {
-    const svg = renderCity(cal, DARK, CITY_DARK);
+    const svg = renderCity(cal, DARK, CITY_DARK, huginn);
     const [, release] = svg.match(/animation:d1 [\d.]+s linear ([\d.]+)s infinite/) ?? [];
     const [, cycle] = svg.match(/\.raven \{ animation: raven ([\d.]+)s/) ?? [];
     const [, across] = svg.match(/@keyframes raven \{.*?([\d.]+)% \{ transform: translate\([\d.]+px/) ?? [];
@@ -430,14 +473,14 @@ describe("renderCity", () => {
   });
   it("slides the towers off in the order they were splattered", () => {
     const busy = { start: "2026-01-04", total: 21, counts: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 7 : 0)), levels: Array.from({ length: 21 }, (_, i) => (i % 7 === 3 ? 4 : 0)) };
-    const svg = renderCity(busy, LIGHT, CITY_LIGHT);
+    const svg = renderCity(busy, LIGHT, CITY_LIGHT, huginn);
     const firstSlide = [...svg.matchAll(/<g class="wk" style="animation-name:w(\d+)"><g class="dr" style="animation-delay:([\d.]+)s/g)].map((m) => [Number(m[1]), Number(m[2])]);
     assert.deepEqual(firstSlide.map(([w]) => w), [0, 1, 2]);
     // Each splat starts a little late, so neighbours can overlap; across the city the order holds.
     assert.ok(firstSlide[0][1] < firstSlide[2][1]);
   });
   it("draws an empty city, not a crash, with no calendar", () => {
-    assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK), /NaN|undefined|class="wk"|class="drop"/);
+    for (const act of [lights, huginn]) assert.doesNotMatch(renderCity(undefined, DARK, CITY_DARK, act), /NaN|undefined|class="wk"|class="drop"/);
   });
 });
 

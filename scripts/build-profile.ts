@@ -13,6 +13,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { type CardInput, renderCard } from "./lib/card.ts";
 import { CITY_DARK, CITY_LIGHT, renderCity } from "./lib/city.ts";
+import { lights } from "./lib/city-lights.ts";
 import { EMPTY, fetchSnapshot, type Release, type Snapshot } from "./lib/data.ts";
 import { renderGitlog } from "./lib/gitlog.ts";
 import { guideMarkdown, LETTERS, QUIZ, RAIN_DARK, RAIN_LIGHT, renderAnswer, renderGuide } from "./lib/guide.ts";
@@ -230,7 +231,7 @@ async function main() {
     writes.push(writeFile(path.join(ASSETS, `portfolio-${theme}.svg`), renderPortfolio(PORTFOLIO, palette)));
   }
   for (const [theme, palette, colors] of [["dark", DARK, CITY_DARK], ["light", LIGHT, CITY_LIGHT]] as const) {
-    writes.push(writeFile(path.join(ASSETS, `city-${theme}.svg`), renderCity(snapshot.contributions, palette, colors)));
+    writes.push(writeFile(path.join(ASSETS, `city-${theme}.svg`), renderCity(snapshot.contributions, palette, colors, lights)));
     writes.push(writeFile(path.join(ASSETS, `gitlog-${theme}.svg`), renderGitlog(snapshot.activity ?? [], palette)));
   }
   const kw = keyWidth(KEYS);

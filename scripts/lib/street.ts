@@ -7,8 +7,7 @@
 // and more flats.
 //
 // Each building is so many weeks wide (one column of windows a week) and so many floors tall. The week's
-// seven days are the top seven floors under the roof, Sunday highest, so a dropping that lands on the
-// roof splatters straight down them.
+// seven days are the top seven floors under the roof, Sunday highest.
 
 export type Kind =
   | "flats"
