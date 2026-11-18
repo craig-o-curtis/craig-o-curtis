@@ -1,12 +1,12 @@
 {
   "packages": {
-    "@northguild/worktree": {
-      "version": "3.0.0",
-      "lastRelease": "2026-11-07T15:04:57Z"
-    },
     "@northguild/gmt": {
       "version": "1.21.0",
       "lastRelease": "2026-11-03T10:54:19Z"
+    },
+    "@northguild/worktree": {
+      "version": "3.0.0",
+      "lastRelease": "2026-11-07T15:04:57Z"
     }
   },
   "gmt": {
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3151,
+    "total": 3155,
     "counts": [
       0,
       0,
@@ -865,7 +865,7 @@
       16,
       8,
       24,
-      7
+      11
     ],
     "levels": [
       0,
@@ -1246,7 +1246,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31634
+      "stars": 31636
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1260,6 +1260,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 551,
+      "sha": "f8e8b17",
+      "title": "feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534)",
+      "date": "2026-11-18T21:01:28Z",
+      "url": "https://github.com/northguild/gmt/pull/551"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 549,
+      "sha": "458860e",
+      "title": "feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515)",
+      "date": "2026-11-18T18:40:27Z",
+      "url": "https://github.com/northguild/gmt/pull/549"
+    },
     {
       "repo": "northguild/gmt",
       "number": 546,
@@ -1307,22 +1323,6 @@
       "title": "feat(domination): PTP timestamps to UTC and back",
       "date": "2026-11-15T17:03:31Z",
       "url": "https://github.com/northguild/gmt/pull/532"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 523,
-      "sha": "ba5fe2b",
-      "title": "fix(core): right years and complete ranges in formatted dates; add the Pulse page (CORE-112, DOX-G9)",
-      "date": "2026-11-15T12:06:34Z",
-      "url": "https://github.com/northguild/gmt/pull/523"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 530,
-      "sha": "32c82f4",
-      "title": "fix(dox): refresh the US clock-watch snapshot and pace Open States to its limit",
-      "date": "2026-11-15T11:12:31Z",
-      "url": "https://github.com/northguild/gmt/pull/530"
     }
   ]
 }
