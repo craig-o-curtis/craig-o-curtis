@@ -1,12 +1,12 @@
 {
   "packages": {
-    "@northguild/gmt": {
-      "version": "1.21.0",
-      "lastRelease": "2026-11-03T10:54:19Z"
-    },
     "@northguild/worktree": {
       "version": "3.0.0",
       "lastRelease": "2026-11-07T15:04:57Z"
+    },
+    "@northguild/gmt": {
+      "version": "1.21.0",
+      "lastRelease": "2026-11-03T10:54:19Z"
     }
   },
   "gmt": {
@@ -496,7 +496,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3155,
+    "total": 3158,
     "counts": [
       0,
       0,
@@ -865,7 +865,8 @@
       16,
       8,
       24,
-      11
+      11,
+      3
     ],
     "levels": [
       0,
@@ -1235,6 +1236,7 @@
       1,
       1,
       1,
+      1,
       1
     ]
   },
@@ -1246,7 +1248,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31636
+      "stars": 31639
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1260,6 +1262,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/northguild.dev",
+      "number": 28,
+      "sha": "bae81e5",
+      "title": "Settings gear with volume, and sound for Huginn and the sky",
+      "date": "2026-11-19T06:29:46Z",
+      "url": "https://github.com/northguild/northguild.dev/pull/28"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 550,
+      "sha": "fccce75",
+      "title": "feat(dox): evals for the Dox chat (DOX-G12, #511)",
+      "date": "2026-11-19T01:06:59Z",
+      "url": "https://github.com/northguild/gmt/pull/550"
+    },
     {
       "repo": "northguild/gmt",
       "number": 551,
@@ -1307,22 +1325,6 @@
       "title": "docs(context): delete finished stories' planning files and trim the rest",
       "date": "2026-11-17T09:25:29Z",
       "url": "https://github.com/northguild/gmt/pull/544"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 533,
-      "sha": "88bfffc",
-      "title": "feat(domination): turn GTFS times into instants",
-      "date": "2026-11-15T19:57:45Z",
-      "url": "https://github.com/northguild/gmt/pull/533"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 532,
-      "sha": "56ba23c",
-      "title": "feat(domination): PTP timestamps to UTC and back",
-      "date": "2026-11-15T17:03:31Z",
-      "url": "https://github.com/northguild/gmt/pull/532"
     }
   ]
 }

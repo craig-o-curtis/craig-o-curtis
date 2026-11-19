@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: gmt: feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534) (Nov 18); gmt: feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515) (Nov 18); gmt: fix(dox): weekly gate legs finish inside their time and report when they cannot (Nov 17); gmt: fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#539–#543) (Nov 17); gmt: feat(dox): agents in the browser can call each tool page (DOX-G10, #473) (Nov 17); gmt: docs(context): delete finished stories' planning files and trim the rest (Nov 17); gmt: feat(domination): turn GTFS times into instants (Nov 15); gmt: feat(domination): PTP timestamps to UTC and back (Nov 15).</title>
+<title id="title">Recently merged at @northguild, newest first: northguild.dev: Settings gear with volume, and sound for Huginn and the sky (Nov 19); gmt: feat(dox): evals for the Dox chat (DOX-G12, #511) (Nov 19); gmt: feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534) (Nov 18); gmt: feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515) (Nov 18); gmt: fix(dox): weekly gate legs finish inside their time and report when they cannot (Nov 17); gmt: fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#539–#543) (Nov 17); gmt: feat(dox): agents in the browser can call each tool page (DOX-G10, #473) (Nov 17); gmt: docs(context): delete finished stories' planning files and trim the rest (Nov 17).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,59 +29,59 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#008000"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#00a000">f8e8b17</text>
-    <text x="100" y="84" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="84" font-size="13" fill="#00ff00" textLength="546" lengthAdjust="spacingAndGlyphs">feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534)</text>
-    <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 18</text>
+    <text x="37.6" y="84" font-size="13" fill="#00a000">bae81e5</text>
+    <text x="100" y="84" font-size="13" fill="#00ffff">(northguild.dev)</text>
+    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="460.2" lengthAdjust="spacingAndGlyphs">Settings gear with volume, and sound for Huginn and the sky</text>
+    <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#00a000">458860e</text>
+    <text x="37.6" y="105" font-size="13" fill="#00a000">fccce75</text>
     <text x="100" y="105" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="105" font-size="13" fill="#00ff00" textLength="585" lengthAdjust="spacingAndGlyphs">feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515)</text>
-    <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 18</text>
+    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="382.2" lengthAdjust="spacingAndGlyphs">feat(dox): evals for the Dox chat (DOX-G12, #511)</text>
+    <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#00a000">c7c78ba</text>
+    <text x="37.6" y="126" font-size="13" fill="#00a000">f8e8b17</text>
     <text x="100" y="126" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="126" font-size="13" fill="#00ff00" textLength="608.4" lengthAdjust="spacingAndGlyphs">fix(dox): weekly gate legs finish inside their time and report when they cann…</text>
-    <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
+    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #…</text>
+    <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 18</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#00a000">6c99dde</text>
+    <text x="37.6" y="147" font-size="13" fill="#00a000">458860e</text>
     <text x="100" y="147" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="147" font-size="13" fill="#00ff00" textLength="608.4" lengthAdjust="spacingAndGlyphs">fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#5…</text>
-    <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
+    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): sound effects and a Settings panel in the header (DOX-G…</text>
+    <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 18</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#00a000">9eba8d6</text>
+    <text x="37.6" y="168" font-size="13" fill="#00a000">c7c78ba</text>
     <text x="100" y="168" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="168" font-size="13" fill="#00ff00" textLength="561.6" lengthAdjust="spacingAndGlyphs">feat(dox): agents in the browser can call each tool page (DOX-G10, #473)</text>
+    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): weekly gate legs finish inside their time and report whe…</text>
     <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#00a000">ae008ad</text>
+    <text x="37.6" y="189" font-size="13" fill="#00a000">6c99dde</text>
     <text x="100" y="189" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="189" font-size="13" fill="#00ff00" textLength="561.6" lengthAdjust="spacingAndGlyphs">docs(context): delete finished stories' planning files and trim the rest</text>
+    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(canary): one rolling issue per run, and the fixes for run 4390…</text>
     <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#00a000">88bfffc</text>
+    <text x="37.6" y="210" font-size="13" fill="#00a000">9eba8d6</text>
     <text x="100" y="210" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="210" font-size="13" fill="#00ff00" textLength="366.6" lengthAdjust="spacingAndGlyphs">feat(domination): turn GTFS times into instants</text>
-    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 15</text>
+    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): agents in the browser can call each tool page (DOX-G10,…</text>
+    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#00a000">56ba23c</text>
+    <text x="37.6" y="231" font-size="13" fill="#00a000">ae008ad</text>
     <text x="100" y="231" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="146.8" y="231" font-size="13" fill="#00ff00" textLength="374.4" lengthAdjust="spacingAndGlyphs">feat(domination): PTP timestamps to UTC and back</text>
-    <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 15</text>
+    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">docs(context): delete finished stories' planning files and trim th…</text>
+    <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 17</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#00a000">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#00ff00"/></g>
 </g>
