@@ -502,7 +502,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3171,
+    "total": 3174,
     "counts": [
       0,
       0,
@@ -872,7 +872,7 @@
       8,
       24,
       11,
-      16
+      19
     ],
     "levels": [
       0,
@@ -1254,7 +1254,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31642
+      "stars": 31644
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1268,6 +1268,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/worktree",
+      "number": 354,
+      "sha": "d4d4387",
+      "title": "feat(docs): the Settings gear and sound",
+      "date": "2026-11-19T20:46:24Z",
+      "url": "https://github.com/northguild/worktree/pull/354"
+    },
+    {
+      "repo": "northguild/worktree",
+      "number": 356,
+      "sha": "6aa748b",
+      "title": "chore(workflow): update to 0.29.1",
+      "date": "2026-11-19T16:16:28Z",
+      "url": "https://github.com/northguild/worktree/pull/356"
+    },
     {
       "repo": "northguild/gmt",
       "number": 557,
@@ -1315,22 +1331,6 @@
       "title": "Settings gear with volume, and sound for Huginn and the sky",
       "date": "2026-11-19T06:29:46Z",
       "url": "https://github.com/northguild/northguild.dev/pull/28"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 550,
-      "sha": "fccce75",
-      "title": "feat(dox): evals for the Dox chat (DOX-G12, #511)",
-      "date": "2026-11-19T01:06:59Z",
-      "url": "https://github.com/northguild/gmt/pull/550"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 551,
-      "sha": "f8e8b17",
-      "title": "feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534)",
-      "date": "2026-11-18T21:01:28Z",
-      "url": "https://github.com/northguild/gmt/pull/551"
     }
   ]
 }
