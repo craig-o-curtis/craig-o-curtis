@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: northguild.dev: Settings gear with volume, and sound for Huginn and the sky (Nov 19); gmt: feat(dox): evals for the Dox chat (DOX-G12, #511) (Nov 19); gmt: feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534) (Nov 18); gmt: feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515) (Nov 18); gmt: fix(dox): weekly gate legs finish inside their time and report when they cannot (Nov 17); gmt: fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#539–#543) (Nov 17); gmt: feat(dox): agents in the browser can call each tool page (DOX-G10, #473) (Nov 17); gmt: docs(context): delete finished stories' planning files and trim the rest (Nov 17).</title>
+<title id="title">Recently merged at @northguild, newest first: gmt: feat(dox): a PTP preset inside the 2016 leap second (DOX-G13, #535) (Nov 19); gmt: fix(dox): plate-overflow tolerance test no longer depends on the machine font (Nov 19); gmt: fix(dox): readout plates fit at every width, and a weekly plate-fit gate (Nov 19); gmt: release: v1.22.0 (Nov 19); gmt: fix(dox): one soft Distant sonar ping for every press (Nov 19); northguild.dev: Settings gear with volume, and sound for Huginn and the sky (Nov 19); gmt: feat(dox): evals for the Dox chat (DOX-G12, #511) (Nov 19); gmt: feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534) (Nov 18).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,59 +29,59 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#2e7d32"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#3f7a4f">bae81e5</text>
-    <text x="100" y="84" font-size="13" fill="#006d77">(northguild.dev)</text>
-    <text x="232.6" y="84" font-size="13" fill="#0b5d1e" textLength="460.2" lengthAdjust="spacingAndGlyphs">Settings gear with volume, and sound for Huginn and the sky</text>
+    <text x="37.6" y="84" font-size="13" fill="#3f7a4f">bc8775e</text>
+    <text x="100" y="84" font-size="13" fill="#006d77">(gmt)</text>
+    <text x="232.6" y="84" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): a PTP preset inside the 2016 leap second (DOX-G13, #535)</text>
     <text x="818" y="84" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#3f7a4f">fccce75</text>
+    <text x="37.6" y="105" font-size="13" fill="#3f7a4f">1e8a1b6</text>
     <text x="100" y="105" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="105" font-size="13" fill="#0b5d1e" textLength="382.2" lengthAdjust="spacingAndGlyphs">feat(dox): evals for the Dox chat (DOX-G12, #511)</text>
+    <text x="232.6" y="105" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): plate-overflow tolerance test no longer depends on the m…</text>
     <text x="818" y="105" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#3f7a4f">f8e8b17</text>
+    <text x="37.6" y="126" font-size="13" fill="#3f7a4f">18b227b</text>
     <text x="100" y="126" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="126" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #…</text>
-    <text x="818" y="126" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 18</text>
+    <text x="232.6" y="126" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): readout plates fit at every width, and a weekly plate-fi…</text>
+    <text x="818" y="126" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#3f7a4f">458860e</text>
+    <text x="37.6" y="147" font-size="13" fill="#3f7a4f">d6031ec</text>
     <text x="100" y="147" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="147" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): sound effects and a Settings panel in the header (DOX-G…</text>
-    <text x="818" y="147" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 18</text>
+    <text x="232.6" y="147" font-size="13" fill="#0b5d1e" textLength="124.8" lengthAdjust="spacingAndGlyphs">release: v1.22.0</text>
+    <text x="818" y="147" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#3f7a4f">c7c78ba</text>
+    <text x="37.6" y="168" font-size="13" fill="#3f7a4f">9861846</text>
     <text x="100" y="168" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="168" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): weekly gate legs finish inside their time and report whe…</text>
-    <text x="818" y="168" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 17</text>
+    <text x="232.6" y="168" font-size="13" fill="#0b5d1e" textLength="413.4" lengthAdjust="spacingAndGlyphs">fix(dox): one soft Distant sonar ping for every press</text>
+    <text x="818" y="168" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#3f7a4f">6c99dde</text>
-    <text x="100" y="189" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="189" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(canary): one rolling issue per run, and the fixes for run 4390…</text>
-    <text x="818" y="189" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 17</text>
+    <text x="37.6" y="189" font-size="13" fill="#3f7a4f">bae81e5</text>
+    <text x="100" y="189" font-size="13" fill="#006d77">(northguild.dev)</text>
+    <text x="232.6" y="189" font-size="13" fill="#0b5d1e" textLength="460.2" lengthAdjust="spacingAndGlyphs">Settings gear with volume, and sound for Huginn and the sky</text>
+    <text x="818" y="189" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#3f7a4f">9eba8d6</text>
+    <text x="37.6" y="210" font-size="13" fill="#3f7a4f">fccce75</text>
     <text x="100" y="210" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="210" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): agents in the browser can call each tool page (DOX-G10,…</text>
-    <text x="818" y="210" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 17</text>
+    <text x="232.6" y="210" font-size="13" fill="#0b5d1e" textLength="382.2" lengthAdjust="spacingAndGlyphs">feat(dox): evals for the Dox chat (DOX-G12, #511)</text>
+    <text x="818" y="210" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 19</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#3f7a4f">ae008ad</text>
+    <text x="37.6" y="231" font-size="13" fill="#3f7a4f">f8e8b17</text>
     <text x="100" y="231" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="232.6" y="231" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">docs(context): delete finished stories' planning files and trim th…</text>
-    <text x="818" y="231" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 17</text>
+    <text x="232.6" y="231" font-size="13" fill="#0b5d1e" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #…</text>
+    <text x="818" y="231" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 18</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#3f7a4f">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#0b5d1e"/></g>
 </g>

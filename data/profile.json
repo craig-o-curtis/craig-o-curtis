@@ -5,8 +5,8 @@
       "lastRelease": "2026-11-07T15:04:57Z"
     },
     "@northguild/gmt": {
-      "version": "1.21.0",
-      "lastRelease": "2026-11-03T10:54:19Z"
+      "version": "1.22.0",
+      "lastRelease": "2026-11-19T08:25:23Z"
     }
   },
   "gmt": {
@@ -37,6 +37,12 @@
     "commands": 9
   },
   "releases": [
+    {
+      "repo": "northguild/gmt",
+      "name": "@northguild/gmt@1.22.0",
+      "url": "https://github.com/northguild/gmt/releases/tag/%40northguild/gmt%401.22.0",
+      "date": "2026-11-19T08:25:23Z"
+    },
     {
       "repo": "northguild/worktree",
       "name": "v3.0.0",
@@ -496,7 +502,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3158,
+    "total": 3171,
     "counts": [
       0,
       0,
@@ -866,7 +872,7 @@
       8,
       24,
       11,
-      3
+      16
     ],
     "levels": [
       0,
@@ -1248,7 +1254,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31639
+      "stars": 31642
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1262,6 +1268,46 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 557,
+      "sha": "bc8775e",
+      "title": "feat(dox): a PTP preset inside the 2016 leap second (DOX-G13, #535)",
+      "date": "2026-11-19T14:46:06Z",
+      "url": "https://github.com/northguild/gmt/pull/557"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 558,
+      "sha": "1e8a1b6",
+      "title": "fix(dox): plate-overflow tolerance test no longer depends on the machine font",
+      "date": "2026-11-19T14:23:17Z",
+      "url": "https://github.com/northguild/gmt/pull/558"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 555,
+      "sha": "18b227b",
+      "title": "fix(dox): readout plates fit at every width, and a weekly plate-fit gate",
+      "date": "2026-11-19T10:23:20Z",
+      "url": "https://github.com/northguild/gmt/pull/555"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 554,
+      "sha": "d6031ec",
+      "title": "release: v1.22.0",
+      "date": "2026-11-19T08:20:10Z",
+      "url": "https://github.com/northguild/gmt/pull/554"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 553,
+      "sha": "9861846",
+      "title": "fix(dox): one soft Distant sonar ping for every press",
+      "date": "2026-11-19T07:50:41Z",
+      "url": "https://github.com/northguild/gmt/pull/553"
+    },
     {
       "repo": "northguild/northguild.dev",
       "number": 28,
@@ -1285,46 +1331,6 @@
       "title": "feat(dox): a live PTP now readout on the PTP converter (DOX-G12, #534)",
       "date": "2026-11-18T21:01:28Z",
       "url": "https://github.com/northguild/gmt/pull/551"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 549,
-      "sha": "458860e",
-      "title": "feat(dox): sound effects and a Settings panel in the header (DOX-G11, #515)",
-      "date": "2026-11-18T18:40:27Z",
-      "url": "https://github.com/northguild/gmt/pull/549"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 546,
-      "sha": "c7c78ba",
-      "title": "fix(dox): weekly gate legs finish inside their time and report when they cannot",
-      "date": "2026-11-17T13:20:57Z",
-      "url": "https://github.com/northguild/gmt/pull/546"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 545,
-      "sha": "6c99dde",
-      "title": "fix(canary): one rolling issue per run, and the fixes for run 43900915538 (#539–#543)",
-      "date": "2026-11-17T12:57:14Z",
-      "url": "https://github.com/northguild/gmt/pull/545"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 537,
-      "sha": "9eba8d6",
-      "title": "feat(dox): agents in the browser can call each tool page (DOX-G10, #473)",
-      "date": "2026-11-17T12:32:14Z",
-      "url": "https://github.com/northguild/gmt/pull/537"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 544,
-      "sha": "ae008ad",
-      "title": "docs(context): delete finished stories' planning files and trim the rest",
-      "date": "2026-11-17T09:25:29Z",
-      "url": "https://github.com/northguild/gmt/pull/544"
     }
   ]
 }
