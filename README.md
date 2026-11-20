@@ -189,7 +189,7 @@ This page is up for a place in curated lists of GitHub profile READMEs. The stat
 <!-- lists:start -->
 | List | Stars | Category | Status |
 | --- | ---: | --- | --- |
-| [roypriyanshu02/awesome-github-profile-readme](https://github.com/roypriyanshu02/awesome-github-profile-readme) | 200 | Dynamic | [Listed since 2026-11-15](https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137) |
+| [roypriyanshu02/awesome-github-profile-readme](https://github.com/roypriyanshu02/awesome-github-profile-readme) | 201 | Dynamic | [Listed since 2026-11-15](https://github.com/roypriyanshu02/awesome-github-profile-readme/pull/137) |
 <!-- lists:end -->
 
 ### Contributions · 贡献
