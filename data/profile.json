@@ -873,7 +873,8 @@
       24,
       11,
       19,
-      7
+      7,
+      0
     ],
     "levels": [
       0,
@@ -1245,7 +1246,8 @@
       1,
       1,
       1,
-      1
+      1,
+      0
     ]
   },
   "submissions": [
@@ -1256,7 +1258,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31651
+      "stars": 31650
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
