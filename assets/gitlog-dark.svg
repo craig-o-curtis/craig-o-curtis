@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: gmt: release: v1.23.0 (Nov 21); gmt: fix(core): calendar, zone and week-data answers follow the frozen workaround approach (Nov 21); gmt: docs(dox): DOX-G14 tracker row and a WebMCP graph test comment (Nov 20); worktree: feat(docs): the Settings gear and sound (Nov 19); worktree: chore(workflow): update to 0.29.1 (Nov 19); gmt: feat(dox): a PTP preset inside the 2016 leap second (DOX-G13, #535) (Nov 19); gmt: fix(dox): plate-overflow tolerance test no longer depends on the machine font (Nov 19); gmt: fix(dox): readout plates fit at every width, and a weekly plate-fit gate (Nov 19).</title>
+<title id="title">Recently merged at @northguild, newest first: gmt: chore(dox): HelsinkiJS talk on 15 December, with doors time, venue and plain presenter notes (Nov 21); gmt: release: v1.23.1 (Nov 21); gmt: fix(core): the week-year guard formats Coptic, Ethiopic and digit weekday names (Nov 21); gmt: feat(dox): slide decks and Deck 0, Give Me Temporal (DOX-G12, #548) (Nov 21); gmt: release: v1.23.0 (Nov 21); gmt: fix(core): calendar, zone and week-data answers follow the frozen workaround approach (Nov 21); gmt: docs(dox): DOX-G14 tracker row and a WebMCP graph test comment (Nov 20); worktree: feat(docs): the Settings gear and sound (Nov 19).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,58 +29,58 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#008000"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#00a000">7850870</text>
+    <text x="37.6" y="84" font-size="13" fill="#00a000">624f0df</text>
     <text x="100" y="84" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="84" font-size="13" fill="#00ff00" textLength="124.8" lengthAdjust="spacingAndGlyphs">release: v1.23.0</text>
+    <text x="185.8" y="84" font-size="13" fill="#00ff00" textLength="569.4" lengthAdjust="spacingAndGlyphs">chore(dox): HelsinkiJS talk on 15 December, with doors time, venue and p…</text>
     <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#00a000">2969eb5</text>
+    <text x="37.6" y="105" font-size="13" fill="#00a000">f44e60f</text>
     <text x="100" y="105" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="105" font-size="13" fill="#00ff00" textLength="569.4" lengthAdjust="spacingAndGlyphs">fix(core): calendar, zone and week-data answers follow the frozen workar…</text>
+    <text x="185.8" y="105" font-size="13" fill="#00ff00" textLength="124.8" lengthAdjust="spacingAndGlyphs">release: v1.23.1</text>
     <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#00a000">d769aee</text>
+    <text x="37.6" y="126" font-size="13" fill="#00a000">fb81109</text>
     <text x="100" y="126" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="126" font-size="13" fill="#00ff00" textLength="483.6" lengthAdjust="spacingAndGlyphs">docs(dox): DOX-G14 tracker row and a WebMCP graph test comment</text>
-    <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 20</text>
+    <text x="185.8" y="126" font-size="13" fill="#00ff00" textLength="569.4" lengthAdjust="spacingAndGlyphs">fix(core): the week-year guard formats Coptic, Ethiopic and digit weekda…</text>
+    <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#00a000">d4d4387</text>
-    <text x="100" y="147" font-size="13" fill="#00ffff">(worktree)</text>
-    <text x="185.8" y="147" font-size="13" fill="#00ff00" textLength="304.2" lengthAdjust="spacingAndGlyphs">feat(docs): the Settings gear and sound</text>
-    <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
+    <text x="37.6" y="147" font-size="13" fill="#00a000">108a0dd</text>
+    <text x="100" y="147" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="185.8" y="147" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): slide decks and Deck 0, Give Me Temporal (DOX-G12, #548)</text>
+    <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#00a000">6aa748b</text>
-    <text x="100" y="168" font-size="13" fill="#00ffff">(worktree)</text>
-    <text x="185.8" y="168" font-size="13" fill="#00ff00" textLength="257.4" lengthAdjust="spacingAndGlyphs">chore(workflow): update to 0.29.1</text>
-    <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
+    <text x="37.6" y="168" font-size="13" fill="#00a000">7850870</text>
+    <text x="100" y="168" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="185.8" y="168" font-size="13" fill="#00ff00" textLength="124.8" lengthAdjust="spacingAndGlyphs">release: v1.23.0</text>
+    <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#00a000">bc8775e</text>
+    <text x="37.6" y="189" font-size="13" fill="#00a000">2969eb5</text>
     <text x="100" y="189" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="189" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): a PTP preset inside the 2016 leap second (DOX-G13, #535)</text>
-    <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
+    <text x="185.8" y="189" font-size="13" fill="#00ff00" textLength="569.4" lengthAdjust="spacingAndGlyphs">fix(core): calendar, zone and week-data answers follow the frozen workar…</text>
+    <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 21</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#00a000">1e8a1b6</text>
+    <text x="37.6" y="210" font-size="13" fill="#00a000">d769aee</text>
     <text x="100" y="210" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="210" font-size="13" fill="#00ff00" textLength="569.4" lengthAdjust="spacingAndGlyphs">fix(dox): plate-overflow tolerance test no longer depends on the machine…</text>
-    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
+    <text x="185.8" y="210" font-size="13" fill="#00ff00" textLength="483.6" lengthAdjust="spacingAndGlyphs">docs(dox): DOX-G14 tracker row and a WebMCP graph test comment</text>
+    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 20</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#00a000">18b227b</text>
-    <text x="100" y="231" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="185.8" y="231" font-size="13" fill="#00ff00" textLength="561.6" lengthAdjust="spacingAndGlyphs">fix(dox): readout plates fit at every width, and a weekly plate-fit gate</text>
+    <text x="37.6" y="231" font-size="13" fill="#00a000">d4d4387</text>
+    <text x="100" y="231" font-size="13" fill="#00ffff">(worktree)</text>
+    <text x="185.8" y="231" font-size="13" fill="#00ff00" textLength="304.2" lengthAdjust="spacingAndGlyphs">feat(docs): the Settings gear and sound</text>
     <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 19</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#00a000">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#00ff00"/></g>
