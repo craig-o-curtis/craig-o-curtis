@@ -5,14 +5,14 @@
       "lastRelease": "2026-11-07T15:04:57Z"
     },
     "@northguild/gmt": {
-      "version": "1.22.0",
-      "lastRelease": "2026-11-19T08:25:23Z"
+      "version": "1.23.0",
+      "lastRelease": "2026-11-21T11:31:39Z"
     }
   },
   "gmt": {
-    "tests": 77843,
+    "tests": 78019,
     "functions": 780,
-    "executions": 2335290,
+    "executions": 2340570,
     "timezones": [
       "Pacific/Niue",
       "America/New_York",
@@ -37,6 +37,12 @@
     "commands": 9
   },
   "releases": [
+    {
+      "repo": "northguild/gmt",
+      "name": "@northguild/gmt@1.23.0",
+      "url": "https://github.com/northguild/gmt/releases/tag/%40northguild/gmt%401.23.0",
+      "date": "2026-11-21T11:31:39Z"
+    },
     {
       "repo": "northguild/gmt",
       "name": "@northguild/gmt@1.22.0",
@@ -502,7 +508,7 @@
   ],
   "contributions": {
     "start": "2025-11-16",
-    "total": 3181,
+    "total": 3185,
     "counts": [
       0,
       0,
@@ -874,7 +880,7 @@
       11,
       19,
       7,
-      0
+      4
     ],
     "levels": [
       0,
@@ -1247,7 +1253,7 @@
       1,
       1,
       1,
-      0
+      1
     ]
   },
   "submissions": [
@@ -1258,7 +1264,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31650
+      "stars": 31649
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1272,6 +1278,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 564,
+      "sha": "7850870",
+      "title": "release: v1.23.0",
+      "date": "2026-11-21T11:28:13Z",
+      "url": "https://github.com/northguild/gmt/pull/564"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 561,
+      "sha": "2969eb5",
+      "title": "fix(core): calendar, zone and week-data answers follow the frozen workaround approach",
+      "date": "2026-11-21T11:01:48Z",
+      "url": "https://github.com/northguild/gmt/pull/561"
+    },
     {
       "repo": "northguild/gmt",
       "number": 562,
@@ -1319,22 +1341,6 @@
       "title": "fix(dox): readout plates fit at every width, and a weekly plate-fit gate",
       "date": "2026-11-19T10:23:20Z",
       "url": "https://github.com/northguild/gmt/pull/555"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 554,
-      "sha": "d6031ec",
-      "title": "release: v1.22.0",
-      "date": "2026-11-19T08:20:10Z",
-      "url": "https://github.com/northguild/gmt/pull/554"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 553,
-      "sha": "9861846",
-      "title": "fix(dox): one soft Distant sonar ping for every press",
-      "date": "2026-11-19T07:50:41Z",
-      "url": "https://github.com/northguild/gmt/pull/553"
     }
   ]
 }
