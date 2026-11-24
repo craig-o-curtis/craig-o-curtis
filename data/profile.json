@@ -520,7 +520,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3185,
+    "total": 3190,
     "counts": [
       0,
       6,
@@ -888,7 +888,7 @@
       10,
       2,
       4,
-      0
+      5
     ],
     "levels": [
       0,
@@ -1257,7 +1257,7 @@
       1,
       1,
       1,
-      0
+      1
     ]
   },
   "submissions": [
@@ -1268,7 +1268,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31673
+      "stars": 31679
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1282,6 +1282,14 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 576,
+      "sha": "5c26f85",
+      "title": "fix(dox): the weekly gate flood of 202 failures",
+      "date": "2026-11-24T13:29:53Z",
+      "url": "https://github.com/northguild/gmt/pull/576"
+    },
     {
       "repo": "northguild/gmt",
       "number": 573,
@@ -1337,14 +1345,6 @@
       "title": "fix(core): the week-year guard formats Coptic, Ethiopic and digit weekday names",
       "date": "2026-11-21T16:23:52Z",
       "url": "https://github.com/northguild/gmt/pull/565"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 552,
-      "sha": "108a0dd",
-      "title": "feat(dox): slide decks and Deck 0, Give Me Temporal (DOX-G12, #548)",
-      "date": "2026-11-21T15:23:34Z",
-      "url": "https://github.com/northguild/gmt/pull/552"
     }
   ]
 }
