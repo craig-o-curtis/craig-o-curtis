@@ -97,7 +97,7 @@ Open source, published to npm, with a release most weeks. The figures on these c
 <!-- releases:start -->
 | Project | Latest release | Date | Releases, last 90 days |
 | --- | --- | --- | ---: |
-| [gmt](https://github.com/northguild/gmt) | [`@northguild/gmt@1.23.1`](https://github.com/northguild/gmt/releases/tag/%40northguild/gmt%401.23.1) | 2026-11-21 | 11 |
+| [gmt](https://github.com/northguild/gmt) | [`@northguild/gmt@1.23.1`](https://github.com/northguild/gmt/releases/tag/%40northguild/gmt%401.23.1) | 2026-11-21 | 10 |
 | [worktree](https://github.com/northguild/worktree) | [`v3.1.0`](https://github.com/northguild/worktree/releases/tag/v3.1.0) | 2026-11-23 | 14 |
 <!-- releases:end -->
 
