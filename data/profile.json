@@ -520,7 +520,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3190,
+    "total": 3193,
     "counts": [
       0,
       6,
@@ -888,7 +888,8 @@
       10,
       2,
       4,
-      5
+      8,
+      0
     ],
     "levels": [
       0,
@@ -1257,7 +1258,8 @@
       1,
       1,
       1,
-      1
+      1,
+      0
     ]
   },
   "submissions": [
@@ -1282,6 +1284,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/worktree",
+      "number": 366,
+      "sha": "f546775",
+      "title": "feat(branch): custom issue providers",
+      "date": "2026-11-24T22:29:56Z",
+      "url": "https://github.com/northguild/worktree/pull/366"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 580,
+      "sha": "39e6bad",
+      "title": "fix(canary): tags follow the new WebKit runners, and two tests take the host's wording",
+      "date": "2026-11-24T19:02:20Z",
+      "url": "https://github.com/northguild/gmt/pull/580"
+    },
     {
       "repo": "northguild/gmt",
       "number": 576,
@@ -1329,22 +1347,6 @@
       "title": "chore(dox): HelsinkiJS talk on 15 December, with doors time, venue and plain presenter notes",
       "date": "2026-11-21T19:30:21Z",
       "url": "https://github.com/northguild/gmt/pull/568"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 566,
-      "sha": "f44e60f",
-      "title": "release: v1.23.1",
-      "date": "2026-11-21T17:27:32Z",
-      "url": "https://github.com/northguild/gmt/pull/566"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 565,
-      "sha": "fb81109",
-      "title": "fix(core): the week-year guard formats Coptic, Ethiopic and digit weekday names",
-      "date": "2026-11-21T16:23:52Z",
-      "url": "https://github.com/northguild/gmt/pull/565"
     }
   ]
 }
