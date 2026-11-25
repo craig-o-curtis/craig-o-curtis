@@ -1,8 +1,8 @@
 {
   "packages": {
     "@northguild/worktree": {
-      "version": "3.1.0",
-      "lastRelease": "2026-11-23T16:11:20Z"
+      "version": "3.1.1",
+      "lastRelease": "2026-11-25T13:52:41Z"
     },
     "@northguild/gmt": {
       "version": "1.23.1",
@@ -37,6 +37,12 @@
     "commands": 9
   },
   "releases": [
+    {
+      "repo": "northguild/worktree",
+      "name": "v3.1.1",
+      "url": "https://github.com/northguild/worktree/releases/tag/v3.1.1",
+      "date": "2026-11-25T13:52:41Z"
+    },
     {
       "repo": "northguild/worktree",
       "name": "v3.1.0",
@@ -520,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3194,
+    "total": 3196,
     "counts": [
       0,
       6,
@@ -888,8 +894,8 @@
       10,
       2,
       4,
-      8,
-      1
+      7,
+      4
     ],
     "levels": [
       0,
@@ -1270,7 +1276,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31679
+      "stars": 31683
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1286,6 +1292,54 @@
   "activity": [
     {
       "repo": "northguild/worktree",
+      "number": 373,
+      "sha": "9620a9c",
+      "title": "feat(docs): Dox chat evals",
+      "date": "2026-11-25T13:55:08Z",
+      "url": "https://github.com/northguild/worktree/pull/373"
+    },
+    {
+      "repo": "northguild/worktree",
+      "number": 375,
+      "sha": "810cc6c",
+      "title": "chore(release): 3.1.1",
+      "date": "2026-11-25T13:50:45Z",
+      "url": "https://github.com/northguild/worktree/pull/375"
+    },
+    {
+      "repo": "northguild/worktree",
+      "number": 372,
+      "sha": "64bc6a8",
+      "title": "fix(git): a worktree that lost its .git no longer fails the gather",
+      "date": "2026-11-25T12:40:01Z",
+      "url": "https://github.com/northguild/worktree/pull/372"
+    },
+    {
+      "repo": "northguild/worktree",
+      "number": 370,
+      "sha": "3f66233",
+      "title": "fix(docs): worker:dev keeps its remote AI and KV bindings",
+      "date": "2026-11-25T12:00:05Z",
+      "url": "https://github.com/northguild/worktree/pull/370"
+    },
+    {
+      "repo": "northguild/worktree",
+      "number": 371,
+      "sha": "beb95ca",
+      "title": "fix(branch): refuse an empty --github, --jira, --linear or --clickup",
+      "date": "2026-11-25T11:45:48Z",
+      "url": "https://github.com/northguild/worktree/pull/371"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 582,
+      "sha": "d475740",
+      "title": "fix(dox): the landing hero on a phone (DOX-G15, #556)",
+      "date": "2026-11-25T09:53:19Z",
+      "url": "https://github.com/northguild/gmt/pull/582"
+    },
+    {
+      "repo": "northguild/worktree",
       "number": 366,
       "sha": "f546775",
       "title": "feat(branch): custom issue providers",
@@ -1299,54 +1353,6 @@
       "title": "fix(canary): tags follow the new WebKit runners, and two tests take the host's wording",
       "date": "2026-11-24T19:02:20Z",
       "url": "https://github.com/northguild/gmt/pull/580"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 576,
-      "sha": "5c26f85",
-      "title": "fix(dox): the weekly gate flood of 202 failures",
-      "date": "2026-11-24T13:29:53Z",
-      "url": "https://github.com/northguild/gmt/pull/576"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 573,
-      "sha": "7889d50",
-      "title": "feat: `isValidOperatingSchedule`, the Operating Schedule Checker and the Opening Hours Board (CORE-115)",
-      "date": "2026-11-23T17:58:19Z",
-      "url": "https://github.com/northguild/gmt/pull/573"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 362,
-      "sha": "925ea79",
-      "title": "chore(release): 3.1.0",
-      "date": "2026-11-23T16:09:29Z",
-      "url": "https://github.com/northguild/worktree/pull/362"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 360,
-      "sha": "d359982",
-      "title": "fix(branch): --agent-stdin keeps the piped brief with an issue flag",
-      "date": "2026-11-23T14:01:53Z",
-      "url": "https://github.com/northguild/worktree/pull/360"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 361,
-      "sha": "29bd470",
-      "title": "fix(linear): batch the issue-state filter as an and per issue",
-      "date": "2026-11-23T13:39:29Z",
-      "url": "https://github.com/northguild/worktree/pull/361"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 568,
-      "sha": "624f0df",
-      "title": "chore(dox): HelsinkiJS talk on 15 December, with doors time, venue and plain presenter notes",
-      "date": "2026-11-21T19:30:21Z",
-      "url": "https://github.com/northguild/gmt/pull/568"
     }
   ]
 }

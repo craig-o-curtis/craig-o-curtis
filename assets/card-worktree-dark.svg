@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="422" height="232" viewBox="0 0 422 232" role="img" aria-labelledby="title">
-<title id="title">worktree v3.1.0: Git worktrees without the ceremony. Hands each new worktree to a coding agent. 26 releases, 9 commands, Nov 23 last release.</title>
+<title id="title">worktree v3.1.1: Git worktrees without the ceremony. Hands each new worktree to a coding agent. 27 releases, 9 commands, Nov 25 last release.</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -19,14 +19,14 @@
   <rect width="410" height="220" fill="#0d0d0d"/>
   <text x="20" y="38" font-size="20" font-weight="700" fill="#00ff00"><tspan fill="#00a000">▸ </tspan>worktree</text>
   <rect x="330.8" y="22" width="59.199999999999996" height="22" fill="#003300" stroke="#008000"/>
-  <text x="360.4" y="37.5" font-size="12" fill="#00ff00" text-anchor="middle">v3.1.0</text>
+  <text x="360.4" y="37.5" font-size="12" fill="#00ff00" text-anchor="middle">v3.1.1</text>
   <text x="20" y="62" font-size="12.5" fill="#00a000">Git worktrees without the ceremony.</text>
   <text x="20" y="79" font-size="12.5" fill="#00a000">Hands each new worktree to a coding agent.</text>
-  <text x="20" y="112" font-size="19" font-weight="700" fill="#00ff00">26</text>
+  <text x="20" y="112" font-size="19" font-weight="700" fill="#00ff00">27</text>
   <text x="20" y="130" font-size="11" fill="#00a000">releases</text>
   <text x="143.33333333333331" y="112" font-size="19" font-weight="700" fill="#00ff00">9</text>
   <text x="143.33333333333331" y="130" font-size="11" fill="#00a000">commands</text>
-  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#00ff00">Nov 23</text>
+  <text x="266.66666666666663" y="112" font-size="19" font-weight="700" fill="#00ff00">Nov 25</text>
   <text x="266.66666666666663" y="130" font-size="11" fill="#00a000">last release</text>
   <line class="axis" x1="20" y1="178" x2="390" y2="178" stroke="#008000" stroke-width="1.5" pathLength="1"/>
   <line x1="20.0" y1="178" x2="20.0" y2="182" stroke="#008000"/>
@@ -73,8 +73,9 @@
   <line class="tick" x1="326.5" y1="169" x2="326.5" y2="178" stroke="#00a000" stroke-width="1.5" style="animation-delay:1.83s"/>
   <g class="tick" style="animation-delay:1.96s"><line x1="358.6" y1="154" x2="358.6" y2="178" stroke="#00ff00" stroke-width="2"/><text x="358.6" y="150" font-size="10" font-weight="700" fill="#00ffff" text-anchor="middle">v3</text></g>
   <line class="tick" x1="380.1" y1="169" x2="380.1" y2="178" stroke="#00a000" stroke-width="1.5" style="animation-delay:2.06s"/>
-  <circle class="pulse motion-only" cx="380.1" cy="178" r="3" fill="none" stroke="#00ffff"/>
-  <circle class="tick" cx="380.1" cy="178" r="3" fill="#00ffff" style="animation-delay:2.20s"/>
+  <line class="tick" x1="382.7" y1="169" x2="382.7" y2="178" stroke="#00a000" stroke-width="1.5" style="animation-delay:2.07s"/>
+  <circle class="pulse motion-only" cx="382.7" cy="178" r="3" fill="none" stroke="#00ffff"/>
+  <circle class="tick" cx="382.7" cy="178" r="3" fill="#00ffff" style="animation-delay:2.20s"/>
   <text x="20" y="212" font-size="10.5" fill="#00a000" opacity=".85">release history</text>
   <text x="390" y="212" font-size="10.5" fill="#00a000" opacity=".85" text-anchor="end">npx @northguild/worktree</text>
 </g>
