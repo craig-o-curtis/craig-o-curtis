@@ -526,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3196,
+    "total": 3198,
     "counts": [
       0,
       6,
@@ -895,7 +895,8 @@
       2,
       4,
       7,
-      4
+      6,
+      0
     ],
     "levels": [
       0,
@@ -1265,7 +1266,8 @@
       1,
       1,
       1,
-      1
+      1,
+      0
     ]
   },
   "submissions": [
@@ -1276,7 +1278,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31683
+      "stars": 31687
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
@@ -1290,6 +1292,22 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/worktree",
+      "number": 377,
+      "sha": "0c72cda",
+      "title": "chore(workflow): update to 0.31.0",
+      "date": "2026-11-25T22:26:21Z",
+      "url": "https://github.com/northguild/worktree/pull/377"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 577,
+      "sha": "31447c8",
+      "title": "feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G15, #569)",
+      "date": "2026-11-25T17:59:33Z",
+      "url": "https://github.com/northguild/gmt/pull/577"
+    },
     {
       "repo": "northguild/worktree",
       "number": 373,
@@ -1337,22 +1355,6 @@
       "title": "fix(dox): the landing hero on a phone (DOX-G15, #556)",
       "date": "2026-11-25T09:53:19Z",
       "url": "https://github.com/northguild/gmt/pull/582"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 366,
-      "sha": "f546775",
-      "title": "feat(branch): custom issue providers",
-      "date": "2026-11-24T22:29:56Z",
-      "url": "https://github.com/northguild/worktree/pull/366"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 580,
-      "sha": "39e6bad",
-      "title": "fix(canary): tags follow the new WebKit runners, and two tests take the host's wording",
-      "date": "2026-11-24T19:02:20Z",
-      "url": "https://github.com/northguild/gmt/pull/580"
     }
   ]
 }

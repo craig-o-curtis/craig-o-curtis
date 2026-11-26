@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: worktree: feat(docs): Dox chat evals (Nov 25); worktree: chore(release): 3.1.1 (Nov 25); worktree: fix(git): a worktree that lost its .git no longer fails the gather (Nov 25); worktree: fix(docs): worker:dev keeps its remote AI and KV bindings (Nov 25); worktree: fix(branch): refuse an empty --github, --jira, --linear or --clickup (Nov 25); gmt: fix(dox): the landing hero on a phone (DOX-G15, #556) (Nov 25); worktree: feat(branch): custom issue providers (Nov 24); gmt: fix(canary): tags follow the new WebKit runners, and two tests take the host's wording (Nov 24).</title>
+<title id="title">Recently merged at @northguild, newest first: worktree: chore(workflow): update to 0.31.0 (Nov 25); gmt: feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G15, #569) (Nov 25); worktree: feat(docs): Dox chat evals (Nov 25); worktree: chore(release): 3.1.1 (Nov 25); worktree: fix(git): a worktree that lost its .git no longer fails the gather (Nov 25); worktree: fix(docs): worker:dev keeps its remote AI and KV bindings (Nov 25); worktree: fix(branch): refuse an empty --github, --jira, --linear or --clickup (Nov 25); gmt: fix(dox): the landing hero on a phone (DOX-G15, #556) (Nov 25).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,59 +29,59 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#2e7d32"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#3f7a4f">9620a9c</text>
+    <text x="37.6" y="84" font-size="13" fill="#3f7a4f">0c72cda</text>
     <text x="100" y="84" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="84" font-size="13" fill="#0b5d1e" textLength="202.8" lengthAdjust="spacingAndGlyphs">feat(docs): Dox chat evals</text>
+    <text x="185.8" y="84" font-size="13" fill="#0b5d1e" textLength="257.4" lengthAdjust="spacingAndGlyphs">chore(workflow): update to 0.31.0</text>
     <text x="818" y="84" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#3f7a4f">810cc6c</text>
-    <text x="100" y="105" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="105" font-size="13" fill="#0b5d1e" textLength="163.8" lengthAdjust="spacingAndGlyphs">chore(release): 3.1.1</text>
+    <text x="37.6" y="105" font-size="13" fill="#3f7a4f">31447c8</text>
+    <text x="100" y="105" font-size="13" fill="#006d77">(gmt)</text>
+    <text x="185.8" y="105" font-size="13" fill="#0b5d1e" textLength="569.4" lengthAdjust="spacingAndGlyphs">feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G1…</text>
     <text x="818" y="105" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#3f7a4f">64bc6a8</text>
+    <text x="37.6" y="126" font-size="13" fill="#3f7a4f">9620a9c</text>
     <text x="100" y="126" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="126" font-size="13" fill="#0b5d1e" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(git): a worktree that lost its .git no longer fails the gather</text>
+    <text x="185.8" y="126" font-size="13" fill="#0b5d1e" textLength="202.8" lengthAdjust="spacingAndGlyphs">feat(docs): Dox chat evals</text>
     <text x="818" y="126" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#3f7a4f">3f66233</text>
+    <text x="37.6" y="147" font-size="13" fill="#3f7a4f">810cc6c</text>
     <text x="100" y="147" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="147" font-size="13" fill="#0b5d1e" textLength="444.6" lengthAdjust="spacingAndGlyphs">fix(docs): worker:dev keeps its remote AI and KV bindings</text>
+    <text x="185.8" y="147" font-size="13" fill="#0b5d1e" textLength="163.8" lengthAdjust="spacingAndGlyphs">chore(release): 3.1.1</text>
     <text x="818" y="147" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#3f7a4f">beb95ca</text>
+    <text x="37.6" y="168" font-size="13" fill="#3f7a4f">64bc6a8</text>
     <text x="100" y="168" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="168" font-size="13" fill="#0b5d1e" textLength="530.4" lengthAdjust="spacingAndGlyphs">fix(branch): refuse an empty --github, --jira, --linear or --clickup</text>
+    <text x="185.8" y="168" font-size="13" fill="#0b5d1e" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(git): a worktree that lost its .git no longer fails the gather</text>
     <text x="818" y="168" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#3f7a4f">d475740</text>
-    <text x="100" y="189" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="185.8" y="189" font-size="13" fill="#0b5d1e" textLength="413.4" lengthAdjust="spacingAndGlyphs">fix(dox): the landing hero on a phone (DOX-G15, #556)</text>
+    <text x="37.6" y="189" font-size="13" fill="#3f7a4f">3f66233</text>
+    <text x="100" y="189" font-size="13" fill="#006d77">(worktree)</text>
+    <text x="185.8" y="189" font-size="13" fill="#0b5d1e" textLength="444.6" lengthAdjust="spacingAndGlyphs">fix(docs): worker:dev keeps its remote AI and KV bindings</text>
     <text x="818" y="189" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#3f7a4f">f546775</text>
+    <text x="37.6" y="210" font-size="13" fill="#3f7a4f">beb95ca</text>
     <text x="100" y="210" font-size="13" fill="#006d77">(worktree)</text>
-    <text x="185.8" y="210" font-size="13" fill="#0b5d1e" textLength="280.8" lengthAdjust="spacingAndGlyphs">feat(branch): custom issue providers</text>
-    <text x="818" y="210" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 24</text>
+    <text x="185.8" y="210" font-size="13" fill="#0b5d1e" textLength="530.4" lengthAdjust="spacingAndGlyphs">fix(branch): refuse an empty --github, --jira, --linear or --clickup</text>
+    <text x="818" y="210" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#0b5d1e">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#3f7a4f">39e6bad</text>
+    <text x="37.6" y="231" font-size="13" fill="#3f7a4f">d475740</text>
     <text x="100" y="231" font-size="13" fill="#006d77">(gmt)</text>
-    <text x="185.8" y="231" font-size="13" fill="#0b5d1e" textLength="561.6" lengthAdjust="spacingAndGlyphs">fix(canary): tags follow the new WebKit runners, and two tests take the…</text>
-    <text x="818" y="231" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 24</text>
+    <text x="185.8" y="231" font-size="13" fill="#0b5d1e" textLength="413.4" lengthAdjust="spacingAndGlyphs">fix(dox): the landing hero on a phone (DOX-G15, #556)</text>
+    <text x="818" y="231" font-size="13" fill="#3f7a4f" text-anchor="end">Nov 25</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#3f7a4f">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#0b5d1e"/></g>
 </g>
