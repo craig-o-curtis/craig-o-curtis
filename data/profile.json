@@ -1,12 +1,12 @@
 {
   "packages": {
-    "@northguild/worktree": {
-      "version": "3.1.1",
-      "lastRelease": "2026-11-25T13:52:41Z"
-    },
     "@northguild/gmt": {
       "version": "1.23.1",
       "lastRelease": "2026-11-21T17:32:49Z"
+    },
+    "@northguild/worktree": {
+      "version": "3.1.1",
+      "lastRelease": "2026-11-25T13:52:41Z"
     }
   },
   "gmt": {
@@ -526,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3215,
+    "total": 3224,
     "counts": [
       0,
       6,
@@ -897,7 +897,7 @@
       7,
       6,
       7,
-      9
+      18
     ],
     "levels": [
       0,
@@ -1296,6 +1296,46 @@
   "activity": [
     {
       "repo": "northguild/gmt",
+      "number": 588,
+      "sha": "8244141",
+      "title": "fix(dox): run the slash smoke rows locally, settle before reading links, close DOX-G17",
+      "date": "2026-11-27T15:44:27Z",
+      "url": "https://github.com/northguild/gmt/pull/588"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 586,
+      "sha": "8a37e2e",
+      "title": "fix(dox): landing sky follow-ups: Look at row, band frames, globe toolbar and Neptune (DOX-G16, #578)",
+      "date": "2026-11-27T15:21:56Z",
+      "url": "https://github.com/northguild/gmt/pull/586"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 587,
+      "sha": "a0506a1",
+      "title": "fix(dox): one permanent hop to each page, and search crawlers skip the `.md` twins and query URLs (DOX-G17, #559)",
+      "date": "2026-11-27T14:09:53Z",
+      "url": "https://github.com/northguild/gmt/pull/587"
+    },
+    {
+      "repo": "northguild/northguild.dev",
+      "number": 29,
+      "sha": "5667146",
+      "title": "chore(site): search crawlers skip the gmt `.md` twins and query URLs (northguild/gmt#559)",
+      "date": "2026-11-27T13:48:13Z",
+      "url": "https://github.com/northguild/northguild.dev/pull/29"
+    },
+    {
+      "repo": "northguild/gmt",
+      "number": 584,
+      "sha": "da68231",
+      "title": "feat(dox): Sun and Moon imagery, the planets and small bodies, and a Look at bar in the landing sky (DOX-G16, #578)",
+      "date": "2026-11-27T08:45:52Z",
+      "url": "https://github.com/northguild/gmt/pull/584"
+    },
+    {
+      "repo": "northguild/gmt",
       "number": 585,
       "sha": "5a62cc3",
       "title": "fix(dox): record tc39/proposal-temporal#3343, the fix for #3342",
@@ -1317,46 +1357,6 @@
       "title": "feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G15, #569)",
       "date": "2026-11-25T17:59:33Z",
       "url": "https://github.com/northguild/gmt/pull/577"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 373,
-      "sha": "9620a9c",
-      "title": "feat(docs): Dox chat evals",
-      "date": "2026-11-25T13:55:08Z",
-      "url": "https://github.com/northguild/worktree/pull/373"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 375,
-      "sha": "810cc6c",
-      "title": "chore(release): 3.1.1",
-      "date": "2026-11-25T13:50:45Z",
-      "url": "https://github.com/northguild/worktree/pull/375"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 372,
-      "sha": "64bc6a8",
-      "title": "fix(git): a worktree that lost its .git no longer fails the gather",
-      "date": "2026-11-25T12:40:01Z",
-      "url": "https://github.com/northguild/worktree/pull/372"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 370,
-      "sha": "3f66233",
-      "title": "fix(docs): worker:dev keeps its remote AI and KV bindings",
-      "date": "2026-11-25T12:00:05Z",
-      "url": "https://github.com/northguild/worktree/pull/370"
-    },
-    {
-      "repo": "northguild/worktree",
-      "number": 371,
-      "sha": "beb95ca",
-      "title": "fix(branch): refuse an empty --github, --jira, --linear or --clickup",
-      "date": "2026-11-25T11:45:48Z",
-      "url": "https://github.com/northguild/worktree/pull/371"
     }
   ]
 }
