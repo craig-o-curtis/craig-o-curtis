@@ -526,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3207,
+    "total": 3215,
     "counts": [
       0,
       6,
@@ -896,8 +896,8 @@
       4,
       7,
       6,
-      8,
-      0
+      7,
+      9
     ],
     "levels": [
       0,
@@ -1269,7 +1269,7 @@
       1,
       1,
       1,
-      0
+      1
     ]
   },
   "submissions": [
@@ -1294,6 +1294,14 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 585,
+      "sha": "5a62cc3",
+      "title": "fix(dox): record tc39/proposal-temporal#3343, the fix for #3342",
+      "date": "2026-11-27T07:51:02Z",
+      "url": "https://github.com/northguild/gmt/pull/585"
+    },
     {
       "repo": "northguild/worktree",
       "number": 377,
@@ -1349,14 +1357,6 @@
       "title": "fix(branch): refuse an empty --github, --jira, --linear or --clickup",
       "date": "2026-11-25T11:45:48Z",
       "url": "https://github.com/northguild/worktree/pull/371"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 582,
-      "sha": "d475740",
-      "title": "fix(dox): the landing hero on a phone (DOX-G15, #556)",
-      "date": "2026-11-25T09:53:19Z",
-      "url": "https://github.com/northguild/gmt/pull/582"
     }
   ]
 }
