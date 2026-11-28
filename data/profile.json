@@ -526,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3226,
+    "total": 3228,
     "counts": [
       0,
       6,
@@ -898,7 +898,7 @@
       6,
       7,
       20,
-      0
+      2
     ],
     "levels": [
       0,
@@ -1271,7 +1271,7 @@
       1,
       1,
       1,
-      0
+      1
     ]
   },
   "submissions": [
@@ -1296,6 +1296,14 @@
     }
   ],
   "activity": [
+    {
+      "repo": "northguild/gmt",
+      "number": 589,
+      "sha": "43dd869",
+      "title": "fix(dox): sync upstream filings and say why fullcalendar/temporal-polyfill#127 and #132 closed",
+      "date": "2026-11-28T07:08:46Z",
+      "url": "https://github.com/northguild/gmt/pull/589"
+    },
     {
       "repo": "northguild/gmt",
       "number": 588,
@@ -1351,14 +1359,6 @@
       "title": "chore(workflow): update to 0.31.0",
       "date": "2026-11-25T22:26:21Z",
       "url": "https://github.com/northguild/worktree/pull/377"
-    },
-    {
-      "repo": "northguild/gmt",
-      "number": 577,
-      "sha": "31447c8",
-      "title": "feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G15, #569)",
-      "date": "2026-11-25T17:59:33Z",
-      "url": "https://github.com/northguild/gmt/pull/577"
     }
   ]
 }

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="852" height="310" viewBox="0 0 852 310" role="img" aria-labelledby="title">
-<title id="title">Recently merged at @northguild, newest first: gmt: fix(dox): run the slash smoke rows locally, settle before reading links, close DOX-G17 (Nov 27); gmt: fix(dox): landing sky follow-ups: Look at row, band frames, globe toolbar and Neptune (DOX-G16, #578) (Nov 27); gmt: fix(dox): one permanent hop to each page, and search crawlers skip the `.md` twins and query URLs (DOX-G17, #559) (Nov 27); northguild.dev: chore(site): search crawlers skip the gmt `.md` twins and query URLs (northguild/gmt#559) (Nov 27); gmt: feat(dox): Sun and Moon imagery, the planets and small bodies, and a Look at bar in the landing sky (DOX-G16, #578) (Nov 27); gmt: fix(dox): record tc39/proposal-temporal#3343, the fix for #3342 (Nov 27); worktree: chore(workflow): update to 0.31.0 (Nov 25); gmt: feat(dox): presentation screen adjustments for the HelsinkiJS TV (DOX-G15, #569) (Nov 25).</title>
+<title id="title">Recently merged at @northguild, newest first: gmt: fix(dox): sync upstream filings and say why fullcalendar/temporal-polyfill#127 and #132 closed (Nov 28); gmt: fix(dox): run the slash smoke rows locally, settle before reading links, close DOX-G17 (Nov 27); gmt: fix(dox): landing sky follow-ups: Look at row, band frames, globe toolbar and Neptune (DOX-G16, #578) (Nov 27); gmt: fix(dox): one permanent hop to each page, and search crawlers skip the `.md` twins and query URLs (DOX-G17, #559) (Nov 27); northguild.dev: chore(site): search crawlers skip the gmt `.md` twins and query URLs (northguild/gmt#559) (Nov 27); gmt: feat(dox): Sun and Moon imagery, the planets and small bodies, and a Look at bar in the landing sky (DOX-G16, #578) (Nov 27); gmt: fix(dox): record tc39/proposal-temporal#3343, the fix for #3342 (Nov 27); worktree: chore(workflow): update to 0.31.0 (Nov 25).</title>
 <style>
   text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', 'Liberation Mono', monospace; white-space: pre; }
   @keyframes appear { from { opacity: 0; } }
@@ -29,58 +29,58 @@
   <text class="comment" x="318.4" y="54" font-size="13" fill="#008000"># @northguild, every repo, main</text>
   <g class="ln" style="animation-delay:2.28s">
     <text x="22" y="84" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="84" font-size="13" fill="#00a000">8244141</text>
+    <text x="37.6" y="84" font-size="13" fill="#00a000">43dd869</text>
     <text x="100" y="84" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(dox): run the slash smoke rows locally, settle before reading…</text>
-    <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
+    <text x="232.6" y="84" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): sync upstream filings and say why fullcalendar/temporal-…</text>
+    <text x="818" y="84" font-size="13" fill="#00a000" text-anchor="end">Nov 28</text>
   </g>
   <g class="ln" style="animation-delay:2.46s">
     <text x="22" y="105" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="105" font-size="13" fill="#00a000">8a37e2e</text>
+    <text x="37.6" y="105" font-size="13" fill="#00a000">8244141</text>
     <text x="100" y="105" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(dox): landing sky follow-ups: Look at row, band frames, globe…</text>
+    <text x="232.6" y="105" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(dox): run the slash smoke rows locally, settle before reading…</text>
     <text x="818" y="105" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:2.64s">
     <text x="22" y="126" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="126" font-size="13" fill="#00a000">a0506a1</text>
+    <text x="37.6" y="126" font-size="13" fill="#00a000">8a37e2e</text>
     <text x="100" y="126" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): one permanent hop to each page, and search crawlers skip…</text>
+    <text x="232.6" y="126" font-size="13" fill="#00ff00" textLength="514.8" lengthAdjust="spacingAndGlyphs">fix(dox): landing sky follow-ups: Look at row, band frames, globe…</text>
     <text x="818" y="126" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:2.82s">
     <text x="22" y="147" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="147" font-size="13" fill="#00a000">5667146</text>
-    <text x="100" y="147" font-size="13" fill="#00ffff">(northguild.dev)</text>
-    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">chore(site): search crawlers skip the gmt `.md` twins and query UR…</text>
+    <text x="37.6" y="147" font-size="13" fill="#00a000">a0506a1</text>
+    <text x="100" y="147" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="147" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">fix(dox): one permanent hop to each page, and search crawlers skip…</text>
     <text x="818" y="147" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:3.00s">
     <text x="22" y="168" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="168" font-size="13" fill="#00a000">da68231</text>
-    <text x="100" y="168" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): Sun and Moon imagery, the planets and small bodies, and…</text>
+    <text x="37.6" y="168" font-size="13" fill="#00a000">5667146</text>
+    <text x="100" y="168" font-size="13" fill="#00ffff">(northguild.dev)</text>
+    <text x="232.6" y="168" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">chore(site): search crawlers skip the gmt `.md` twins and query UR…</text>
     <text x="818" y="168" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:3.18s">
     <text x="22" y="189" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="189" font-size="13" fill="#00a000">5a62cc3</text>
+    <text x="37.6" y="189" font-size="13" fill="#00a000">da68231</text>
     <text x="100" y="189" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="491.4" lengthAdjust="spacingAndGlyphs">fix(dox): record tc39/proposal-temporal#3343, the fix for #3342</text>
+    <text x="232.6" y="189" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): Sun and Moon imagery, the planets and small bodies, and…</text>
     <text x="818" y="189" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:3.36s">
     <text x="22" y="210" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="210" font-size="13" fill="#00a000">0c72cda</text>
-    <text x="100" y="210" font-size="13" fill="#00ffff">(worktree)</text>
-    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="257.4" lengthAdjust="spacingAndGlyphs">chore(workflow): update to 0.31.0</text>
-    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 25</text>
+    <text x="37.6" y="210" font-size="13" fill="#00a000">5a62cc3</text>
+    <text x="100" y="210" font-size="13" fill="#00ffff">(gmt)</text>
+    <text x="232.6" y="210" font-size="13" fill="#00ff00" textLength="491.4" lengthAdjust="spacingAndGlyphs">fix(dox): record tc39/proposal-temporal#3343, the fix for #3342</text>
+    <text x="818" y="210" font-size="13" fill="#00a000" text-anchor="end">Nov 27</text>
   </g>
   <g class="ln" style="animation-delay:3.54s">
     <text x="22" y="231" font-size="13" fill="#00ff00">*</text>
-    <text x="37.6" y="231" font-size="13" fill="#00a000">31447c8</text>
-    <text x="100" y="231" font-size="13" fill="#00ffff">(gmt)</text>
-    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="522.6" lengthAdjust="spacingAndGlyphs">feat(dox): presentation screen adjustments for the HelsinkiJS TV (…</text>
+    <text x="37.6" y="231" font-size="13" fill="#00a000">0c72cda</text>
+    <text x="100" y="231" font-size="13" fill="#00ffff">(worktree)</text>
+    <text x="232.6" y="231" font-size="13" fill="#00ff00" textLength="257.4" lengthAdjust="spacingAndGlyphs">chore(workflow): update to 0.31.0</text>
     <text x="818" y="231" font-size="13" fill="#00a000" text-anchor="end">Nov 25</text>
   </g>
   <g class="end"><text x="22" y="272" font-size="13" fill="#00a000">$</text><rect class="blink" x="37.6" y="260" width="7.8" height="15" fill="#00ff00"/></g>
