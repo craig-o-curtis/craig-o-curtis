@@ -1,12 +1,12 @@
 {
   "packages": {
-    "@northguild/gmt": {
-      "version": "1.23.1",
-      "lastRelease": "2026-11-21T17:32:49Z"
-    },
     "@northguild/worktree": {
       "version": "3.1.1",
       "lastRelease": "2026-11-25T13:52:41Z"
+    },
+    "@northguild/gmt": {
+      "version": "1.23.1",
+      "lastRelease": "2026-11-21T17:32:49Z"
     }
   },
   "gmt": {
@@ -526,7 +526,7 @@
   ],
   "contributions": {
     "start": "2025-11-23",
-    "total": 3224,
+    "total": 3226,
     "counts": [
       0,
       6,
@@ -897,7 +897,8 @@
       7,
       6,
       7,
-      18
+      20,
+      0
     ],
     "levels": [
       0,
@@ -1269,7 +1270,8 @@
       1,
       1,
       1,
-      1
+      1,
+      0
     ]
   },
   "submissions": [
@@ -1280,7 +1282,7 @@
       "url": "https://github.com/abhisheknaiidu/awesome-github-profile-readme/pull/1906",
       "state": "closed",
       "opened": "2026-11-14T18:46:26Z",
-      "stars": 31693
+      "stars": 31695
     },
     {
       "list": "roypriyanshu02/awesome-github-profile-readme",
